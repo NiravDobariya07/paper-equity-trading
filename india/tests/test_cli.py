@@ -97,6 +97,51 @@ class CLI(unittest.TestCase):
         self.assertLess(clock[0], ist.at(D, "15:21"))
         self.assertIn("1 paper trade(s)", out.getvalue())
 
+    def write_liquid(self, symbols):
+        with open(os.path.join(self.tmp, "liquid-%s.json" % D.isoformat()), "w") as fh:
+            json.dump({"day": D.isoformat(), "symbols": symbols}, fh)
+
+    def test_unlisted_holiday_exits_with_a_reason(self):
+        from india.tests.test_engine import bar
+        from india.yahoo import Chart
+        self.write_liquid(["AAA"])
+        y = [bar(i, 101, day=datetime.date(2026, 10, 26)) for i in range(70)]
+        clock = [ist.at(D, "10:00")]
+
+        def sleep(s):
+            clock[0] += datetime.timedelta(seconds=s)
+        out = io.StringIO()
+        with mock.patch.object(paper_trader.yahoo, "fetch_chart", lambda s, r, i: Chart(y, 101.0, clock[0])), \
+                contextlib.redirect_stdout(out):
+            code = paper_trader.main(["run"], clock=lambda: clock[0], sleep=sleep)
+        self.assertEqual(code, 0)
+        self.assertIn("no 09:15 bar", out.getvalue())
+        self.assertLess(clock[0], ist.at(D, "10:06"))
+
+    def test_empty_list_exits_with_a_reason(self):
+        self.write_liquid([])
+        code, out = self.main(["run"], ist.at(D, "10:00"))
+        self.assertEqual(code, 1)
+        self.assertIn("no liquid stocks", out)
+
+    def test_restart_after_close_settles_open_trades(self):
+        from india import ledger
+        from india.tests.test_engine import breakout_at
+        from india.yahoo import Chart
+        st = ledger.load(os.path.join(self.tmp, "state.json"), 20000)
+        st["trades"].append(ledger.new_trade(D.isoformat(), "AAA", "orb", D.isoformat() + "T10:05:05+05:30",
+                                             103.1, 64, 100.0, 109.3, None))
+        ledger.save(os.path.join(self.tmp, "state.json"), st)
+        bars = breakout_at(9)
+        out = io.StringIO()
+        with mock.patch.object(paper_trader.yahoo, "fetch_chart", lambda s, r, i: Chart(bars, 103.1, None)), \
+                contextlib.redirect_stdout(out):
+            code = paper_trader.main(["run"], clock=lambda: ist.at(D, "16:00"), sleep=lambda s: None)
+        self.assertEqual(code, 0)
+        with open(os.path.join(self.tmp, "state.json")) as fh:
+            (t,) = json.load(fh)["trades"]
+        self.assertEqual(t["reason"], "close-all")
+
     def test_prepare_after_close_is_for_the_next_trading_day(self):
         shutil.copy(os.path.join(FIX, "EQUITY_L-excerpt.csv"), os.path.join(self.tmp, "EQUITY_L.csv"))
         got = []

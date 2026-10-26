@@ -49,7 +49,8 @@ def new_trade(date, symbol, setup, entry_time, entry, shares, stop, target, odds
 
 
 def close(t, price, when, reason, rates):
-    t["exit"], t["exit_time"], t["reason"] = round(price, 2), when, reason
+    price = round(price, 2)
+    t["exit"], t["exit_time"], t["reason"] = price, when, reason
     t["gross"] = round((price - t["entry"]) * t["shares"], 2)
     t["charges"] = money.charges(t["entry"] * t["shares"], price * t["shares"], rates)
     t["net"] = round(t["gross"] - t["charges"], 2)

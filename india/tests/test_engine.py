@@ -205,6 +205,60 @@ class Engine(unittest.TestCase):
         self.assertEqual(feed.calls, ["B"])
         self.assertEqual([t["symbol"] for t in self.state["trades"]], ["B"])
 
+    def test_mid_bar_entry_ignores_that_bars_earlier_prices(self):
+        # catch-up entry at 10:02: the 10:00 bar's high touched the target before the position existed
+        bars = day_of([101, 101, 103.0] + [104.0] * 4 + [104.0] * 6,
+                      extra=[bar(9, 104, h=120, l=103.5), bar(10, 104.5, h=105, l=104)])
+        self.run_engine({"AAA": bars}, [at("10:02", sec=0), at("10:10")])
+        self.assertIsNone(self.state["trades"][0]["exit"])
+
+    def test_entry_on_the_bar_open_checks_that_bar(self):
+        bars = breakout_at(9, extra=[bar(10, 104, h=120, l=103.5)])   # 10:05 bar reaches the target
+        self.run_engine({"AAA": bars}, [at("10:05"), at("10:10")])
+        self.assertEqual(self.state["trades"][0]["reason"], "target")
+
+    def test_any_fetch_error_is_per_symbol(self):
+        import http.client
+        days = {"AAA": breakout_at(9), "BAD": breakout_at(9)}
+        feed = Feed(days)
+
+        def today(sym):
+            if sym == "BAD":
+                raise http.client.IncompleteRead(b"")
+            return feed.today(sym)
+        eng = engine.Engine(self.cfg, self.state, sorted(days), today, feed.sixty, log=lambda *a: None)
+        feed.now = at("10:05")
+        events = eng.sweep(feed.now)
+        self.assertEqual([t["symbol"] for t in self.state["trades"]], ["AAA"])
+        self.assertTrue(any("1 symbol" in e for e in events))
+
+    def test_entry_time_is_when_the_price_was_fetched(self):
+        feed = Feed({"AAA": breakout_at(9)})
+        late = at("10:08", sec=40)
+        eng = engine.Engine(self.cfg, self.state, ["AAA"], feed.today, feed.sixty, log=lambda *a: None,
+                            clock=lambda: late)
+        feed.now = at("10:05")
+        eng.sweep(feed.now)
+        self.assertEqual(self.state["trades"][0]["entry_time"][11:19], "10:08:40")
+
+    def test_range_is_not_cached_before_the_last_range_bar_settles(self):
+        early = day_of([], extra=[bar(2, 100, h=101, l=98.5)])        # 09:25 bar as first seen at 09:30:05
+        final = day_of([101] * 10, extra=[bar(2, 100, h=104, l=98.5)])  # Yahoo's settled 09:25 bar
+        feed = Feed({"AAA": early})
+        eng = engine.Engine(self.cfg, self.state, ["AAA"], feed.today, feed.sixty, log=lambda *a: None)
+        feed.now = at("09:30")
+        eng.sweep(feed.now)
+        feed.days["AAA"] = final
+        feed.now = at("09:35")
+        eng.sweep(feed.now)
+        self.assertEqual(eng.ranges["AAA"][0], 104)
+
+    def test_no_bars_today_is_reported(self):
+        y = [bar(i, 101, day=Y) for i in range(70)]
+        eng, events = self.run_engine({"AAA": y, "BBB": y}, [at("10:05")])
+        self.assertTrue(any("2 symbol(s) have no bars today" in e for e in events))
+        self.assertEqual(eng.last_sweep["with_bars_today"], 0)
+
     def test_workbook_matches_state(self):
         self.run_engine({"AAA": breakout_at(9)}, [at("10:05")])
         wb = openpyxl.load_workbook(os.path.join(self.tmp, "paper_trades.xlsx"))

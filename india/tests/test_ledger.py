@@ -46,6 +46,11 @@ class Ledger(unittest.TestCase):
         self.assertEqual(ledger.open_trades(s), [])
         self.assertAlmostEqual(ledger.cash(s), 20000 + t["net"])
 
+    def test_gross_uses_the_recorded_exit(self):
+        t = trade()
+        ledger.close(t, 1020.004, "2026-10-27T11:00:00+05:30", "target", RATES)
+        self.assertEqual((t["exit"], t["gross"]), (1020.0, 200.0))
+
     def test_day_stats(self):
         s = ledger.load(self.path, 20000)
         a, b, c = trade(), trade("TCS", stop=995.0), trade("INFY", date="2026-10-26")
