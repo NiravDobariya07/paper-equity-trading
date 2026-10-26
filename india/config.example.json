@@ -1,0 +1,27 @@
+{
+  "capital": 20000,
+  "max_loss_per_trade": 200,
+  "max_daily_loss": 600,
+  "max_trades_per_day": 3,
+  "min_price": 50,
+  "min_turnover": 100000000,
+  "turnover_days": 20,
+  "or_minutes": 15,
+  "no_entries_after": "14:30",
+  "close_all": "15:15",
+  "target_r": 2,
+  "tick": 0.05,
+  "tm_replays": 10000,
+  "tm_seed": 19,
+  "equity_list": "EQUITY_L.csv",
+  "holidays": [],
+  "charges": {
+    "brokerage_pct": 0.1,
+    "brokerage_cap": 20,
+    "stt_sell_pct": 0.025,
+    "txn_pct": 0.00297,
+    "sebi_per_crore": 10,
+    "stamp_buy_pct": 0.003,
+    "gst_pct": 18
+  }
+}
