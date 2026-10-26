@@ -173,6 +173,26 @@ class Engine(unittest.TestCase):
         self.assertEqual((old["reason"], old["exit"], old["exit_time"][:16]),
                          ("close-all", 104.0, "2026-10-26T15:15"))
 
+    def test_spark_prefilter_for_big_lists(self):
+        days = {"A": breakout_at(20), "B": breakout_at(11), "C": breakout_at(40)}
+        feed = Feed(days)
+        asked = []
+
+        def spark(syms):
+            asked.append(list(syms))
+            return {s: [(b.t, b.c) for b in days[s] if b.t <= feed.now] for s in syms}
+        eng = engine.Engine(self.cfg, self.state, sorted(days), feed.today, feed.sixty, log=lambda *a: None,
+                            fetch_spark=spark, spark_over=1)
+        feed.now = at("10:05")
+        eng.sweep(feed.now)                 # first sweep: full charts for all, ranges learned
+        self.assertEqual(sorted(feed.calls), ["A", "B", "C"])
+        feed.calls[:] = []
+        feed.now = at("10:15")
+        eng.sweep(feed.now)                 # B's 10:10 bar closed above its range: only B is fetched
+        self.assertEqual(asked, [["A", "B", "C"]])
+        self.assertEqual(feed.calls, ["B"])
+        self.assertEqual([t["symbol"] for t in self.state["trades"]], ["B"])
+
     def test_workbook_matches_state(self):
         self.run_engine({"AAA": breakout_at(9)}, [at("10:05")])
         wb = openpyxl.load_workbook(os.path.join(self.tmp, "paper_trades.xlsx"))

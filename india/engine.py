@@ -23,9 +23,10 @@ def _when(iso):
 
 class Engine(object):
     def __init__(self, cfg, state, symbols, fetch_today, fetch_60d, log=print,
-                 state_path=None, book_path=None):
+                 state_path=None, book_path=None, fetch_spark=None, spark_over=300):
         self.cfg, self.state, self.symbols = cfg, state, list(symbols)
         self.fetch_today, self.fetch_60d, self.log = fetch_today, fetch_60d, log
+        self.fetch_spark, self.spark_over = fetch_spark, spark_over
         self.state_path, self.book_path = state_path, book_path
         self.n_range = cfg["or_minutes"] // 5
         self.ranges = {}      # symbol -> (high, low), today's opening range once known
@@ -76,12 +77,29 @@ class Engine(object):
             charts[sym] = self.fetch_today(sym)
         return charts[sym]
 
+    def _to_check(self, syms, now):
+        """With a big list, only symbols whose range is unknown or whose spark closes broke above it."""
+        if not self.fetch_spark or len(syms) <= self.spark_over:
+            return syms
+        known = [s for s in syms if s in self.ranges]
+        if not known:
+            return syms
+        try:
+            sp = self.fetch_spark(known)
+        except FETCH_ERRORS:
+            return syms
+        hot = set()
+        for s in known:
+            orh = self.ranges[s][0]
+            if any(t + FIVE <= now and ist.bar_index(t) >= self.n_range and c > orh for t, c in sp.get(s) or ()):
+                hot.add(s)
+        return [s for s in syms if s not in self.ranges or s in hot]
+
     def _candidates(self, now, charts, dd, events):
         out, failed = [], 0
         traded = {t["symbol"] for t in self.state["trades"] if t["date"] == now.date().isoformat()}
-        for sym in self.symbols:
-            if sym in dd["done"] or sym in traded:
-                continue
+        syms = [s for s in self.symbols if s not in dd["done"] and s not in traded]
+        for sym in self._to_check(syms, now):
             try:
                 ch = self._chart(sym, charts)
             except FETCH_ERRORS:
