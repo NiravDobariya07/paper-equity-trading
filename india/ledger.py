@@ -7,6 +7,13 @@ import tempfile
 from india import money
 
 
+def file_mode():
+    """What a plain open() would give: mkstemp's 0600 would hide the files from other readers."""
+    m = os.umask(0)
+    os.umask(m)
+    return 0o666 & ~m
+
+
 def load(path, capital):
     if not os.path.exists(path):
         return {"capital_start": float(capital), "trades": [], "days": {}}
@@ -21,6 +28,7 @@ def save(path, state):
     try:
         with os.fdopen(fd, "w", encoding="utf-8") as fh:
             json.dump(state, fh, indent=1)
+        os.chmod(tmp, file_mode())
         os.replace(tmp, path)
     except BaseException:
         if os.path.exists(tmp):

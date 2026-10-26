@@ -135,6 +135,11 @@ class Engine(object):
         if not plan:
             return self._skip(dd, sym, "stop not below entry", now)
         shares = money.size(entry, plan["stop"], ledger.cash(self.state), cfg["max_loss_per_trade"])
+        if shares == 0:
+            why = ("stop too far for max loss" if money.size(entry, plan["stop"], entry, cfg["max_loss_per_trade"]) == 0
+                   else "not enough free cash")
+            events.append("%s broke out at %.2f: skipped (%s)" % (sym, entry, why))
+            return self._skip(dd, sym, why, now)
         risk = round(plan["risk"] * shares, 2)
         est = money.charges(entry * shares, plan["target"] * shares, cfg["charges"])
         ok, why = money.risk_check(risk, est, ledger.day_stats(self.state, now.date().isoformat()), cfg, now)

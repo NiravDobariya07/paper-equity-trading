@@ -107,6 +107,18 @@ class Engine(unittest.TestCase):
         skipped = self.state["days"][D.isoformat()]["skipped"]
         self.assertIn(("A", "daily loss"), [(s["symbol"], s["reason"]) for s in skipped])
 
+    def test_skip_reasons_say_cash_or_stop_distance(self):
+        self.cfg["max_daily_loss"] = 100000
+        self.cfg["max_loss_per_trade"] = 100000         # so only cash limits A's size
+        days = {"A": breakout_at(9, 103, 103.1), "B": breakout_at(9, 102.5, 102.6)}
+        self.run_engine(days, [at("10:05")])
+        self.assertEqual([t["symbol"] for t in self.state["trades"]], ["A"])
+        self.assertEqual(self.state["days"][D.isoformat()]["skipped"][0]["reason"], "not enough free cash")
+        self.cfg["max_loss_per_trade"] = 2              # less than one share's risk
+        self.state = ledger.load(os.path.join(self.tmp, "none.json"), 20000)
+        self.run_engine({"A": breakout_at(9, 103, 103.1)}, [at("10:05")])
+        self.assertEqual(self.state["days"][D.isoformat()]["skipped"][0]["reason"], "stop too far for max loss")
+
     def test_catch_up_skips_a_breakout_that_faded(self):
         days = {"AAA": day_of([101, 101, 101, 103.0, 101.5, 101.2, 101, 101, 101, 101, 101])}
         self.run_engine(days, [at("10:05")])

@@ -30,6 +30,8 @@ class Ledger(unittest.TestCase):
         ledger.save(self.path, s)
         self.assertEqual(ledger.load(self.path, 1)["trades"], s["trades"])
         self.assertEqual(os.listdir(self.tmp), ["state.json"])
+        self.assertEqual(stat.S_IMODE(os.stat(self.path).st_mode), ledger.file_mode())
+        self.assertTrue(ledger.file_mode() & stat.S_IRUSR)
 
     def test_cash_and_close(self):
         s = ledger.load(self.path, 20000)

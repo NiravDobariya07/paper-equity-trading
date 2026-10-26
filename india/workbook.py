@@ -82,6 +82,7 @@ def write(state, path, today=None):
         os.close(fd)
         try:
             wb.save(tmp)
+            os.chmod(tmp, ledger.file_mode())
             os.replace(tmp, path)
         finally:
             if os.path.exists(tmp):
