@@ -33,6 +33,17 @@ def _trades_sheet(ws, state):
                    t["value"], t["stop"], t["target"], t["risk"], _pct(t["tm_target"]), _pct(t["tm_stop"]),
                    _hm(t["exit_time"]), t["exit"], t["reason"] or "open", t["gross"], t["charges"],
                    t["net"], after.get(t["id"])])
+    closed = [t for t in state["trades"] if t["exit"] is not None]
+    total = dict.fromkeys(TRADE_COLUMNS)
+    total.update({
+        "Date": "TOTAL", "Symbol": "%d trades (%d closed)" % (len(state["trades"]), len(closed)),
+        "Gross P&L": round(sum(t["gross"] for t in closed), 2),
+        "Charges": round(sum(t["charges"] for t in closed), 2),
+        "Net P&L": round(sum(t["net"] for t in closed), 2),
+    })
+    ws.append([total[c] for c in TRADE_COLUMNS])
+    for c in ws[ws.max_row]:
+        c.font = Font(bold=True)
 
 
 def _summary_sheet(ws, state, today):

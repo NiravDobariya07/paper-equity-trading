@@ -77,11 +77,28 @@ class Workbook(unittest.TestCase):
         self.assertEqual(wb.sheetnames, ["Trades", "Summary"])
         rows = list(wb["Trades"].iter_rows(values_only=True))
         self.assertEqual(list(rows[0]), workbook.TRADE_COLUMNS)
-        self.assertEqual(len(rows), 3)
+        self.assertEqual(len(rows), 4)   # header, 2 trades, TOTAL
         summary = {r[0]: r[1] for r in wb["Summary"].iter_rows(values_only=True) if r and r[0]}
         self.assertAlmostEqual(summary["Current capital"], ledger.cash(self.state) + 10000)
         self.assertEqual(summary["Trades (closed)"], 1)
         self.assertEqual(os.listdir(self.tmp), ["paper_trades.xlsx"])
+
+    def test_total_row_at_the_bottom(self):
+        c = trade("INFY")
+        ledger.close(c, 990.0, "2026-10-27T12:00:00+05:30", "stop", RATES)
+        self.state["trades"].append(c)
+        path = os.path.join(self.tmp, "paper_trades.xlsx")
+        workbook.write(self.state, path, today="2026-10-27")
+        ws = openpyxl.load_workbook(path)["Trades"]
+        last = dict(zip(workbook.TRADE_COLUMNS, next(ws.iter_rows(min_row=ws.max_row, values_only=True))))
+        closed = [t for t in self.state["trades"] if t["exit"] is not None]
+        self.assertEqual(ws.max_row, 1 + 3 + 1)
+        self.assertEqual(last["Date"], "TOTAL")
+        self.assertEqual(last["Symbol"], "3 trades (2 closed)")
+        self.assertAlmostEqual(last["Gross P&L"], sum(t["gross"] for t in closed))
+        self.assertAlmostEqual(last["Charges"], sum(t["charges"] for t in closed))
+        self.assertAlmostEqual(last["Net P&L"], sum(t["net"] for t in closed))
+        self.assertIsNone(last["Entry price"])
 
     def test_unwritable_returns_false(self):
         ro = os.path.join(self.tmp, "ro")
