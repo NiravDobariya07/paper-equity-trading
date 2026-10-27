@@ -276,4 +276,4 @@ class Engine(unittest.TestCase):
     def test_workbook_matches_state(self):
         self.run_engine({"AAA": breakout_at(9)}, [at("10:05")])
         wb = openpyxl.load_workbook(os.path.join(self.tmp, "paper_trades.xlsx"))
-        self.assertEqual(wb["Trades"].max_row, 2)
+        self.assertEqual(wb["Trades"].max_row, 3)   # header, the trade, TOTAL
