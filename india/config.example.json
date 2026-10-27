@@ -10,6 +10,7 @@
   "no_entries_after": "14:30",
   "close_all": "15:15",
   "target_r": 2,
+  "max_chase_range": 0.5,
   "tick": 0.05,
   "tm_replays": 10000,
   "tm_seed": 19,

@@ -142,6 +142,13 @@ class CLI(unittest.TestCase):
             (t,) = json.load(fh)["trades"]
         self.assertEqual(t["reason"], "close-all")
 
+    def test_stocks_dearer_than_capital_are_left_out(self):
+        doc = {"symbols": ["MRF", "RELIANCE", "PAGEIND"],
+               "rows": [{"symbol": "MRF", "close": 117380.0}, {"symbol": "RELIANCE", "close": 1201.6},
+                        {"symbol": "PAGEIND", "close": 20000.0}]}
+        self.assertEqual(paper_trader.tradable(doc, 20000), ["RELIANCE", "PAGEIND"])
+        self.assertEqual(paper_trader.tradable({"symbols": ["A", "B"]}, 20000), ["A", "B"])
+
     def test_prepare_after_close_is_for_the_next_trading_day(self):
         shutil.copy(os.path.join(FIX, "EQUITY_L-excerpt.csv"), os.path.join(self.tmp, "EQUITY_L.csv"))
         got = []

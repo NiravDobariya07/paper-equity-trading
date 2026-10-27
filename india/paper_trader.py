@@ -41,6 +41,12 @@ def session_day(now, holidays):
     return next_trading_day(now.date(), holidays)
 
 
+def tradable(doc, capital):
+    """Today's symbols minus any whose last close is above the whole paper capital."""
+    close = {r["symbol"]: r["close"] for r in doc.get("rows") or ()}
+    return [s for s in doc["symbols"] if close.get(s, 0) <= capital]
+
+
 def prepare(cfg, day):
     try:
         universe.prepare(cfg, day, data_dir=config.DATA)
@@ -104,7 +110,7 @@ def run(cfg, clock, sleep):
         if code:
             return code
     with open(liquid, encoding="utf-8") as fh:
-        symbols = json.load(fh)["symbols"]
+        symbols = tradable(json.load(fh), cfg["capital"])
     if not symbols:
         print("There are no liquid stocks in today's list (%s). Check EQUITY_L.csv and the floors in "
               "config.json, then run prepare again." % liquid)

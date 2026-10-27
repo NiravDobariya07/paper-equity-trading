@@ -131,7 +131,10 @@ class Engine(object):
             if i is None:
                 continue
             dd["done"].append(sym)
-            if ch.price > rng[0]:
+            chase_cap = rng[0] + self.cfg["max_chase_range"] * (rng[0] - rng[1])
+            if ch.price > chase_cap:
+                self._skip(dd, sym, "too far above breakout", now)
+            elif ch.price > rng[0]:
                 out.append({"symbol": sym, "price": ch.price, "orh": rng[0], "orl": rng[1], "bar": i,
                             "at": self.fetched_at.get(sym, now)})
             else:
@@ -141,7 +144,8 @@ class Engine(object):
             events.append("no data for %d symbol(s) this sweep" % failed)
         if checked - with_today:
             events.append("%d symbol(s) have no bars today" % (checked - with_today))
-        out.sort(key=lambda c: -strategy.strength(c["price"], c["orh"]))
+        # closest to its breakout first: a stock that has already run has a far stop and few shares
+        out.sort(key=lambda c: strategy.strength(c["price"], c["orh"]))
         return out
 
     def _skip(self, dd, sym, reason, now):

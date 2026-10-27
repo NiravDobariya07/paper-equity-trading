@@ -88,31 +88,45 @@ class Engine(unittest.TestCase):
         self.run_engine({"AAA": breakout_at(9)}, [at("10:05"), at("10:10"), at("10:15")])
         self.assertEqual(len(self.state["trades"]), 1)
 
-    def test_strongest_first_then_trade_limit(self):
+    def test_closest_to_breakout_first_then_trade_limit(self):
         self.cfg["max_daily_loss"] = 100000
-        days = {"A": breakout_at(9, 103, 103.1), "B": breakout_at(9, 104, 104.1),
-                "C": breakout_at(9, 105, 105.1), "D": breakout_at(9, 102.5, 102.6)}
+        days = {"A": breakout_at(9, 103, 103.1), "B": breakout_at(9, 103.5, 103.6),
+                "C": breakout_at(9, 102.5, 102.6), "D": breakout_at(9, 103.8, 103.9)}
         self.cfg["max_loss_per_trade"] = 60   # keep cash from being the limit
         self.run_engine(days, [at("10:05")])
-        self.assertEqual([t["symbol"] for t in self.state["trades"]], ["C", "B", "A"])
+        self.assertEqual([t["symbol"] for t in self.state["trades"]], ["C", "A", "B"])
         skipped = self.state["days"][D.isoformat()]["skipped"]
         self.assertEqual([(s["symbol"], s["reason"]) for s in skipped], [("D", "trade limit")])
 
+    def test_too_far_above_the_breakout_is_skipped(self):
+        # range 98-102: with max_chase_range 0.5 the highest entry is 102 + 0.5 x 4 = 104
+        days = {"FAR": breakout_at(9, 104.5, 104.1), "OK": breakout_at(9, 103.9, 104.0)}
+        self.run_engine(days, [at("10:05")])
+        self.assertEqual([t["symbol"] for t in self.state["trades"]], ["OK"])
+        dd = self.state["days"][D.isoformat()]
+        self.assertIn("FAR", dd["done"])
+        self.assertEqual([(s["symbol"], s["reason"]) for s in dd["skipped"]], [("FAR", "too far above breakout")])
+
+    def test_chase_limit_is_a_setting(self):
+        self.cfg["max_chase_range"] = 1.0
+        self.run_engine({"FAR": breakout_at(9, 104.5, 104.1)}, [at("10:05")])
+        self.assertEqual([t["symbol"] for t in self.state["trades"]], ["FAR"])
+
     def test_daily_loss_counts_open_risk(self):
-        days = {"A": breakout_at(9, 103, 103.1), "B": breakout_at(9, 104, 104.1),
-                "C": breakout_at(9, 105, 105.1)}
+        days = {"A": breakout_at(9, 103, 103.1), "B": breakout_at(9, 103.5, 103.6),
+                "C": breakout_at(9, 103.8, 103.9)}
         self.run_engine(days, [at("10:05")])
         # two full ₹200 risks are open; a third would put ₹600 + charges at risk
-        self.assertEqual(len(self.state["trades"]), 2)
+        self.assertEqual([t["symbol"] for t in self.state["trades"]], ["A", "B"])
         skipped = self.state["days"][D.isoformat()]["skipped"]
-        self.assertIn(("A", "daily loss"), [(s["symbol"], s["reason"]) for s in skipped])
+        self.assertIn(("C", "daily loss"), [(s["symbol"], s["reason"]) for s in skipped])
 
     def test_skip_reasons_say_cash_or_stop_distance(self):
         self.cfg["max_daily_loss"] = 100000
         self.cfg["max_loss_per_trade"] = 100000         # so only cash limits A's size
         days = {"A": breakout_at(9, 103, 103.1), "B": breakout_at(9, 102.5, 102.6)}
         self.run_engine(days, [at("10:05")])
-        self.assertEqual([t["symbol"] for t in self.state["trades"]], ["A"])
+        self.assertEqual([t["symbol"] for t in self.state["trades"]], ["B"])
         self.assertEqual(self.state["days"][D.isoformat()]["skipped"][0]["reason"], "not enough free cash")
         self.cfg["max_loss_per_trade"] = 2              # less than one share's risk
         self.state = ledger.load(os.path.join(self.tmp, "none.json"), 20000)
