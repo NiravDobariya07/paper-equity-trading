@@ -45,16 +45,26 @@ def prepare(cfg, day, fetch=yahoo.fetch_chart, log=print, data_dir=None):
     syms = read_equity_list(cfg["equity_list"])
     log("Checking %d NSE EQ stocks for price >= %s and 20-day traded value >= %s (one request each)..."
         % (len(syms), cfg["min_price"], cfg["min_turnover"]))
-    daily, nodata, failed = {}, 0, 0
+    daily, nodata, retry = {}, 0, []
     for n, sym in enumerate(syms, 1):
         try:
             daily[sym] = fetch(sym, "2mo", "1d").bars
         except yahoo.NoData:
             nodata += 1
         except (urllib.error.URLError, OSError, ValueError):
-            failed += 1
+            retry.append(sym)
         if n % 200 == 0:
             log("  %d of %d" % (n, len(syms)))
+    if retry:
+        log("Retrying %d failed request(s)..." % len(retry))
+    failed = 0
+    for sym in retry:  # a second try after the pass: most failures are brief network hiccups
+        try:
+            daily[sym] = fetch(sym, "2mo", "1d").bars
+        except yahoo.NoData:
+            nodata += 1
+        except (urllib.error.URLError, OSError, ValueError):
+            failed += 1
     if syms and not daily:
         raise RuntimeError("no daily data at all (%d failed requests): is the network up?" % failed)
     rows = liquid(daily, day, cfg["min_price"], cfg["min_turnover"], cfg["turnover_days"])

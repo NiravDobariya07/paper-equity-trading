@@ -46,6 +46,28 @@ class Universe(unittest.TestCase):
         self.assertEqual([r["symbol"] for r in got], ["BIG", "OK"])
         self.assertAlmostEqual(got[1]["avg_turnover"], 11 * crore)
 
+    def test_prepare_retries_failed_requests_once(self):
+        import urllib.error
+        tmp = tempfile.mkdtemp()
+        cfg = {"equity_list": os.path.join(FIX, "EQUITY_L-excerpt.csv"), "min_price": 50,
+               "min_turnover": 100000000, "turnover_days": 20}
+        calls = []
+
+        def fetch(sym, rng, interval):
+            calls.append(sym)
+            if sym == "TCS" and calls.count("TCS") == 1:
+                raise urllib.error.URLError("timed out")
+            if sym == "M&M":
+                raise urllib.error.URLError("timed out")
+            return yahoo.Chart(daily(1000, 1e6), 1000.0, None)
+        path = universe.prepare(cfg, DAY, fetch=fetch, log=lambda *a: None, data_dir=tmp)
+        with open(path) as fh:
+            doc = json.load(fh)
+        self.assertEqual(doc["symbols"], ["RELIANCE", "TCS"])
+        self.assertEqual(doc["failed"], 1)
+        self.assertEqual(calls.count("TCS"), 2)
+        self.assertEqual(calls.count("M&M"), 2)
+
     def test_prepare_writes_the_day_file(self):
         tmp = tempfile.mkdtemp()
         cfg = {"equity_list": os.path.join(FIX, "EQUITY_L-excerpt.csv"), "min_price": 50,
