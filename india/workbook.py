@@ -4,13 +4,26 @@ import os
 import tempfile
 
 import openpyxl
-from openpyxl.styles import Font
+from openpyxl.styles import Font, PatternFill
 
 from india import ledger
 
 TRADE_COLUMNS = ["Date", "Symbol", "Setup", "Entry time", "Entry price", "Shares", "Position value",
                  "Stop", "Target", "Risk ₹", "TM target first %", "TM stop first %", "Exit time",
                  "Exit price", "Exit reason", "Gross P&L", "Charges", "Net P&L", "Capital after"]
+
+
+GREEN, RED = "C6EFCE", "FFC7CE"            # Excel's "good" / "bad" cell fills
+GREEN_TEXT, RED_TEXT = "006100", "9C0006"
+
+
+def _colour(cell, bold=False):
+    """Profit green, loss red; an empty cell (trade still open) stays plain."""
+    if cell.value is None or cell.value == 0:
+        return
+    up = cell.value > 0
+    cell.fill = PatternFill("solid", fgColor=GREEN if up else RED)
+    cell.font = Font(bold=bold, color=GREEN_TEXT if up else RED_TEXT)
 
 
 def _hm(iso):
@@ -44,6 +57,9 @@ def _trades_sheet(ws, state):
     ws.append([total[c] for c in TRADE_COLUMNS])
     for c in ws[ws.max_row]:
         c.font = Font(bold=True)
+    net = TRADE_COLUMNS.index("Net P&L") + 1
+    for r in range(2, ws.max_row + 1):
+        _colour(ws.cell(row=r, column=net), bold=r == ws.max_row)
 
 
 def _summary_sheet(ws, state, today):

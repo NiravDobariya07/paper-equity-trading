@@ -100,6 +100,22 @@ class Workbook(unittest.TestCase):
         self.assertAlmostEqual(last["Net P&L"], sum(t["net"] for t in closed))
         self.assertIsNone(last["Entry price"])
 
+    def test_net_pnl_is_green_for_profit_red_for_loss(self):
+        loss = trade("INFY")
+        ledger.close(loss, 990.0, "2026-10-27T12:00:00+05:30", "stop", RATES)
+        self.state["trades"].append(loss)
+        path = os.path.join(self.tmp, "paper_trades.xlsx")
+        workbook.write(self.state, path, today="2026-10-27")
+        ws = openpyxl.load_workbook(path)["Trades"]
+        col = workbook.TRADE_COLUMNS.index("Net P&L") + 1
+        fill = {ws.cell(row=r, column=2).value: ws.cell(row=r, column=col).fill.fgColor.rgb
+                for r in range(2, ws.max_row + 1)}
+        self.assertEqual(fill["RELIANCE"][-6:], workbook.GREEN)     # +200 gross, closed at target
+        self.assertEqual(fill["INFY"][-6:], workbook.RED)          # stopped out
+        self.assertNotIn(fill["TCS"][-6:], (workbook.GREEN, workbook.RED))   # still open: no net yet
+        self.assertEqual(fill["3 trades (2 closed)"][-6:], workbook.GREEN if sum(
+            t["net"] for t in self.state["trades"] if t["net"] is not None) > 0 else workbook.RED)
+
     def test_unwritable_returns_false(self):
         ro = os.path.join(self.tmp, "ro")
         os.mkdir(ro)
