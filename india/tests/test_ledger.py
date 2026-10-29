@@ -116,6 +116,14 @@ class Workbook(unittest.TestCase):
         self.assertEqual(fill["3 trades (2 closed)"][-6:], workbook.GREEN if sum(
             t["net"] for t in self.state["trades"] if t["net"] is not None) > 0 else workbook.RED)
 
+    def test_columns_are_wide_enough_to_read(self):
+        path = os.path.join(self.tmp, "paper_trades.xlsx")
+        workbook.write(self.state, path, today="2026-10-27")
+        ws = openpyxl.load_workbook(path)["Trades"]
+        self.assertGreaterEqual(ws.column_dimensions["A"].width, len("2026-10-27"))
+        self.assertGreaterEqual(ws.column_dimensions["B"].width, len("3 trades (2 closed)"))
+        self.assertGreaterEqual(ws.column_dimensions["O"].width, len("Exit reason"))
+
     def test_unwritable_returns_false(self):
         ro = os.path.join(self.tmp, "ro")
         os.mkdir(ro)

@@ -26,6 +26,14 @@ def _colour(cell, bold=False):
     cell.font = Font(bold=bold, color=GREEN_TEXT if up else RED_TEXT)
 
 
+def _fit(ws):
+    """Widen each column to its longest value so nothing is cut off."""
+    for col in ws.columns:
+        longest = max(len(str(c.value)) for c in col if c.value is not None) if any(
+            c.value is not None for c in col) else 0
+        ws.column_dimensions[col[0].column_letter].width = longest + 2
+
+
 def _hm(iso):
     return iso[11:16] if iso else None
 
@@ -103,7 +111,10 @@ def write(state, path, today=None):
         for c in trades[1]:
             c.font = Font(bold=True)
         trades.freeze_panes = "A2"
-        _summary_sheet(wb.create_sheet("Summary"), state, today)
+        _fit(trades)
+        summary = wb.create_sheet("Summary")
+        _summary_sheet(summary, state, today)
+        _fit(summary)
         d = os.path.dirname(os.path.abspath(path))
         fd, tmp = tempfile.mkstemp(prefix=".paper-", suffix=".xlsx", dir=d)
         os.close(fd)
