@@ -157,7 +157,9 @@ class Engine(object):
         plan = strategy.make_plan(entry, c["orh"], c["orl"], cfg["target_r"], cfg["tick"])
         if not plan:
             return self._skip(dd, sym, "stop not below entry", now)
-        shares = money.size(entry, plan["stop"], ledger.cash(self.state), cfg["max_loss_per_trade"])
+        # one trade may not tie up all the money: the day's other slots need some too
+        budget = min(ledger.cash(self.state), ledger.capital(self.state) * cfg["max_position_pct"] / 100.0)
+        shares = money.size(entry, plan["stop"], budget, cfg["max_loss_per_trade"])
         if shares == 0:
             why = ("stop too far for max loss" if money.size(entry, plan["stop"], entry, cfg["max_loss_per_trade"]) == 0
                    else "not enough free cash")

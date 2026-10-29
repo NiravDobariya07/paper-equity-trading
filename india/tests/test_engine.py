@@ -125,6 +125,7 @@ class Engine(unittest.TestCase):
     def test_skip_reasons_say_cash_or_stop_distance(self):
         self.cfg["max_daily_loss"] = 100000
         self.cfg["max_loss_per_trade"] = 100000         # so only cash limits A's size
+        self.cfg["max_position_pct"] = 100              # and B may use all of it
         days = {"A": breakout_at(9, 103, 103.1), "B": breakout_at(9, 102.5, 102.6)}
         self.run_engine(days, [at("10:05")])
         self.assertEqual([t["symbol"] for t in self.state["trades"]], ["B"])
@@ -144,6 +145,16 @@ class Engine(unittest.TestCase):
         (skip,) = self.state["days"][D.isoformat()]["skipped"]
         self.assertEqual((skip["symbol"], skip["reason"]), ("A", "risk below 100"))
         self.assertEqual(ledger.day_stats(self.state, D.isoformat())["trades"], 1)   # the slot is kept
+
+    def test_one_trade_uses_at_most_its_share_of_capital(self):
+        # max loss out of the way: the 33% cap allows floor(6,600 / 103.1) = 64 shares
+        self.cfg["max_loss_per_trade"] = self.cfg["max_daily_loss"] = 100000
+        self.run_engine({"A": breakout_at(9, 103, 103.1)}, [at("10:05")])
+        self.assertEqual(self.state["trades"][0]["shares"], 64)
+        self.cfg["max_position_pct"] = 100
+        self.state = ledger.load(os.path.join(self.tmp, "none.json"), 20000)
+        self.run_engine({"A": breakout_at(9, 103, 103.1)}, [at("10:05")])
+        self.assertEqual(self.state["trades"][0]["shares"], 193)   # free cash: floor(20,000 / 103.1)
 
     def test_min_risk_is_a_setting(self):
         self.cfg["min_risk"] = 300          # above a full ₹198.40 trade
