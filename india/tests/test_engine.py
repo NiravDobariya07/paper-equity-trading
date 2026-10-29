@@ -93,6 +93,7 @@ class Engine(unittest.TestCase):
         days = {"A": breakout_at(9, 103, 103.1), "B": breakout_at(9, 103.5, 103.6),
                 "C": breakout_at(9, 102.5, 102.6), "D": breakout_at(9, 103.8, 103.9)}
         self.cfg["max_loss_per_trade"] = 60   # keep cash from being the limit
+        self.cfg["min_risk"] = 0
         self.run_engine(days, [at("10:05")])
         self.assertEqual([t["symbol"] for t in self.state["trades"]], ["C", "A", "B"])
         skipped = self.state["days"][D.isoformat()]["skipped"]
@@ -132,6 +133,23 @@ class Engine(unittest.TestCase):
         self.state = ledger.load(os.path.join(self.tmp, "none.json"), 20000)
         self.run_engine({"A": breakout_at(9, 103, 103.1)}, [at("10:05")])
         self.assertEqual(self.state["days"][D.isoformat()]["skipped"][0]["reason"], "stop too far for max loss")
+
+    def test_cash_starved_tiny_trade_is_skipped(self):
+        # an open trade already holds ₹19,800, so A could only get 1 share (₹3.10 at risk)
+        held = ledger.new_trade(D.isoformat(), "ZZZ", "orb", D.isoformat() + "T09:50:05+05:30",
+                                99.0, 200, 98.0, 101.0, None)
+        self.state["trades"].append(held)
+        self.run_engine({"A": breakout_at(9, 103, 103.1)}, [at("10:05")])
+        self.assertEqual([t["symbol"] for t in self.state["trades"]], ["ZZZ"])
+        (skip,) = self.state["days"][D.isoformat()]["skipped"]
+        self.assertEqual((skip["symbol"], skip["reason"]), ("A", "risk below 100"))
+        self.assertEqual(ledger.day_stats(self.state, D.isoformat())["trades"], 1)   # the slot is kept
+
+    def test_min_risk_is_a_setting(self):
+        self.cfg["min_risk"] = 300          # above a full ₹198.40 trade
+        self.run_engine({"A": breakout_at(9, 103, 103.1)}, [at("10:05")])
+        self.assertEqual(self.state["trades"], [])
+        self.assertEqual(self.state["days"][D.isoformat()]["skipped"][0]["reason"], "risk below 300")
 
     def test_catch_up_skips_a_breakout_that_faded(self):
         days = {"AAA": day_of([101, 101, 101, 103.0, 101.5, 101.2, 101, 101, 101, 101, 101])}

@@ -164,6 +164,11 @@ class Engine(object):
             events.append("%s broke out at %.2f: skipped (%s)" % (sym, entry, why))
             return self._skip(dd, sym, why, now)
         risk = round(plan["risk"] * shares, 2)
+        if risk < cfg["min_risk"]:
+            # a cash-starved sliver of a trade would use up one of the day's slots for nothing
+            why = "risk below %g" % cfg["min_risk"]
+            events.append("%s broke out at %.2f: skipped (%s: %d shares, %.2f at risk)" % (sym, entry, why, shares, risk))
+            return self._skip(dd, sym, why, now)
         est = money.charges(entry * shares, plan["target"] * shares, cfg["charges"])
         ok, why = money.risk_check(risk, est, ledger.day_stats(self.state, now.date().isoformat()), cfg, now)
         if not ok:
