@@ -17,7 +17,7 @@
   "equity_list": "EQUITY_L.csv",
   "holidays": [],
   "charges": {
-    "brokerage_pct": 0.1,
+    "brokerage_pct": 0.03,
     "brokerage_cap": 20,
     "stt_sell_pct": 0.025,
     "txn_pct": 0.00297,
