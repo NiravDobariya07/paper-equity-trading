@@ -345,13 +345,13 @@
    "risk": 69.08,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-03T12:25:00+05:30",
-   "exit_time": null,
-   "exit": null,
-   "reason": null,
-   "gross": null,
-   "charges": null,
-   "net": null
+   "checked_through": "2026-11-03T15:10:00+05:30",
+   "exit_time": "2026-11-03T15:15:00+05:30",
+   "exit": 148.72,
+   "reason": "close-all",
+   "gross": 28.6,
+   "charges": 17.71,
+   "net": 10.89
   },
   {
    "id": "2026-11-03-SBCL",
@@ -16761,7 +16761,34 @@
     "ENTERO",
     "AONESTEELS",
     "INDUSTOWER",
-    "AVADHSUGAR"
+    "AVADHSUGAR",
+    "APOLLOHOSP",
+    "PHOENIXLTD",
+    "PROTEAN",
+    "SMSPHARMA",
+    "GLAND",
+    "TANLA",
+    "TDPOWERSYS",
+    "TIINDIA",
+    "TATACHEM",
+    "DHOOTTRANS",
+    "GRAPHITE",
+    "EPL",
+    "LASERPOWER",
+    "AFCONS",
+    "AUROPHARMA",
+    "RELIGARE",
+    "EMCURE",
+    "CHOLAHLDNG",
+    "SKYWAYS",
+    "HAVELLS",
+    "CREDITACC",
+    "RUBICON",
+    "SOTL",
+    "CORDELIA",
+    "SWANCORP",
+    "PREMIERENE",
+    "JINDALSAW"
    ],
    "skipped": [
     {
@@ -18918,6 +18945,141 @@
      "symbol": "AVADHSUGAR",
      "reason": "back below range high",
      "time": "2026-11-03T12:30:05+05:30"
+    },
+    {
+     "symbol": "PHOENIXLTD",
+     "reason": "too far above breakout",
+     "time": "2026-11-03T12:50:05+05:30"
+    },
+    {
+     "symbol": "APOLLOHOSP",
+     "reason": "not enough free cash",
+     "time": "2026-11-03T12:50:51+05:30"
+    },
+    {
+     "symbol": "PROTEAN",
+     "reason": "back below range high",
+     "time": "2026-11-03T13:00:05+05:30"
+    },
+    {
+     "symbol": "SMSPHARMA",
+     "reason": "trade limit",
+     "time": "2026-11-03T13:05:19+05:30"
+    },
+    {
+     "symbol": "GLAND",
+     "reason": "trade limit",
+     "time": "2026-11-03T13:10:18+05:30"
+    },
+    {
+     "symbol": "TANLA",
+     "reason": "too far above breakout",
+     "time": "2026-11-03T13:15:05+05:30"
+    },
+    {
+     "symbol": "TIINDIA",
+     "reason": "trade limit",
+     "time": "2026-11-03T13:35:17+05:30"
+    },
+    {
+     "symbol": "TDPOWERSYS",
+     "reason": "trade limit",
+     "time": "2026-11-03T13:35:17+05:30"
+    },
+    {
+     "symbol": "TATACHEM",
+     "reason": "back below range high",
+     "time": "2026-11-03T13:40:05+05:30"
+    },
+    {
+     "symbol": "EPL",
+     "reason": "trade limit",
+     "time": "2026-11-03T13:40:19+05:30"
+    },
+    {
+     "symbol": "LASERPOWER",
+     "reason": "trade limit",
+     "time": "2026-11-03T13:40:20+05:30"
+    },
+    {
+     "symbol": "AFCONS",
+     "reason": "trade limit",
+     "time": "2026-11-03T13:40:21+05:30"
+    },
+    {
+     "symbol": "GRAPHITE",
+     "reason": "trade limit",
+     "time": "2026-11-03T13:40:18+05:30"
+    },
+    {
+     "symbol": "DHOOTTRANS",
+     "reason": "trade limit",
+     "time": "2026-11-03T13:40:18+05:30"
+    },
+    {
+     "symbol": "EMCURE",
+     "reason": "too far above breakout",
+     "time": "2026-11-03T13:45:05+05:30"
+    },
+    {
+     "symbol": "AUROPHARMA",
+     "reason": "trade limit",
+     "time": "2026-11-03T13:45:20+05:30"
+    },
+    {
+     "symbol": "RELIGARE",
+     "reason": "trade limit",
+     "time": "2026-11-03T13:45:20+05:30"
+    },
+    {
+     "symbol": "CHOLAHLDNG",
+     "reason": "back below range high",
+     "time": "2026-11-03T13:50:05+05:30"
+    },
+    {
+     "symbol": "SKYWAYS",
+     "reason": "too far above breakout",
+     "time": "2026-11-03T13:50:05+05:30"
+    },
+    {
+     "symbol": "CREDITACC",
+     "reason": "back below range high",
+     "time": "2026-11-03T13:55:05+05:30"
+    },
+    {
+     "symbol": "SOTL",
+     "reason": "too far above breakout",
+     "time": "2026-11-03T13:55:05+05:30"
+    },
+    {
+     "symbol": "RUBICON",
+     "reason": "trade limit",
+     "time": "2026-11-03T13:55:19+05:30"
+    },
+    {
+     "symbol": "HAVELLS",
+     "reason": "trade limit",
+     "time": "2026-11-03T13:55:18+05:30"
+    },
+    {
+     "symbol": "SWANCORP",
+     "reason": "trade limit",
+     "time": "2026-11-03T14:00:19+05:30"
+    },
+    {
+     "symbol": "CORDELIA",
+     "reason": "trade limit",
+     "time": "2026-11-03T14:00:19+05:30"
+    },
+    {
+     "symbol": "JINDALSAW",
+     "reason": "trade limit",
+     "time": "2026-11-03T14:05:28+05:30"
+    },
+    {
+     "symbol": "PREMIERENE",
+     "reason": "risk below 30",
+     "time": "2026-11-03T14:05:28+05:30"
     }
    ]
   }
