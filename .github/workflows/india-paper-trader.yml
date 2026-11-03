@@ -1,0 +1,97 @@
+# NSE paper trader on a schedule. Code comes from main; config.json, EQUITY_L.csv,
+# state.json, liquid-*.json and paper_trades.xlsx live on the `data` branch, checked
+# out at trader/india and committed back after every job.
+name: India paper trader
+
+on:
+  schedule:
+    - cron: "0 4 * * 1-5"     # 09:30 IST: run (enters, exits, records until 15:15)
+    - cron: "45 10 * * 1-5"   # 16:15 IST: prepare the next trading day's stock list
+  workflow_dispatch:
+    inputs:
+      command:
+        description: Command to run
+        type: choice
+        options: [run, prepare, report]
+        default: report
+
+permissions:
+  contents: write
+
+concurrency:
+  group: india-data           # one job at a time writes the data branch
+  cancel-in-progress: false
+
+jobs:
+  trade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Pick the command
+        id: cmd
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "name=${{ inputs.command }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "0 4 * * 1-5" ]; then
+            echo "name=run" >> "$GITHUB_OUTPUT"
+          else
+            echo "name=prepare" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4   # india/tm.py runs its Time Machine simulator
+        with:
+          repository: Jakeschincariol/day-trader-skill
+          ref: 3d0f4ef6986f4984b7c6bd46f7ff4f87744c3abd
+          path: day-trader-skill
+
+      - uses: actions/checkout@v4
+        with:
+          ref: data
+          path: trader/india
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - run: pip install -r india/requirements.txt
+
+      - name: python3 india/paper_trader.py ${{ steps.cmd.outputs.name }}
+        timeout-minutes: 352    # leaves room to save the data even on a long day
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: python3 india/paper_trader.py ${{ steps.cmd.outputs.name }} 2>&1 | tee "$RUNNER_TEMP/out.txt"; exit ${PIPESTATUS[0]}
+
+      - name: Summary
+        if: always()
+        run: |
+          python3 india/paper_trader.py report > "$RUNNER_TEMP/report.txt" 2>&1 || true
+          { echo '```'; tail -n 40 "$RUNNER_TEMP/report.txt"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Save data to the data branch
+        if: always()
+        working-directory: trader/india
+        run: |
+          # stock lists older than 10 days are not needed again (dates from the names:
+          # a fresh checkout resets every file's mtime)
+          cutoff=$(date -d '10 days ago' +%F)
+          for f in liquid-*.json; do
+            d=${f#liquid-}; d=${d%.json}
+            if [ -f "$f" ] && [[ "$d" < "$cutoff" ]]; then rm "$f"; fi
+          done
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -q -m "${{ steps.cmd.outputs.name }} $(TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M IST')"
+          git pull -q --rebase origin data
+          git push -q origin HEAD:data
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: paper_trades-${{ github.run_id }}
+          path: trader/india/paper_trades.xlsx
+          if-no-files-found: ignore
+          retention-days: 30
