@@ -1,4 +1,4 @@
-"""Angel One intraday charges (estimates from config), share count, and the risk check."""
+"""Zerodha intraday charges (estimates from config), share count, and the risk check."""
 
 import math
 

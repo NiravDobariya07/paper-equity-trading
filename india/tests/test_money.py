@@ -12,13 +12,18 @@ class Money(unittest.TestCase):
         self.rates = self.cfg["charges"]
 
     def test_charges_round_trip(self):
-        # brokerage 20+20, STT 5.05, txn 1.19, SEBI 0.04, stamp 0.60, GST 18% of 41.23 = 7.42
-        self.assertAlmostEqual(money.charges(20000, 20200, self.rates), 54.31, delta=0.02)
+        # brokerage 6.00+6.06, STT 5.05, txn 1.19, SEBI 0.04, stamp 0.60, GST 18% of 13.29 = 2.39
+        self.assertAlmostEqual(money.charges(20000, 20200, self.rates), 21.34, delta=0.02)
 
     def test_small_orders_pay_percentage_brokerage(self):
-        # 0.1% of 5,000 = 5 per side, under the ₹20 cap
+        # 0.03% of 5,000 = 1.50 per side, under the ₹20 cap
         got = money.charges(5000, 5000, self.rates)
-        self.assertAlmostEqual(got, 10 + 1.25 + 0.30 + 0.01 + 0.15 + 0.18 * (10 + 0.30 + 0.01), delta=0.02)
+        self.assertAlmostEqual(got, 3 + 1.25 + 0.30 + 0.01 + 0.15 + 0.18 * (3 + 0.30 + 0.01), delta=0.02)
+
+    def test_big_orders_hit_the_brokerage_cap(self):
+        # 0.03% of 1,00,000 = 30, capped at ₹20 per side
+        got = money.charges(100000, 100000, self.rates)
+        self.assertAlmostEqual(got, 40 + 25 + 5.94 + 0.20 + 3 + 0.18 * (40 + 5.94 + 0.20), delta=0.02)
 
     def test_size(self):
         self.assertEqual(money.size(500, 495, 20000, 200), 40)
