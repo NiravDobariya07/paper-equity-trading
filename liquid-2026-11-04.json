@@ -60,6 +60,7 @@
   "ACUTAAS",
   "BAJAJ-AUTO",
   "SUNPHARMA",
+  "SSRETAIL",
   "HEROMOTORS",
   "TVSMOTOR",
   "CHOLAFIN",
@@ -260,6 +261,7 @@
   "MOTILALOFS",
   "PGEL",
   "ANANDRATHI",
+  "ORIENTCABL",
   "ZENSARTECH",
   "SBC",
   "BIOCON",
@@ -440,6 +442,7 @@
   "BOROLTD",
   "LALPATHLAB",
   "GANDHAR",
+  "GERMAN",
   "STAR",
   "NBCC",
   "IEX",
@@ -512,6 +515,7 @@
   "CLEANMAX",
   "MOMSBELIEF",
   "GRAVITA",
+  "ELEVATE",
   "GNFC",
   "VIKRAN",
   "JSFB",
@@ -734,6 +738,7 @@
   "CCAVENUE",
   "ICIL",
   "GODIGIT",
+  "SWASTIKAIN",
   "CANFINHOME",
   "CONFIPET",
   "SOTL",
@@ -778,6 +783,7 @@
   "ABLBL",
   "SRIT",
   "GODAVARIB",
+  "AONESTEELS",
   "EUREKAFORB",
   "COMSYN",
   "DEVYANI",
@@ -1189,6 +1195,11 @@
    "symbol": "SUNPHARMA",
    "close": 1769.9000244140625,
    "avg_turnover": 3101779822.3906984
+  },
+  {
+   "symbol": "SSRETAIL",
+   "close": 636.0,
+   "avg_turnover": 3094100954.0047884
   },
   {
    "symbol": "HEROMOTORS",
@@ -2191,6 +2202,11 @@
    "avg_turnover": 1029247355.46073
   },
   {
+   "symbol": "ORIENTCABL",
+   "close": 337.45001220703125,
+   "avg_turnover": 1026499554.0065277
+  },
+  {
    "symbol": "ZENSARTECH",
    "close": 533.1500244140625,
    "avg_turnover": 1004831580.8356369
@@ -3091,6 +3107,11 @@
    "avg_turnover": 434990275.25127107
   },
   {
+   "symbol": "GERMAN",
+   "close": 102.08000183105469,
+   "avg_turnover": 434666680.0111507
+  },
+  {
    "symbol": "STAR",
    "close": 1037.300048828125,
    "avg_turnover": 433551605.4995941
@@ -3449,6 +3470,11 @@
    "symbol": "GRAVITA",
    "close": 1400.300048828125,
    "avg_turnover": 334735496.73998415
+  },
+  {
+   "symbol": "ELEVATE",
+   "close": 275.6000061035156,
+   "avg_turnover": 330764019.3512619
   },
   {
    "symbol": "GNFC",
@@ -4561,6 +4587,11 @@
    "avg_turnover": 163039142.03102264
   },
   {
+   "symbol": "SWASTIKAIN",
+   "close": 196.08999633789062,
+   "avg_turnover": 162763448.58449477
+  },
+  {
    "symbol": "CANFINHOME",
    "close": 736.3499755859375,
    "avg_turnover": 162699243.94559938
@@ -4779,6 +4810,11 @@
    "symbol": "GODAVARIB",
    "close": 213.1999969482422,
    "avg_turnover": 145539305.56885988
+  },
+  {
+   "symbol": "AONESTEELS",
+   "close": 369.5,
+   "avg_turnover": 144966933.01044312
   },
   {
    "symbol": "EUREKAFORB",
