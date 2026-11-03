@@ -1,0 +1,5367 @@
+{
+ "day": "2026-10-27",
+ "symbols": [
+  "HDFCBANK",
+  "BSE",
+  "RELIANCE",
+  "INFY",
+  "ICICIBANK",
+  "BHARTIARTL",
+  "TCS",
+  "KOTAKBANK",
+  "AXISBANK",
+  "SBIN",
+  "ETERNAL",
+  "POLICYBZR",
+  "BAJFINANCE",
+  "HEROMOTORS",
+  "CUPID",
+  "M&M",
+  "KANOHAR",
+  "LT",
+  "TECHM",
+  "SSRETAIL",
+  "NETWEB",
+  "PAYTM",
+  "HCLTECH",
+  "APOLLOHOSP",
+  "BHEL",
+  "ITC",
+  "MARUTI",
+  "MCX",
+  "CHENNPETRO",
+  "ADANIPORTS",
+  "DIVISLAB",
+  "GROWW",
+  "WIPRO",
+  "SHRIRAMFIN",
+  "MEESHO",
+  "ATHERENERG",
+  "COFORGE",
+  "INDHOTEL",
+  "ADANIPOWER",
+  "ADANIENT",
+  "POLYCAB",
+  "WELCORP",
+  "TATASTEEL",
+  "PERSISTENT",
+  "SWIGGY",
+  "POWERINDIA",
+  "BEL",
+  "APOLLO",
+  "HINDALCO",
+  "KALYANKJIL",
+  "VAML",
+  "TITAN",
+  "HAL",
+  "DIXON",
+  "MRPL",
+  "TRENT",
+  "AZAD",
+  "ULTRACEMCO",
+  "INDIGO",
+  "PFC",
+  "BAJAJ-AUTO",
+  "DRREDDY",
+  "MAXHEALTH",
+  "FEDERALBNK",
+  "ADANIGREEN",
+  "TARIL",
+  "JIOFIN",
+  "HBLENGINE",
+  "TDPOWERSYS",
+  "EICHERMOT",
+  "LAURUSLABS",
+  "TMPV",
+  "SOLARINDS",
+  "LENSKART",
+  "MOLBIO",
+  "PINELABS",
+  "IFCI",
+  "GVT&D",
+  "RSYSTEMS",
+  "SUNPHARMA",
+  "NTPC",
+  "DMART",
+  "TVSMOTOR",
+  "HINDUNILVR",
+  "HEROMOTOCO",
+  "CHOLAFIN",
+  "SAIL",
+  "ADANIENSOL",
+  "LICI",
+  "UNIONBANK",
+  "CGPOWER",
+  "CANBK",
+  "MVELECTRO",
+  "NESTLEIND",
+  "GALLANTT",
+  "VEDL",
+  "POWERGRID",
+  "MOBIKWIK",
+  "KAYNES",
+  "TMCV",
+  "COALINDIA",
+  "OFSS",
+  "LTTS",
+  "SBILIFE",
+  "RECLTD",
+  "JSWSTEEL",
+  "RBLBANK",
+  "ONGC",
+  "TATAELXSI",
+  "PNB",
+  "APARINDS",
+  "TFCILTD",
+  "CUMMINSIND",
+  "CYIENT",
+  "HINDCOPPER",
+  "WHIRLPOOL",
+  "VBL",
+  "LTM",
+  "SYRMA",
+  "HDFCAMC",
+  "BANDHANBNK",
+  "KEI",
+  "INDUSINDBK",
+  "DLF",
+  "ASHOKLEY",
+  "AUBANK",
+  "SHANTIGOLD",
+  "INDUSTOWER",
+  "SSWL",
+  "SHRINGARMS",
+  "SUNTV",
+  "ANGELONE",
+  "SONACOMS",
+  "ZYDUSLIFE",
+  "ABB",
+  "BANKBARODA",
+  "LODHA",
+  "HINDZINC",
+  "BAJAJFINSV",
+  "SMCGLOBAL",
+  "MOTHERSON",
+  "SKYGOLD",
+  "IDBI",
+  "RENTOMOJO",
+  "LICHSGFIN",
+  "FORTIS",
+  "ENRIN",
+  "DELTACORP",
+  "HINDPETRO",
+  "RAYMOND",
+  "MPHASIS",
+  "LTF",
+  "INDIACEM",
+  "NAUKRI",
+  "LALITHAA",
+  "HDFCLIFE",
+  "WAAREEENER",
+  "AEQUS",
+  "NYKAA",
+  "NATIONALUM",
+  "ICICIGI",
+  "KARURVYSYA",
+  "RATNAVEER",
+  "LLOYDSENGG",
+  "TATAPOWER",
+  "ASIANPAINT",
+  "TORNTPHARM",
+  "CLEANMAX",
+  "UNITDSPR",
+  "ENGINERSIN",
+  "GLENMARK",
+  "GMRAIRPORT",
+  "DEEPA",
+  "MANKIND",
+  "KIRLOSENG",
+  "BPCL",
+  "MUTHOOTFIN",
+  "BHARATFORG",
+  "MFSL",
+  "REDINGTON",
+  "AEROFLEX",
+  "GLASSWALL",
+  "ESDS",
+  "INDOMIM",
+  "HSCL",
+  "IDFCFIRSTB",
+  "CPPLUS",
+  "WOCKPHARMA",
+  "PFOCUS",
+  "NIACL",
+  "MANAPPURAM",
+  "AUROPHARMA",
+  "HONASA",
+  "HYUNDAI",
+  "SYMBIOTEC",
+  "TATACHEM",
+  "RADICO",
+  "TATACONSUM",
+  "LUPIN",
+  "GRASIM",
+  "SENCO",
+  "GESHIP",
+  "OMNI",
+  "AEGISLOG",
+  "TIINDIA",
+  "GAIL",
+  "CIPLA",
+  "PWL",
+  "JINDALSTEL",
+  "MTARTECH",
+  "VMM",
+  "MARICO",
+  "UJJIVANSFB",
+  "CMLL",
+  "POONAWALLA",
+  "ACUTAAS",
+  "SHADOWFAX",
+  "MAZDOCK",
+  "GLAND",
+  "KPITTECH",
+  "DHOOTTRANS",
+  "CGCL",
+  "ICICIAMC",
+  "ABCAPITAL",
+  "ANANDRATHI",
+  "SOUTHBANK",
+  "SBC",
+  "DATAPATTNS",
+  "ELECON",
+  "DELHIVERY",
+  "SHREECEM",
+  "BRITANNIA",
+  "BBOX",
+  "PATANJALI",
+  "IIFL",
+  "INDIANB",
+  "SANSERA",
+  "NMDC",
+  "APLAPOLLO",
+  "MAHABANK",
+  "TEMPSENS",
+  "CDSL",
+  "BANKINDIA",
+  "HEXT",
+  "JUSTDIAL",
+  "COLPAL",
+  "ANTELOPUS",
+  "IOC",
+  "UPL",
+  "PVRINOX",
+  "INOXGREEN",
+  "COCHINSHIP",
+  "RITES",
+  "HAVELLS",
+  "CROMPTON",
+  "FORCEMOT",
+  "AUGMONT",
+  "JSWENERGY",
+  "NUVAMA",
+  "OPTIEMUS",
+  "360ONE",
+  "KARAMTARA",
+  "PNGSREVA",
+  "PREMIERENE",
+  "CARTRADE",
+  "AVALON",
+  "PHOENIXLTD",
+  "RRKABEL",
+  "URBANCO",
+  "AMBER",
+  "LGEINDIA",
+  "PIDILITIND",
+  "BOSCHLTD",
+  "BIOCON",
+  "IXIGO",
+  "PNBHOUSING",
+  "NEULANDLAB",
+  "AMBUJACEM",
+  "TATACOMM",
+  "MOTILALOFS",
+  "GRSE",
+  "WELSPUNLIV",
+  "FSL",
+  "RAYMONDREL",
+  "BALRAMCHIN",
+  "ZEEL",
+  "WSTCSTPAPR",
+  "BDL",
+  "JSWINFRA",
+  "SCI",
+  "IRFC",
+  "PAISALO",
+  "IRCON",
+  "SHREEJISPG",
+  "FRACTAL",
+  "BSOFT",
+  "JAICORPLTD",
+  "GRAPHITE",
+  "BLEL",
+  "SHILPAMED",
+  "FINCABLES",
+  "ASTERDM",
+  "RVNL",
+  "NAM-INDIA",
+  "ANANTRAJ",
+  "GODREJCP",
+  "RAIN",
+  "TATATECH",
+  "KROSS",
+  "LLOYDSME",
+  "EMIL",
+  "NAVINFLUOR",
+  "SRF",
+  "PRESTIGE",
+  "SIEMENS",
+  "ZENSARTECH",
+  "CAMS",
+  "SAMMAANCAP",
+  "GODREJPROP",
+  "CYIENTDLM",
+  "KEC",
+  "PARAS",
+  "PIRAMALFIN",
+  "WABAG",
+  "CELLO",
+  "AETHER",
+  "EMMVEE",
+  "HDBFS",
+  "NAZARA",
+  "SBIFUNDS",
+  "BLUESTARCO",
+  "GOODLUCK",
+  "M&MFIN",
+  "SUPREMEIND",
+  "FIRSTCRY",
+  "INDIAGLYCO",
+  "IGIL",
+  "SEDEMAC",
+  "STEAMHOUSE",
+  "INOXWIND",
+  "PTCIL",
+  "VOLTAS",
+  "PAGEIND",
+  "JUBLFOOD",
+  "PNCINFRA",
+  "TEGA",
+  "BLUESTONE",
+  "ALKEM",
+  "PETRONET",
+  "KAJARIACER",
+  "V2RETAIL",
+  "MARINE",
+  "MPIMANIPAL",
+  "CASTROLIND",
+  "EXIDEIND",
+  "TRANSRAILL",
+  "SAILIFE",
+  "ABDL",
+  "OIL",
+  "SHUKRAPHAR",
+  "PGEL",
+  "IREDA",
+  "DABUR",
+  "NHPC",
+  "BALAMINES",
+  "JYOTICNC",
+  "GRWRHITECH",
+  "OBEROIRLTY",
+  "BELRISE",
+  "AXISCADES",
+  "MANINDS",
+  "PIIND",
+  "KFINTECH",
+  "SBICARD",
+  "THERMAX",
+  "KRN",
+  "GRANULES",
+  "TIPSMUSIC",
+  "EDELWEISS",
+  "FEDDERSHOL",
+  "ORIENTELEC",
+  "KTKBANK",
+  "TEJASNET",
+  "DPABHUSHAN",
+  "TECHNOCRAF",
+  "EMUDHRA",
+  "KPIGREEN",
+  "ASTRAL",
+  "IOLCP",
+  "LANDMARK",
+  "PARAGMILK",
+  "LALPATHLAB",
+  "SHOPERSTOP",
+  "EBGNG",
+  "CEMPRO",
+  "CUB",
+  "UNOMINDA",
+  "MANIPALHOS",
+  "MARKSANS",
+  "SAMBHV",
+  "NCC",
+  "JINDALSAW",
+  "VIYASH",
+  "TATACAP",
+  "NEWGEN",
+  "AARTIPHARM",
+  "GKSL",
+  "MARSONS",
+  "SHYAMMETL",
+  "KSCL",
+  "MBEL",
+  "JWL",
+  "HTEL",
+  "QPOWER",
+  "KMEW",
+  "IPCALAB",
+  "LUMINO",
+  "STYLEBAAZA",
+  "NEOGEN",
+  "JSL",
+  "J&KBANK",
+  "LEMONTREE",
+  "PROTEAN",
+  "CREDITACC",
+  "ASTRAMICRO",
+  "PRASOLCHEM",
+  "BALKRISIND",
+  "ARTEMISMED",
+  "SGFIN",
+  "BAJAJHLDNG",
+  "CRAFTSMAN",
+  "PPLPHARMA",
+  "GABRIEL",
+  "ARFIN",
+  "JSLL",
+  "BAJAJCON",
+  "JSFB",
+  "63MOONS",
+  "JAYNECOIND",
+  "ACMESOLAR",
+  "EMAMILTD",
+  "SMLMAH",
+  "INOXINDIA",
+  "DEEPAKFERT",
+  "THELEELA",
+  "AWL",
+  "TANLA",
+  "ITCHOTELS",
+  "FLUOROCHEM",
+  "ZENTEC",
+  "ANURAS",
+  "KISSHT",
+  "SHANKESH",
+  "SHIPROCKET",
+  "TI",
+  "SOLARA",
+  "ROLEXRINGS",
+  "CENTUM",
+  "GREAVESCOT",
+  "VENUSPIPES",
+  "JAMNAAUTO",
+  "HUDCO",
+  "SHRIPISTON",
+  "IEX",
+  "KIMS",
+  "CONCOR",
+  "RKFORGE",
+  "NATCOPHARM",
+  "ALKYLAMINE",
+  "YATHARTH",
+  "DYNAMATECH",
+  "BHARTIHEXA",
+  "TEXRAIL",
+  "IRCTC",
+  "EUROPRATIK",
+  "PRIVISCL",
+  "SONATSOFTW",
+  "WHEELS",
+  "GENUSPOWER",
+  "NBCC",
+  "TIMETECHNO",
+  "GMDCLTD",
+  "UNIMECH",
+  "UTTAMSUGAR",
+  "DCMSRIND",
+  "APTUS",
+  "BEML",
+  "ORIENTTECH",
+  "ANTHEM",
+  "GNFC",
+  "ELLEN",
+  "TBOTEK",
+  "JINDALPOLY",
+  "MOMSBELIEF",
+  "WESTLIFE",
+  "VIKRAN",
+  "ARCIL",
+  "SWARAJENG",
+  "PNGJL",
+  "ATLANTAELE",
+  "ECLERX",
+  "KSB",
+  "MIDHANI",
+  "COROMANDEL",
+  "GRAVITA",
+  "COHANCE",
+  "ELECTCAST",
+  "ONEPOINT",
+  "JAYKAY",
+  "GODFRYPHLP",
+  "NH",
+  "INDOCO",
+  "MANORAMA",
+  "AJANTPHARM",
+  "PIXTRANS",
+  "SUNFLAG",
+  "APOLLOTYRE",
+  "ACE",
+  "SHAILY",
+  "LLOYDSENT",
+  "PRICOLLTD",
+  "RUBICON",
+  "AARTIIND",
+  "OLECTRA",
+  "SJS",
+  "ONESOURCE",
+  "ATGL",
+  "BAJAJHFL",
+  "PRIORITY",
+  "LCL",
+  "EPL",
+  "MRF",
+  "NLCINDIA",
+  "GUJENERGY",
+  "TCI",
+  "SENORES",
+  "ADVANCE",
+  "TITAGARH",
+  "DCBBANK",
+  "JUBLPHARMA",
+  "RPTECH",
+  "JGCHEM",
+  "JINDRILL",
+  "TATVA",
+  "INDGN",
+  "JTLIND",
+  "SUNTECK",
+  "CAPLIPOINT",
+  "CARBORUNIV",
+  "MEDANTA",
+  "CHOICEIN",
+  "FIVESTAR",
+  "LUMAXTECH",
+  "ROSSTECH",
+  "TORNTPOWER",
+  "PACEDIGITK",
+  "SCHNEIDER",
+  "KRISHNADEF",
+  "SIGNATURE",
+  "SGMART",
+  "FILATEX",
+  "MANALIPETC",
+  "THANGAMAYL",
+  "TIMEX",
+  "GNA",
+  "GMMPFAUDLR",
+  "PARADEEP",
+  "USHAMART",
+  "PRANAV",
+  "QUADFUTURE",
+  "DEEPAKNTR",
+  "MAHLOG",
+  "HEGAM",
+  "BLS",
+  "CEATLTD",
+  "SOBHA",
+  "SYNGENE",
+  "ABREL",
+  "INDOBORAX",
+  "ABLBL",
+  "GCSL",
+  "SUDARSCHEM",
+  "JKCEMENT",
+  "VESUVIUS",
+  "TENNIND",
+  "STARHEALTH",
+  "VIKRAMSOLR",
+  "SETL",
+  "UBL",
+  "ARE&M",
+  "RELIGARE",
+  "ARVIND",
+  "DHAMPURSUG",
+  "PRECWIRE",
+  "PARKHOSPS",
+  "NTPCGREEN",
+  "IKS",
+  "AEGISVOPAK",
+  "GODIGIT",
+  "KERNEX",
+  "GANDHAR",
+  "KNACK",
+  "SOTL",
+  "KSHINTL",
+  "INTELLECT",
+  "IGL",
+  "ATUL",
+  "LXCHEM",
+  "TRITURBINE",
+  "STAR",
+  "SUDEEPPHRM",
+  "SKIPPER",
+  "KIRIINDUS",
+  "MAHSEAMLES",
+  "RBA",
+  "SBCL",
+  "GPIL",
+  "CHOLAHLDNG",
+  "FERMENTA",
+  "AEROPLANE",
+  "PAUSHAKLTD",
+  "FINOPB",
+  "FREDUN",
+  "BLACKBUCK",
+  "RAINBOW",
+  "DALMIASUG",
+  "BALUFORGE",
+  "CESC",
+  "RAILTEL",
+  "PARACABLES",
+  "CCL",
+  "SDBL",
+  "RAMBHAJO",
+  "SCHAEFFLER",
+  "NRBBEARING",
+  "AURUM",
+  "JMFINANCIL",
+  "SHAREINDIA",
+  "JSWCEMENT",
+  "CRISIL",
+  "ABSLAMC",
+  "MMTC",
+  "WALCHANNAG",
+  "PTC",
+  "VINDHYATEL",
+  "DAMCAPITAL",
+  "PGIL",
+  "EIDPARRY",
+  "GPPL",
+  "PCBL",
+  "SUVEN",
+  "CMPDI",
+  "NORTHARC",
+  "BEPL",
+  "ARIS",
+  "ESCORTS",
+  "ITDC",
+  "KRISHANA",
+  "SWANCORP",
+  "KPIL",
+  "HAPPSTMNDS",
+  "HOMEFIRST",
+  "DCMSHRIRAM",
+  "PREMEXPLN",
+  "PASHUPATI",
+  "RATEGAIN",
+  "SUPRIYA",
+  "TATAINVEST",
+  "AVADHSUGAR",
+  "CANFINHOME",
+  "EMCURE",
+  "AFFLE",
+  "SKYWAYS",
+  "FEDFINA",
+  "DEEPINDS",
+  "MASTEK",
+  "SUNSHINE",
+  "RIIL",
+  "JAINREC",
+  "ZFCVINDIA",
+  "GICRE",
+  "ENDURANCE",
+  "GOKEX",
+  "HAPPYFORGE",
+  "CORDELIA",
+  "SHAKTIPUMP",
+  "WAAREERTL",
+  "TURTLEMINT",
+  "JNPR",
+  "TCIEXP",
+  "LASERPOWER",
+  "BAJAJELEC",
+  "SPARC",
+  "ACC",
+  "CAPILLARY",
+  "SWSOLAR",
+  "VOLTAMP",
+  "EPACKPEB",
+  "ACI",
+  "AVANTEL",
+  "DECNGOLD",
+  "UNIVCABLES",
+  "IDEAFORGE",
+  "IIFLCAPS",
+  "RAMRAT",
+  "AVANTIFEED",
+  "LEAPIND",
+  "RPEL",
+  "TRIVENI",
+  "MOSCHIP",
+  "XTRANET",
+  "RISHABH",
+  "AYE",
+  "CHAMBLFERT",
+  "COMSYN",
+  "NIBE",
+  "GLAXO",
+  "WELENT",
+  "ARSSBL",
+  "VIJAYA",
+  "ENTERO",
+  "SMSPHARMA",
+  "INDSWFTLAB",
+  "SUNDARMFIN",
+  "NIVABUPA",
+  "VINCOFE",
+  "ERIS",
+  "ICIL",
+  "GAEL",
+  "GRMOVER",
+  "CONFIPET",
+  "LCCPROJECT",
+  "TEAMLEASE",
+  "MUFIN",
+  "KUSUMGAR",
+  "CLEAN",
+  "GMRP&UI",
+  "SANGHVIMOV",
+  "PLATIND",
+  "BLUEJET",
+  "THYROCARE",
+  "NAVA",
+  "MANINFRA",
+  "AKUMS",
+  "YASHO",
+  "MGL",
+  "SAREGAMA",
+  "POLYMED",
+  "VIDYAWIRES",
+  "RIR",
+  "AGIIL",
+  "MINDACORP",
+  "BRIGADE",
+  "CCAVENUE",
+  "KOPRAN",
+  "OAL",
+  "JKPAPER",
+  "JUBLINGREA",
+  "JKTYRE",
+  "JASH",
+  "GALAXYSURF",
+  "GENESYS",
+  "LTFOODS",
+  "SKFINDUS",
+  "ORIENTHOT",
+  "UNICHEMLAB",
+  "NEPHROPLUS",
+  "SAKAR",
+  "ABBOTINDIA",
+  "TMB",
+  "DEEDEV",
+  "PANAMAPET",
+  "DEVYANI",
+  "VARROC",
+  "SAPPHIRE",
+  "BECTORFOOD",
+  "KPRMILL",
+  "EIEL",
+  "BETA",
+  "GODAVARIB",
+  "ASKAUTOLTD",
+  "KRBL",
+  "PRAJIND",
+  "BLUSPRING",
+  "PFIZER",
+  "CSBBANK",
+  "CANHLIFE",
+  "FINEORG",
+  "AIAENG",
+  "EIHOTEL",
+  "SBFC",
+  "EIMCOELECO",
+  "POWERMECH",
+  "AMAGI",
+  "APLLTD",
+  "TIMKEN",
+  "ASHAPURMIN",
+  "BIRLACABLE",
+  "ELGIEQUIP",
+  "NELCO",
+  "GSPCROP",
+  "FIEMIND",
+  "3MINDIA",
+  "HERITGFOOD",
+  "TNPETRO",
+  "SUNDRMFAST",
+  "MBAPL",
+  "TRUALT",
+  "NOCIL",
+  "SUMICHEM",
+  "SARDAEN",
+  "GVPIL",
+  "BORORENEW",
+  "GILLETTE",
+  "GODREJIND",
+  "RAMCOCEM",
+  "TECHNOE",
+  "CHEMPLASTS",
+  "MSTCLTD",
+  "METROPOLIS",
+  "BIKAJI",
+  "KIRLOSBROS",
+  "AMAL",
+  "SPLPETRO",
+  "HONAUT",
+  "POCL",
+  "JBMA",
+  "ALIVUS",
+  "RAYMONDLSL",
+  "CONCORDBIO",
+  "SATIN",
+  "CMSINFO",
+  "PRUDENT",
+  "PREMIERPOL",
+  "BERGEPAINT",
+  "POWERICA",
+  "LATENTVIEW",
+  "RESPONIND",
+  "ZAGGLE",
+  "KENNAMET",
+  "DIVGIITTS",
+  "SAMHI",
+  "AURIONPRO",
+  "DALBHARAT",
+  "AWFIS",
+  "LINDEINDIA",
+  "GOLDIAM",
+  "LOKESHMACH",
+  "ASIANENE",
+  "VTL",
+  "INDOAMIN",
+  "INNOVACAP",
+  "QUESS",
+  "CHALET",
+  "NUVOCO",
+  "BOSCH-HCIL",
+  "DMCC",
+  "TGVSL",
+  "ALICON",
+  "MVGJL",
+  "LMW",
+  "CEIGALL",
+  "BAYERCROP",
+  "ETHOSLTD",
+  "BOROLTD",
+  "DYCL",
+  "WEBELSOLAR",
+  "RHIM",
+  "ONIXSOLAR",
+  "AADHARHFC",
+  "KAPSTON",
+  "MUKANDLTD",
+  "MACPOWER",
+  "GSFC",
+  "UTLSOLAR",
+  "KMCSHIL",
+  "EQUITASBNK",
+  "AGARWALEYE",
+  "INTERARCH",
+  "AVTNPL",
+  "KOLTEPATIL",
+  "GUJTHEM",
+  "PNBGILTS",
+  "STYLAMIND",
+  "NPST",
+  "PANORAMA",
+  "KPL",
+  "GMBREW",
+  "MAHLIFE",
+  "AFCONS",
+  "INDOTECH",
+  "JSWDULUX",
+  "KDDL"
+ ],
+ "dropped_nodata": 2,
+ "failed": 1,
+ "rows": [
+  {
+   "symbol": "HDFCBANK",
+   "close": 688.0499877929688,
+   "avg_turnover": 21968979527.01432
+  },
+  {
+   "symbol": "BSE",
+   "close": 3359.0,
+   "avg_turnover": 18077844143.795654
+  },
+  {
+   "symbol": "RELIANCE",
+   "close": 1201.800048828125,
+   "avg_turnover": 17821550158.798676
+  },
+  {
+   "symbol": "INFY",
+   "close": 1166.0,
+   "avg_turnover": 17326985131.362385
+  },
+  {
+   "symbol": "ICICIBANK",
+   "close": 1403.0,
+   "avg_turnover": 16942521537.091022
+  },
+  {
+   "symbol": "BHARTIARTL",
+   "close": 1917.5,
+   "avg_turnover": 15178599242.132452
+  },
+  {
+   "symbol": "TCS",
+   "close": 2535.0,
+   "avg_turnover": 13769757149.84472
+  },
+  {
+   "symbol": "KOTAKBANK",
+   "close": 440.75,
+   "avg_turnover": 11664024207.782543
+  },
+  {
+   "symbol": "AXISBANK",
+   "close": 1220.0,
+   "avg_turnover": 9519729984.82937
+  },
+  {
+   "symbol": "SBIN",
+   "close": 960.7999877929688,
+   "avg_turnover": 9124640251.196533
+  },
+  {
+   "symbol": "ETERNAL",
+   "close": 325.54998779296875,
+   "avg_turnover": 8853081311.88949
+  },
+  {
+   "symbol": "POLICYBZR",
+   "close": 1023.0,
+   "avg_turnover": 8038145046.660971
+  },
+  {
+   "symbol": "BAJFINANCE",
+   "close": 918.7000122070312,
+   "avg_turnover": 7942896819.747931
+  },
+  {
+   "symbol": "HEROMOTORS",
+   "close": 105.69000244140625,
+   "avg_turnover": 7793330852.221689
+  },
+  {
+   "symbol": "CUPID",
+   "close": 314.04998779296875,
+   "avg_turnover": 7758629836.044962
+  },
+  {
+   "symbol": "M&M",
+   "close": 2853.10009765625,
+   "avg_turnover": 7468148168.423083
+  },
+  {
+   "symbol": "KANOHAR",
+   "close": 940.5999755859375,
+   "avg_turnover": 7179604445.920917
+  },
+  {
+   "symbol": "LT",
+   "close": 3680.0,
+   "avg_turnover": 7079943890.009607
+  },
+  {
+   "symbol": "TECHM",
+   "close": 1795.0,
+   "avg_turnover": 6955113834.736829
+  },
+  {
+   "symbol": "SSRETAIL",
+   "close": 658.25,
+   "avg_turnover": 6837985945.217438
+  },
+  {
+   "symbol": "NETWEB",
+   "close": 4286.0,
+   "avg_turnover": 6725087669.215528
+  },
+  {
+   "symbol": "PAYTM",
+   "close": 1654.699951171875,
+   "avg_turnover": 6601470026.267962
+  },
+  {
+   "symbol": "HCLTECH",
+   "close": 1417.0,
+   "avg_turnover": 6438732931.002637
+  },
+  {
+   "symbol": "APOLLOHOSP",
+   "close": 7844.0,
+   "avg_turnover": 5779369710.5
+  },
+  {
+   "symbol": "BHEL",
+   "close": 394.54998779296875,
+   "avg_turnover": 5757390139.368284
+  },
+  {
+   "symbol": "ITC",
+   "close": 260.5,
+   "avg_turnover": 5628891678.051659
+  },
+  {
+   "symbol": "MARUTI",
+   "close": 11220.0,
+   "avg_turnover": 5385911866.2
+  },
+  {
+   "symbol": "MCX",
+   "close": 3111.800048828125,
+   "avg_turnover": 5366829517.582349
+  },
+  {
+   "symbol": "CHENNPETRO",
+   "close": 1521.4000244140625,
+   "avg_turnover": 5366056731.4232235
+  },
+  {
+   "symbol": "ADANIPORTS",
+   "close": 1752.5,
+   "avg_turnover": 5307536445.184588
+  },
+  {
+   "symbol": "DIVISLAB",
+   "close": 9050.0,
+   "avg_turnover": 5210138434.0
+  },
+  {
+   "symbol": "GROWW",
+   "close": 184.47999572753906,
+   "avg_turnover": 5158025032.781524
+  },
+  {
+   "symbol": "WIPRO",
+   "close": 189.1999969482422,
+   "avg_turnover": 4982144921.11038
+  },
+  {
+   "symbol": "SHRIRAMFIN",
+   "close": 825.0,
+   "avg_turnover": 4949882693.926523
+  },
+  {
+   "symbol": "MEESHO",
+   "close": 214.83999633789062,
+   "avg_turnover": 4741639157.932216
+  },
+  {
+   "symbol": "ATHERENERG",
+   "close": 1575.0,
+   "avg_turnover": 4740111049.577441
+  },
+  {
+   "symbol": "COFORGE",
+   "close": 1993.0,
+   "avg_turnover": 4597917529.92984
+  },
+  {
+   "symbol": "INDHOTEL",
+   "close": 795.5,
+   "avg_turnover": 4432472233.7018795
+  },
+  {
+   "symbol": "ADANIPOWER",
+   "close": 186.5500030517578,
+   "avg_turnover": 4430004730.641387
+  },
+  {
+   "symbol": "ADANIENT",
+   "close": 2508.0,
+   "avg_turnover": 4357746392.515772
+  },
+  {
+   "symbol": "POLYCAB",
+   "close": 7739.0,
+   "avg_turnover": 4264059782.85
+  },
+  {
+   "symbol": "WELCORP",
+   "close": 2342.60009765625,
+   "avg_turnover": 4208771343.080676
+  },
+  {
+   "symbol": "TATASTEEL",
+   "close": 169.94000244140625,
+   "avg_turnover": 4153634281.0070434
+  },
+  {
+   "symbol": "PERSISTENT",
+   "close": 5850.0,
+   "avg_turnover": 4146892306.225
+  },
+  {
+   "symbol": "SWIGGY",
+   "close": 185.75,
+   "avg_turnover": 3923853180.659009
+  },
+  {
+   "symbol": "POWERINDIA",
+   "close": 26850.0,
+   "avg_turnover": 3904233297.25
+  },
+  {
+   "symbol": "BEL",
+   "close": 363.0,
+   "avg_turnover": 3794268838.7391267
+  },
+  {
+   "symbol": "APOLLO",
+   "close": 410.8999938964844,
+   "avg_turnover": 3738827988.6338058
+  },
+  {
+   "symbol": "HINDALCO",
+   "close": 885.6500244140625,
+   "avg_turnover": 3660909571.539215
+  },
+  {
+   "symbol": "KALYANKJIL",
+   "close": 504.79998779296875,
+   "avg_turnover": 3630022894.9918365
+  },
+  {
+   "symbol": "VAML",
+   "close": 350.20001220703125,
+   "avg_turnover": 3611660181.762175
+  },
+  {
+   "symbol": "TITAN",
+   "close": 4323.0,
+   "avg_turnover": 3547242199.731665
+  },
+  {
+   "symbol": "HAL",
+   "close": 4775.0,
+   "avg_turnover": 3490536366.958496
+  },
+  {
+   "symbol": "DIXON",
+   "close": 11161.0,
+   "avg_turnover": 3460880227.35
+  },
+  {
+   "symbol": "MRPL",
+   "close": 182.61000061035156,
+   "avg_turnover": 3456421184.644661
+  },
+  {
+   "symbol": "TRENT",
+   "close": 2754.0,
+   "avg_turnover": 3390690885.6771727
+  },
+  {
+   "symbol": "AZAD",
+   "close": 2547.800048828125,
+   "avg_turnover": 3360370096.5170164
+  },
+  {
+   "symbol": "ULTRACEMCO",
+   "close": 11180.0,
+   "avg_turnover": 3313777823.65
+  },
+  {
+   "symbol": "INDIGO",
+   "close": 4608.0,
+   "avg_turnover": 3275211911.814209
+  },
+  {
+   "symbol": "PFC",
+   "close": 318.29998779296875,
+   "avg_turnover": 3264312068.415178
+  },
+  {
+   "symbol": "BAJAJ-AUTO",
+   "close": 10071.0,
+   "avg_turnover": 3230016992.05
+  },
+  {
+   "symbol": "DRREDDY",
+   "close": 1310.9000244140625,
+   "avg_turnover": 3205628608.335138
+  },
+  {
+   "symbol": "MAXHEALTH",
+   "close": 835.0,
+   "avg_turnover": 3194834152.4357057
+  },
+  {
+   "symbol": "FEDERALBNK",
+   "close": 344.3999938964844,
+   "avg_turnover": 3103240040.7970185
+  },
+  {
+   "symbol": "ADANIGREEN",
+   "close": 1250.0,
+   "avg_turnover": 3092340241.600305
+  },
+  {
+   "symbol": "TARIL",
+   "close": 299.70001220703125,
+   "avg_turnover": 3064973245.9076552
+  },
+  {
+   "symbol": "JIOFIN",
+   "close": 205.22999572753906,
+   "avg_turnover": 3063540767.992598
+  },
+  {
+   "symbol": "HBLENGINE",
+   "close": 760.7999877929688,
+   "avg_turnover": 3044868091.960065
+  },
+  {
+   "symbol": "TDPOWERSYS",
+   "close": 688.3499755859375,
+   "avg_turnover": 3004301503.289365
+  },
+  {
+   "symbol": "EICHERMOT",
+   "close": 7099.5,
+   "avg_turnover": 2984820754.725
+  },
+  {
+   "symbol": "LAURUSLABS",
+   "close": 2058.89990234375,
+   "avg_turnover": 2982549708.400415
+  },
+  {
+   "symbol": "TMPV",
+   "close": 263.70001220703125,
+   "avg_turnover": 2923701593.0051637
+  },
+  {
+   "symbol": "SOLARINDS",
+   "close": 18683.0,
+   "avg_turnover": 2843564372.95
+  },
+  {
+   "symbol": "LENSKART",
+   "close": 651.2000122070312,
+   "avg_turnover": 2835321131.3369417
+  },
+  {
+   "symbol": "MOLBIO",
+   "close": 1273.5,
+   "avg_turnover": 2834033556.399347
+  },
+  {
+   "symbol": "PINELABS",
+   "close": 154.85000610351562,
+   "avg_turnover": 2821809512.6299734
+  },
+  {
+   "symbol": "IFCI",
+   "close": 59.84000015258789,
+   "avg_turnover": 2793470938.2983756
+  },
+  {
+   "symbol": "GVT&D",
+   "close": 3790.0,
+   "avg_turnover": 2774171569.6544924
+  },
+  {
+   "symbol": "RSYSTEMS",
+   "close": 247.85000610351562,
+   "avg_turnover": 2770071849.060767
+  },
+  {
+   "symbol": "SUNPHARMA",
+   "close": 1740.0,
+   "avg_turnover": 2758889659.7628965
+  },
+  {
+   "symbol": "NTPC",
+   "close": 300.0,
+   "avg_turnover": 2713347560.4599824
+  },
+  {
+   "symbol": "DMART",
+   "close": 3150.0,
+   "avg_turnover": 2674129085.834924
+  },
+  {
+   "symbol": "TVSMOTOR",
+   "close": 3996.0,
+   "avg_turnover": 2665052440.586853
+  },
+  {
+   "symbol": "HINDUNILVR",
+   "close": 1818.5999755859375,
+   "avg_turnover": 2662485240.0735474
+  },
+  {
+   "symbol": "HEROMOTOCO",
+   "close": 5199.0,
+   "avg_turnover": 2651412590.825
+  },
+  {
+   "symbol": "CHOLAFIN",
+   "close": 1447.9000244140625,
+   "avg_turnover": 2651177313.092908
+  },
+  {
+   "symbol": "SAIL",
+   "close": 169.8000030517578,
+   "avg_turnover": 2650402440.188796
+  },
+  {
+   "symbol": "ADANIENSOL",
+   "close": 1258.0,
+   "avg_turnover": 2646007922.9578004
+  },
+  {
+   "symbol": "LICI",
+   "close": 380.95001220703125,
+   "avg_turnover": 2644958675.1116576
+  },
+  {
+   "symbol": "UNIONBANK",
+   "close": 181.1999969482422,
+   "avg_turnover": 2629530427.181769
+  },
+  {
+   "symbol": "CGPOWER",
+   "close": 833.25,
+   "avg_turnover": 2620328443.7825804
+  },
+  {
+   "symbol": "CANBK",
+   "close": 116.70999908447266,
+   "avg_turnover": 2618864038.5861235
+  },
+  {
+   "symbol": "MVELECTRO",
+   "close": 772.8499755859375,
+   "avg_turnover": 2614911381.2308836
+  },
+  {
+   "symbol": "NESTLEIND",
+   "close": 1173.5,
+   "avg_turnover": 2584911409.1307554
+  },
+  {
+   "symbol": "GALLANTT",
+   "close": 538.3499755859375,
+   "avg_turnover": 2577772991.383249
+  },
+  {
+   "symbol": "VEDL",
+   "close": 227.5,
+   "avg_turnover": 2575577980.212458
+  },
+  {
+   "symbol": "POWERGRID",
+   "close": 247.0,
+   "avg_turnover": 2559755393.497442
+  },
+  {
+   "symbol": "MOBIKWIK",
+   "close": 213.44000244140625,
+   "avg_turnover": 2520397882.3566566
+  },
+  {
+   "symbol": "KAYNES",
+   "close": 3306.800048828125,
+   "avg_turnover": 2500355210.355957
+  },
+  {
+   "symbol": "TMCV",
+   "close": 384.04998779296875,
+   "avg_turnover": 2477905662.4604387
+  },
+  {
+   "symbol": "COALINDIA",
+   "close": 405.0,
+   "avg_turnover": 2470021292.7539415
+  },
+  {
+   "symbol": "OFSS",
+   "close": 9913.0,
+   "avg_turnover": 2363916041.35
+  },
+  {
+   "symbol": "LTTS",
+   "close": 4035.60009765625,
+   "avg_turnover": 2363452971.4168215
+  },
+  {
+   "symbol": "SBILIFE",
+   "close": 1643.699951171875,
+   "avg_turnover": 2360338372.9065123
+  },
+  {
+   "symbol": "RECLTD",
+   "close": 298.20001220703125,
+   "avg_turnover": 2354979948.1843386
+  },
+  {
+   "symbol": "JSWSTEEL",
+   "close": 1260.0,
+   "avg_turnover": 2350284760.3713074
+  },
+  {
+   "symbol": "RBLBANK",
+   "close": 348.5,
+   "avg_turnover": 2346484937.0699816
+  },
+  {
+   "symbol": "ONGC",
+   "close": 228.44000244140625,
+   "avg_turnover": 2338127198.150313
+  },
+  {
+   "symbol": "TATAELXSI",
+   "close": 3724.0,
+   "avg_turnover": 2335449605.8154173
+  },
+  {
+   "symbol": "PNB",
+   "close": 120.88999938964844,
+   "avg_turnover": 2326649001.6976366
+  },
+  {
+   "symbol": "APARINDS",
+   "close": 14801.0,
+   "avg_turnover": 2318204772.6
+  },
+  {
+   "symbol": "TFCILTD",
+   "close": 154.30999755859375,
+   "avg_turnover": 2295890954.9227943
+  },
+  {
+   "symbol": "CUMMINSIND",
+   "close": 4385.5,
+   "avg_turnover": 2205410789.9698243
+  },
+  {
+   "symbol": "CYIENT",
+   "close": 1242.9000244140625,
+   "avg_turnover": 2203210221.741174
+  },
+  {
+   "symbol": "HINDCOPPER",
+   "close": 407.54998779296875,
+   "avg_turnover": 2198820510.6290526
+  },
+  {
+   "symbol": "WHIRLPOOL",
+   "close": 803.3499755859375,
+   "avg_turnover": 2197847333.553842
+  },
+  {
+   "symbol": "VBL",
+   "close": 408.0,
+   "avg_turnover": 2167167689.356238
+  },
+  {
+   "symbol": "LTM",
+   "close": 4074.89990234375,
+   "avg_turnover": 2112795500.9047852
+  },
+  {
+   "symbol": "SYRMA",
+   "close": 1495.4000244140625,
+   "avg_turnover": 2107549064.2135742
+  },
+  {
+   "symbol": "HDFCAMC",
+   "close": 2258.39990234375,
+   "avg_turnover": 2098803245.4248168
+  },
+  {
+   "symbol": "BANDHANBNK",
+   "close": 150.86000061035156,
+   "avg_turnover": 2078651079.424247
+  },
+  {
+   "symbol": "KEI",
+   "close": 3899.5,
+   "avg_turnover": 2071425252.449756
+  },
+  {
+   "symbol": "INDUSINDBK",
+   "close": 844.5,
+   "avg_turnover": 2062104790.4773407
+  },
+  {
+   "symbol": "DLF",
+   "close": 662.2999877929688,
+   "avg_turnover": 2054208805.3676178
+  },
+  {
+   "symbol": "ASHOKLEY",
+   "close": 141.89999389648438,
+   "avg_turnover": 2001976139.2002792
+  },
+  {
+   "symbol": "AUBANK",
+   "close": 869.0,
+   "avg_turnover": 1989665242.687842
+  },
+  {
+   "symbol": "SHANTIGOLD",
+   "close": 327.6000061035156,
+   "avg_turnover": 1957849171.633728
+  },
+  {
+   "symbol": "INDUSTOWER",
+   "close": 389.0,
+   "avg_turnover": 1918211644.6362426
+  },
+  {
+   "symbol": "SSWL",
+   "close": 532.25,
+   "avg_turnover": 1904761917.7117417
+  },
+  {
+   "symbol": "SHRINGARMS",
+   "close": 279.94000244140625,
+   "avg_turnover": 1903418141.0396514
+  },
+  {
+   "symbol": "SUNTV",
+   "close": 572.0999755859375,
+   "avg_turnover": 1902180619.3956788
+  },
+  {
+   "symbol": "ANGELONE",
+   "close": 282.6000061035156,
+   "avg_turnover": 1896580862.7149231
+  },
+  {
+   "symbol": "SONACOMS",
+   "close": 781.9000244140625,
+   "avg_turnover": 1890141110.1369386
+  },
+  {
+   "symbol": "ZYDUSLIFE",
+   "close": 1160.4000244140625,
+   "avg_turnover": 1870709335.4521363
+  },
+  {
+   "symbol": "ABB",
+   "close": 6357.5,
+   "avg_turnover": 1866565271.55
+  },
+  {
+   "symbol": "BANKBARODA",
+   "close": 232.0,
+   "avg_turnover": 1861656809.712169
+  },
+  {
+   "symbol": "LODHA",
+   "close": 980.0,
+   "avg_turnover": 1830193158.1879516
+  },
+  {
+   "symbol": "HINDZINC",
+   "close": 497.0,
+   "avg_turnover": 1827636015.0530334
+  },
+  {
+   "symbol": "BAJAJFINSV",
+   "close": 1670.9000244140625,
+   "avg_turnover": 1821752709.3316772
+  },
+  {
+   "symbol": "SMCGLOBAL",
+   "close": 94.26000213623047,
+   "avg_turnover": 1819624266.3096123
+  },
+  {
+   "symbol": "MOTHERSON",
+   "close": 153.75,
+   "avg_turnover": 1803921276.0848923
+  },
+  {
+   "symbol": "SKYGOLD",
+   "close": 938.5,
+   "avg_turnover": 1790964789.6673799
+  },
+  {
+   "symbol": "IDBI",
+   "close": 76.48999786376953,
+   "avg_turnover": 1767431657.5597465
+  },
+  {
+   "symbol": "RENTOMOJO",
+   "close": 526.7999877929688,
+   "avg_turnover": 1751328057.223767
+  },
+  {
+   "symbol": "LICHSGFIN",
+   "close": 497.3999938964844,
+   "avg_turnover": 1740416897.6763701
+  },
+  {
+   "symbol": "FORTIS",
+   "close": 734.7000122070312,
+   "avg_turnover": 1737628796.356784
+  },
+  {
+   "symbol": "ENRIN",
+   "close": 2754.89990234375,
+   "avg_turnover": 1728402654.9243286
+  },
+  {
+   "symbol": "DELTACORP",
+   "close": 73.29000091552734,
+   "avg_turnover": 1715037416.3897712
+  },
+  {
+   "symbol": "HINDPETRO",
+   "close": 343.45001220703125,
+   "avg_turnover": 1691165408.8964875
+  },
+  {
+   "symbol": "RAYMOND",
+   "close": 1055.300048828125,
+   "avg_turnover": 1691092136.2766967
+  },
+  {
+   "symbol": "MPHASIS",
+   "close": 2557.60009765625,
+   "avg_turnover": 1688503602.4680665
+  },
+  {
+   "symbol": "LTF",
+   "close": 241.10000610351562,
+   "avg_turnover": 1686917351.652739
+  },
+  {
+   "symbol": "INDIACEM",
+   "close": 306.0,
+   "avg_turnover": 1669569962.8755202
+  },
+  {
+   "symbol": "NAUKRI",
+   "close": 1196.5999755859375,
+   "avg_turnover": 1666449725.3487854
+  },
+  {
+   "symbol": "LALITHAA",
+   "close": 347.5,
+   "avg_turnover": 1662168118.793637
+  },
+  {
+   "symbol": "HDFCLIFE",
+   "close": 519.0,
+   "avg_turnover": 1661445993.5131195
+  },
+  {
+   "symbol": "WAAREEENER",
+   "close": 2319.0,
+   "avg_turnover": 1661326462.5187988
+  },
+  {
+   "symbol": "AEQUS",
+   "close": 242.39999389648438,
+   "avg_turnover": 1648196736.5163581
+  },
+  {
+   "symbol": "NYKAA",
+   "close": 329.8500061035156,
+   "avg_turnover": 1641944053.0729446
+  },
+  {
+   "symbol": "NATIONALUM",
+   "close": 312.3999938964844,
+   "avg_turnover": 1631480722.0835938
+  },
+  {
+   "symbol": "ICICIGI",
+   "close": 1580.0,
+   "avg_turnover": 1622557721.942346
+  },
+  {
+   "symbol": "KARURVYSYA",
+   "close": 337.70001220703125,
+   "avg_turnover": 1619835515.256621
+  },
+  {
+   "symbol": "RATNAVEER",
+   "close": 332.6000061035156,
+   "avg_turnover": 1614981477.3008804
+  },
+  {
+   "symbol": "LLOYDSENGG",
+   "close": 83.23999786376953,
+   "avg_turnover": 1609299096.887816
+  },
+  {
+   "symbol": "TATAPOWER",
+   "close": 338.5,
+   "avg_turnover": 1593760850.7604797
+  },
+  {
+   "symbol": "ASIANPAINT",
+   "close": 2322.0,
+   "avg_turnover": 1590740614.2542846
+  },
+  {
+   "symbol": "TORNTPHARM",
+   "close": 4550.0,
+   "avg_turnover": 1587355695.3735595
+  },
+  {
+   "symbol": "CLEANMAX",
+   "close": 1161.199951171875,
+   "avg_turnover": 1580821140.432074
+  },
+  {
+   "symbol": "UNITDSPR",
+   "close": 1239.0,
+   "avg_turnover": 1570820571.7837462
+  },
+  {
+   "symbol": "ENGINERSIN",
+   "close": 244.1999969482422,
+   "avg_turnover": 1566245570.163716
+  },
+  {
+   "symbol": "GLENMARK",
+   "close": 2225.800048828125,
+   "avg_turnover": 1564253069.7230713
+  },
+  {
+   "symbol": "GMRAIRPORT",
+   "close": 89.87999725341797,
+   "avg_turnover": 1557261147.889211
+  },
+  {
+   "symbol": "DEEPA",
+   "close": 207.80999755859375,
+   "avg_turnover": 1554160848.4315484
+  },
+  {
+   "symbol": "MANKIND",
+   "close": 2312.0,
+   "avg_turnover": 1553581205.4107788
+  },
+  {
+   "symbol": "KIRLOSENG",
+   "close": 1819.4000244140625,
+   "avg_turnover": 1549020029.0145142
+  },
+  {
+   "symbol": "BPCL",
+   "close": 290.3999938964844,
+   "avg_turnover": 1532102787.8840942
+  },
+  {
+   "symbol": "MUTHOOTFIN",
+   "close": 2395.800048828125,
+   "avg_turnover": 1527521923.256555
+  },
+  {
+   "symbol": "BHARATFORG",
+   "close": 1730.4000244140625,
+   "avg_turnover": 1514708034.504364
+  },
+  {
+   "symbol": "MFSL",
+   "close": 1240.0999755859375,
+   "avg_turnover": 1492714193.626538
+  },
+  {
+   "symbol": "REDINGTON",
+   "close": 366.75,
+   "avg_turnover": 1491476119.4398894
+  },
+  {
+   "symbol": "AEROFLEX",
+   "close": 445.75,
+   "avg_turnover": 1489920603.793155
+  },
+  {
+   "symbol": "GLASSWALL",
+   "close": 212.89999389648438,
+   "avg_turnover": 1488084924.6566727
+  },
+  {
+   "symbol": "ESDS",
+   "close": 1293.199951171875,
+   "avg_turnover": 1471867545.058374
+  },
+  {
+   "symbol": "INDOMIM",
+   "close": 1075.800048828125,
+   "avg_turnover": 1437014807.4835327
+  },
+  {
+   "symbol": "HSCL",
+   "close": 522.25,
+   "avg_turnover": 1434500586.1543794
+  },
+  {
+   "symbol": "IDFCFIRSTB",
+   "close": 71.73999786376953,
+   "avg_turnover": 1432850939.4979997
+  },
+  {
+   "symbol": "CPPLUS",
+   "close": 3867.39990234375,
+   "avg_turnover": 1428665489.339087
+  },
+  {
+   "symbol": "WOCKPHARMA",
+   "close": 1809.5999755859375,
+   "avg_turnover": 1425406968.8348145
+  },
+  {
+   "symbol": "PFOCUS",
+   "close": 274.3500061035156,
+   "avg_turnover": 1425371896.9907272
+  },
+  {
+   "symbol": "NIACL",
+   "close": 161.39999389648438,
+   "avg_turnover": 1422423269.061753
+  },
+  {
+   "symbol": "MANAPPURAM",
+   "close": 287.5,
+   "avg_turnover": 1414782920.5283005
+  },
+  {
+   "symbol": "AUROPHARMA",
+   "close": 1590.0,
+   "avg_turnover": 1412465170.69458
+  },
+  {
+   "symbol": "HONASA",
+   "close": 443.6499938964844,
+   "avg_turnover": 1411462083.3250687
+  },
+  {
+   "symbol": "HYUNDAI",
+   "close": 1868.0,
+   "avg_turnover": 1374900815.3646667
+  },
+  {
+   "symbol": "SYMBIOTEC",
+   "close": 1229.800048828125,
+   "avg_turnover": 1372005692.4342895
+  },
+  {
+   "symbol": "TATACHEM",
+   "close": 595.4500122070312,
+   "avg_turnover": 1369076708.58089
+  },
+  {
+   "symbol": "RADICO",
+   "close": 4200.0,
+   "avg_turnover": 1366346838.336499
+  },
+  {
+   "symbol": "TATACONSUM",
+   "close": 936.5,
+   "avg_turnover": 1364646451.606784
+  },
+  {
+   "symbol": "LUPIN",
+   "close": 1959.9000244140625,
+   "avg_turnover": 1360646496.2563598
+  },
+  {
+   "symbol": "GRASIM",
+   "close": 2950.0,
+   "avg_turnover": 1356054248.6550293
+  },
+  {
+   "symbol": "SENCO",
+   "close": 306.1499938964844,
+   "avg_turnover": 1355904916.4249146
+  },
+  {
+   "symbol": "GESHIP",
+   "close": 1532.4000244140625,
+   "avg_turnover": 1355653821.727948
+  },
+  {
+   "symbol": "OMNI",
+   "close": 641.5499877929688,
+   "avg_turnover": 1351427162.066449
+  },
+  {
+   "symbol": "AEGISLOG",
+   "close": 1291.0999755859375,
+   "avg_turnover": 1341750637.4245727
+  },
+  {
+   "symbol": "TIINDIA",
+   "close": 2085.199951171875,
+   "avg_turnover": 1329561080.9247804
+  },
+  {
+   "symbol": "GAIL",
+   "close": 168.27999877929688,
+   "avg_turnover": 1317321356.2198892
+  },
+  {
+   "symbol": "CIPLA",
+   "close": 1355.0,
+   "avg_turnover": 1309673175.2973876
+  },
+  {
+   "symbol": "PWL",
+   "close": 124.83999633789062,
+   "avg_turnover": 1297880255.4297493
+  },
+  {
+   "symbol": "JINDALSTEL",
+   "close": 1039.9000244140625,
+   "avg_turnover": 1296966670.9450316
+  },
+  {
+   "symbol": "MTARTECH",
+   "close": 6582.5,
+   "avg_turnover": 1287692157.85
+  },
+  {
+   "symbol": "VMM",
+   "close": 88.69999694824219,
+   "avg_turnover": 1277760525.7682242
+  },
+  {
+   "symbol": "MARICO",
+   "close": 775.1500244140625,
+   "avg_turnover": 1276702462.8015716
+  },
+  {
+   "symbol": "UJJIVANSFB",
+   "close": 55.0,
+   "avg_turnover": 1275550831.277483
+  },
+  {
+   "symbol": "CMLL",
+   "close": 516.8499755859375,
+   "avg_turnover": 1273816854.6223114
+  },
+  {
+   "symbol": "POONAWALLA",
+   "close": 408.6000061035156,
+   "avg_turnover": 1260420559.7828598
+  },
+  {
+   "symbol": "ACUTAAS",
+   "close": 3348.800048828125,
+   "avg_turnover": 1257750125.9742432
+  },
+  {
+   "symbol": "SHADOWFAX",
+   "close": 285.79998779296875,
+   "avg_turnover": 1253326939.9786925
+  },
+  {
+   "symbol": "MAZDOCK",
+   "close": 1875.0,
+   "avg_turnover": 1248107976.3728395
+  },
+  {
+   "symbol": "GLAND",
+   "close": 2843.89990234375,
+   "avg_turnover": 1232275011.7958863
+  },
+  {
+   "symbol": "KPITTECH",
+   "close": 536.5499877929688,
+   "avg_turnover": 1229026366.2261276
+  },
+  {
+   "symbol": "DHOOTTRANS",
+   "close": 1411.699951171875,
+   "avg_turnover": 1225119371.2382996
+  },
+  {
+   "symbol": "CGCL",
+   "close": 231.0500030517578,
+   "avg_turnover": 1219111164.8422234
+  },
+  {
+   "symbol": "ICICIAMC",
+   "close": 2754.300048828125,
+   "avg_turnover": 1213015004.2822998
+  },
+  {
+   "symbol": "ABCAPITAL",
+   "close": 353.04998779296875,
+   "avg_turnover": 1206214952.9218001
+  },
+  {
+   "symbol": "ANANDRATHI",
+   "close": 2230.0,
+   "avg_turnover": 1201910750.9844728
+  },
+  {
+   "symbol": "SOUTHBANK",
+   "close": 52.70000076293945,
+   "avg_turnover": 1190933206.546925
+  },
+  {
+   "symbol": "SBC",
+   "close": 63.709999084472656,
+   "avg_turnover": 1190849786.8712916
+  },
+  {
+   "symbol": "DATAPATTNS",
+   "close": 3773.800048828125,
+   "avg_turnover": 1187951168.6200562
+  },
+  {
+   "symbol": "ELECON",
+   "close": 424.04998779296875,
+   "avg_turnover": 1184805829.6010163
+  },
+  {
+   "symbol": "DELHIVERY",
+   "close": 375.0,
+   "avg_turnover": 1177634425.5190582
+  },
+  {
+   "symbol": "SHREECEM",
+   "close": 23540.0,
+   "avg_turnover": 1172944680.75
+  },
+  {
+   "symbol": "BRITANNIA",
+   "close": 4580.0,
+   "avg_turnover": 1170437088.6139405
+  },
+  {
+   "symbol": "BBOX",
+   "close": 796.0,
+   "avg_turnover": 1167386739.310965
+  },
+  {
+   "symbol": "PATANJALI",
+   "close": 347.45001220703125,
+   "avg_turnover": 1158092896.0980163
+  },
+  {
+   "symbol": "IIFL",
+   "close": 529.2000122070312,
+   "avg_turnover": 1153616170.313446
+  },
+  {
+   "symbol": "INDIANB",
+   "close": 830.0,
+   "avg_turnover": 1152082858.2642791
+  },
+  {
+   "symbol": "SANSERA",
+   "close": 4147.7001953125,
+   "avg_turnover": 1149998710.5448976
+  },
+  {
+   "symbol": "NMDC",
+   "close": 66.48999786376953,
+   "avg_turnover": 1147899856.7148976
+  },
+  {
+   "symbol": "APLAPOLLO",
+   "close": 2077.89990234375,
+   "avg_turnover": 1145854343.2134032
+  },
+  {
+   "symbol": "MAHABANK",
+   "close": 76.12000274658203,
+   "avg_turnover": 1145011122.4191597
+  },
+  {
+   "symbol": "TEMPSENS",
+   "close": 492.79998779296875,
+   "avg_turnover": 1142409076.298715
+  },
+  {
+   "symbol": "CDSL",
+   "close": 1196.0,
+   "avg_turnover": 1141848570.5036378
+  },
+  {
+   "symbol": "BANKINDIA",
+   "close": 126.31999969482422,
+   "avg_turnover": 1123958964.3304589
+  },
+  {
+   "symbol": "HEXT",
+   "close": 592.6500244140625,
+   "avg_turnover": 1116733261.2724838
+  },
+  {
+   "symbol": "JUSTDIAL",
+   "close": 698.7999877929688,
+   "avg_turnover": 1101602782.8633971
+  },
+  {
+   "symbol": "COLPAL",
+   "close": 1615.5,
+   "avg_turnover": 1098727406.8350892
+  },
+  {
+   "symbol": "ANTELOPUS",
+   "close": 1188.800048828125,
+   "avg_turnover": 1094886358.2501984
+  },
+  {
+   "symbol": "IOC",
+   "close": 130.85000610351562,
+   "avg_turnover": 1085926486.6752472
+  },
+  {
+   "symbol": "UPL",
+   "close": 497.70001220703125,
+   "avg_turnover": 1081483797.8423448
+  },
+  {
+   "symbol": "PVRINOX",
+   "close": 1404.699951171875,
+   "avg_turnover": 1079227408.9053771
+  },
+  {
+   "symbol": "INOXGREEN",
+   "close": 108.7699966430664,
+   "avg_turnover": 1078876855.9717183
+  },
+  {
+   "symbol": "COCHINSHIP",
+   "close": 1133.9000244140625,
+   "avg_turnover": 1074011745.8909485
+  },
+  {
+   "symbol": "RITES",
+   "close": 189.3800048828125,
+   "avg_turnover": 1063026039.1715324
+  },
+  {
+   "symbol": "HAVELLS",
+   "close": 1009.9000244140625,
+   "avg_turnover": 1042453791.1514527
+  },
+  {
+   "symbol": "CROMPTON",
+   "close": 193.9499969482422,
+   "avg_turnover": 1041721634.6117989
+  },
+  {
+   "symbol": "FORCEMOT",
+   "close": 16588.0,
+   "avg_turnover": 1038866438.05
+  },
+  {
+   "symbol": "AUGMONT",
+   "close": 1050.199951171875,
+   "avg_turnover": 1016184370.5472901
+  },
+  {
+   "symbol": "JSWENERGY",
+   "close": 449.6499938964844,
+   "avg_turnover": 1006583339.0159836
+  },
+  {
+   "symbol": "NUVAMA",
+   "close": 1659.0,
+   "avg_turnover": 1003197231.5566833
+  },
+  {
+   "symbol": "OPTIEMUS",
+   "close": 694.7999877929688,
+   "avg_turnover": 999696806.3479248
+  },
+  {
+   "symbol": "360ONE",
+   "close": 975.0,
+   "avg_turnover": 990698834.3616211
+  },
+  {
+   "symbol": "KARAMTARA",
+   "close": 351.75,
+   "avg_turnover": 989480065.3827225
+  },
+  {
+   "symbol": "PNGSREVA",
+   "close": 555.0999755859375,
+   "avg_turnover": 987644346.766011
+  },
+  {
+   "symbol": "PREMIERENE",
+   "close": 840.5999755859375,
+   "avg_turnover": 987194938.9399536
+  },
+  {
+   "symbol": "CARTRADE",
+   "close": 2822.10009765625,
+   "avg_turnover": 977283849.7814575
+  },
+  {
+   "symbol": "AVALON",
+   "close": 2002.199951171875,
+   "avg_turnover": 976698698.0580139
+  },
+  {
+   "symbol": "PHOENIXLTD",
+   "close": 1894.0,
+   "avg_turnover": 958016186.3741028
+  },
+  {
+   "symbol": "RRKABEL",
+   "close": 2182.0,
+   "avg_turnover": 957647239.3163574
+  },
+  {
+   "symbol": "URBANCO",
+   "close": 135.63999938964844,
+   "avg_turnover": 955911267.4031327
+  },
+  {
+   "symbol": "AMBER",
+   "close": 5908.0,
+   "avg_turnover": 955803212.525
+  },
+  {
+   "symbol": "LGEINDIA",
+   "close": 1621.4000244140625,
+   "avg_turnover": 953050401.7643067
+  },
+  {
+   "symbol": "PIDILITIND",
+   "close": 1478.0,
+   "avg_turnover": 952034416.472058
+  },
+  {
+   "symbol": "BOSCHLTD",
+   "close": 44900.0,
+   "avg_turnover": 950569831.75
+  },
+  {
+   "symbol": "BIOCON",
+   "close": 328.79998779296875,
+   "avg_turnover": 948547622.0745713
+  },
+  {
+   "symbol": "IXIGO",
+   "close": 145.13999938964844,
+   "avg_turnover": 947215580.8091087
+  },
+  {
+   "symbol": "PNBHOUSING",
+   "close": 1086.0,
+   "avg_turnover": 938296591.2676513
+  },
+  {
+   "symbol": "NEULANDLAB",
+   "close": 19055.0,
+   "avg_turnover": 934699626.25
+  },
+  {
+   "symbol": "AMBUJACEM",
+   "close": 368.0,
+   "avg_turnover": 933485997.4367249
+  },
+  {
+   "symbol": "TATACOMM",
+   "close": 1681.199951171875,
+   "avg_turnover": 932369213.4041564
+  },
+  {
+   "symbol": "MOTILALOFS",
+   "close": 933.3499755859375,
+   "avg_turnover": 926776350.7409729
+  },
+  {
+   "symbol": "GRSE",
+   "close": 1869.0999755859375,
+   "avg_turnover": 924673108.8925965
+  },
+  {
+   "symbol": "WELSPUNLIV",
+   "close": 208.9600067138672,
+   "avg_turnover": 923563756.6313683
+  },
+  {
+   "symbol": "FSL",
+   "close": 292.25,
+   "avg_turnover": 922283721.2679062
+  },
+  {
+   "symbol": "RAYMONDREL",
+   "close": 571.4000244140625,
+   "avg_turnover": 921589056.1822846
+  },
+  {
+   "symbol": "BALRAMCHIN",
+   "close": 625.3499755859375,
+   "avg_turnover": 921222300.4410369
+  },
+  {
+   "symbol": "ZEEL",
+   "close": 64.23999786376953,
+   "avg_turnover": 915932365.5105644
+  },
+  {
+   "symbol": "WSTCSTPAPR",
+   "close": 787.7999877929688,
+   "avg_turnover": 915911275.1581208
+  },
+  {
+   "symbol": "BDL",
+   "close": 1029.0,
+   "avg_turnover": 912641831.2642456
+  },
+  {
+   "symbol": "JSWINFRA",
+   "close": 317.45001220703125,
+   "avg_turnover": 908970300.3404633
+  },
+  {
+   "symbol": "SCI",
+   "close": 246.89999389648438,
+   "avg_turnover": 904987058.4761956
+  },
+  {
+   "symbol": "IRFC",
+   "close": 74.4000015258789,
+   "avg_turnover": 903145940.040974
+  },
+  {
+   "symbol": "PAISALO",
+   "close": 76.0,
+   "avg_turnover": 901583234.5477161
+  },
+  {
+   "symbol": "IRCON",
+   "close": 97.58000183105469,
+   "avg_turnover": 901481431.5588452
+  },
+  {
+   "symbol": "SHREEJISPG",
+   "close": 811.5,
+   "avg_turnover": 898290213.0311096
+  },
+  {
+   "symbol": "FRACTAL",
+   "close": 755.75,
+   "avg_turnover": 896028028.8944976
+  },
+  {
+   "symbol": "BSOFT",
+   "close": 306.6000061035156,
+   "avg_turnover": 891594955.7441772
+  },
+  {
+   "symbol": "JAICORPLTD",
+   "close": 88.05000305175781,
+   "avg_turnover": 887629844.8990647
+  },
+  {
+   "symbol": "GRAPHITE",
+   "close": 736.0499877929688,
+   "avg_turnover": 874183698.3494476
+  },
+  {
+   "symbol": "BLEL",
+   "close": 440.6499938964844,
+   "avg_turnover": 872310406.1275208
+  },
+  {
+   "symbol": "SHILPAMED",
+   "close": 900.7999877929688,
+   "avg_turnover": 869186458.1575928
+  },
+  {
+   "symbol": "FINCABLES",
+   "close": 1144.699951171875,
+   "avg_turnover": 864710856.6716125
+  },
+  {
+   "symbol": "ASTERDM",
+   "close": 647.0,
+   "avg_turnover": 861767184.6235015
+  },
+  {
+   "symbol": "RVNL",
+   "close": 182.64999389648438,
+   "avg_turnover": 857710055.352143
+  },
+  {
+   "symbol": "NAM-INDIA",
+   "close": 919.0999755859375,
+   "avg_turnover": 855887191.5781677
+  },
+  {
+   "symbol": "ANANTRAJ",
+   "close": 458.8500061035156,
+   "avg_turnover": 855476806.6416886
+  },
+  {
+   "symbol": "GODREJCP",
+   "close": 833.1500244140625,
+   "avg_turnover": 847510172.867273
+  },
+  {
+   "symbol": "RAIN",
+   "close": 205.99000549316406,
+   "avg_turnover": 845553573.6297379
+  },
+  {
+   "symbol": "TATATECH",
+   "close": 670.9000244140625,
+   "avg_turnover": 843106275.1359192
+  },
+  {
+   "symbol": "KROSS",
+   "close": 288.70001220703125,
+   "avg_turnover": 842305398.5370544
+  },
+  {
+   "symbol": "LLOYDSME",
+   "close": 1787.199951171875,
+   "avg_turnover": 827327299.0316223
+  },
+  {
+   "symbol": "EMIL",
+   "close": 156.2100067138672,
+   "avg_turnover": 822562935.0262626
+  },
+  {
+   "symbol": "NAVINFLUOR",
+   "close": 7662.0,
+   "avg_turnover": 814156153.775
+  },
+  {
+   "symbol": "SRF",
+   "close": 2340.0,
+   "avg_turnover": 811825773.3615112
+  },
+  {
+   "symbol": "PRESTIGE",
+   "close": 1396.5999755859375,
+   "avg_turnover": 808886241.7421753
+  },
+  {
+   "symbol": "SIEMENS",
+   "close": 3278.800048828125,
+   "avg_turnover": 808724882.3860352
+  },
+  {
+   "symbol": "ZENSARTECH",
+   "close": 505.29998779296875,
+   "avg_turnover": 804685434.9432418
+  },
+  {
+   "symbol": "CAMS",
+   "close": 661.5,
+   "avg_turnover": 799253430.238678
+  },
+  {
+   "symbol": "SAMMAANCAP",
+   "close": 112.55999755859375,
+   "avg_turnover": 786842462.2522247
+  },
+  {
+   "symbol": "GODREJPROP",
+   "close": 1525.199951171875,
+   "avg_turnover": 786751490.5264161
+  },
+  {
+   "symbol": "CYIENTDLM",
+   "close": 748.2999877929688,
+   "avg_turnover": 786189658.5546601
+  },
+  {
+   "symbol": "KEC",
+   "close": 336.79998779296875,
+   "avg_turnover": 782425672.766481
+  },
+  {
+   "symbol": "PARAS",
+   "close": 1254.0,
+   "avg_turnover": 781272361.6224121
+  },
+  {
+   "symbol": "PIRAMALFIN",
+   "close": 1898.300048828125,
+   "avg_turnover": 773486807.6676209
+  },
+  {
+   "symbol": "WABAG",
+   "close": 1707.4000244140625,
+   "avg_turnover": 773013463.1386902
+  },
+  {
+   "symbol": "CELLO",
+   "close": 340.95001220703125,
+   "avg_turnover": 767767047.4921296
+  },
+  {
+   "symbol": "AETHER",
+   "close": 1471.5,
+   "avg_turnover": 767686389.9233154
+  },
+  {
+   "symbol": "EMMVEE",
+   "close": 240.4499969482422,
+   "avg_turnover": 765574903.1419388
+  },
+  {
+   "symbol": "HDBFS",
+   "close": 500.25,
+   "avg_turnover": 764347035.7987992
+  },
+  {
+   "symbol": "NAZARA",
+   "close": 400.25,
+   "avg_turnover": 761758203.6300064
+  },
+  {
+   "symbol": "SBIFUNDS",
+   "close": 452.04998779296875,
+   "avg_turnover": 761413860.0397644
+  },
+  {
+   "symbol": "BLUESTARCO",
+   "close": 1504.5,
+   "avg_turnover": 760938083.4465454
+  },
+  {
+   "symbol": "GOODLUCK",
+   "close": 529.8499755859375,
+   "avg_turnover": 753809341.2742904
+  },
+  {
+   "symbol": "M&MFIN",
+   "close": 279.25,
+   "avg_turnover": 750165623.726683
+  },
+  {
+   "symbol": "SUPREMEIND",
+   "close": 3250.0,
+   "avg_turnover": 745462245.1571411
+  },
+  {
+   "symbol": "FIRSTCRY",
+   "close": 164.00999450683594,
+   "avg_turnover": 741870636.244461
+  },
+  {
+   "symbol": "INDIAGLYCO",
+   "close": 285.95001220703125,
+   "avg_turnover": 741074654.4193268
+  },
+  {
+   "symbol": "IGIL",
+   "close": 385.29998779296875,
+   "avg_turnover": 739516890.8131211
+  },
+  {
+   "symbol": "SEDEMAC",
+   "close": 3104.699951171875,
+   "avg_turnover": 733734182.1080933
+  },
+  {
+   "symbol": "STEAMHOUSE",
+   "close": 132.94000244140625,
+   "avg_turnover": 733444672.8695087
+  },
+  {
+   "symbol": "INOXWIND",
+   "close": 58.400001525878906,
+   "avg_turnover": 731379515.9405924
+  },
+  {
+   "symbol": "PTCIL",
+   "close": 23190.0,
+   "avg_turnover": 729525028.25
+  },
+  {
+   "symbol": "VOLTAS",
+   "close": 947.5999755859375,
+   "avg_turnover": 729303510.9747986
+  },
+  {
+   "symbol": "PAGEIND",
+   "close": 33910.0,
+   "avg_turnover": 726766921.0
+  },
+  {
+   "symbol": "JUBLFOOD",
+   "close": 422.8999938964844,
+   "avg_turnover": 712956128.4597992
+  },
+  {
+   "symbol": "PNCINFRA",
+   "close": 133.64999389648438,
+   "avg_turnover": 703702364.7171447
+  },
+  {
+   "symbol": "TEGA",
+   "close": 1697.4000244140625,
+   "avg_turnover": 698363481.9218811
+  },
+  {
+   "symbol": "BLUESTONE",
+   "close": 758.0499877929688,
+   "avg_turnover": 697777240.8773712
+  },
+  {
+   "symbol": "ALKEM",
+   "close": 5030.0,
+   "avg_turnover": 697185137.55
+  },
+  {
+   "symbol": "PETRONET",
+   "close": 291.75,
+   "avg_turnover": 689390269.4297225
+  },
+  {
+   "symbol": "KAJARIACER",
+   "close": 1118.4000244140625,
+   "avg_turnover": 688026303.1625366
+  },
+  {
+   "symbol": "V2RETAIL",
+   "close": 161.36000061035156,
+   "avg_turnover": 680765747.350898
+  },
+  {
+   "symbol": "MARINE",
+   "close": 388.1000061035156,
+   "avg_turnover": 673668419.1138214
+  },
+  {
+   "symbol": "MPIMANIPAL",
+   "close": 307.1499938964844,
+   "avg_turnover": 663961238.3827698
+  },
+  {
+   "symbol": "CASTROLIND",
+   "close": 190.77999877929688,
+   "avg_turnover": 662166616.3160309
+  },
+  {
+   "symbol": "EXIDEIND",
+   "close": 336.8999938964844,
+   "avg_turnover": 661083332.0794754
+  },
+  {
+   "symbol": "TRANSRAILL",
+   "close": 428.6499938964844,
+   "avg_turnover": 653693566.1079727
+  },
+  {
+   "symbol": "SAILIFE",
+   "close": 1445.300048828125,
+   "avg_turnover": 652672611.7270081
+  },
+  {
+   "symbol": "ABDL",
+   "close": 671.0499877929688,
+   "avg_turnover": 652271670.7349335
+  },
+  {
+   "symbol": "OIL",
+   "close": 454.8999938964844,
+   "avg_turnover": 648382208.6260636
+  },
+  {
+   "symbol": "SHUKRAPHAR",
+   "close": 67.45999908447266,
+   "avg_turnover": 646474022.1625408
+  },
+  {
+   "symbol": "PGEL",
+   "close": 475.0,
+   "avg_turnover": 645978036.8401169
+  },
+  {
+   "symbol": "IREDA",
+   "close": 101.87000274658203,
+   "avg_turnover": 641706917.722503
+  },
+  {
+   "symbol": "DABUR",
+   "close": 359.29998779296875,
+   "avg_turnover": 638863884.0453293
+  },
+  {
+   "symbol": "NHPC",
+   "close": 70.55999755859375,
+   "avg_turnover": 635779002.6544495
+  },
+  {
+   "symbol": "BALAMINES",
+   "close": 1815.4000244140625,
+   "avg_turnover": 632409660.1752503
+  },
+  {
+   "symbol": "JYOTICNC",
+   "close": 902.5,
+   "avg_turnover": 626239202.5186799
+  },
+  {
+   "symbol": "GRWRHITECH",
+   "close": 6977.0,
+   "avg_turnover": 623743806.45
+  },
+  {
+   "symbol": "OBEROIRLTY",
+   "close": 1582.0,
+   "avg_turnover": 611983260.0186341
+  },
+  {
+   "symbol": "BELRISE",
+   "close": 202.44000244140625,
+   "avg_turnover": 611086969.7713311
+  },
+  {
+   "symbol": "AXISCADES",
+   "close": 1921.300048828125,
+   "avg_turnover": 609923388.6819763
+  },
+  {
+   "symbol": "MANINDS",
+   "close": 783.8499755859375,
+   "avg_turnover": 605479452.9681091
+  },
+  {
+   "symbol": "PIIND",
+   "close": 2020.0,
+   "avg_turnover": 604544449.3562622
+  },
+  {
+   "symbol": "KFINTECH",
+   "close": 829.0,
+   "avg_turnover": 603170771.3325989
+  },
+  {
+   "symbol": "SBICARD",
+   "close": 538.2999877929688,
+   "avg_turnover": 601459998.2072418
+  },
+  {
+   "symbol": "THERMAX",
+   "close": 3187.0,
+   "avg_turnover": 600719537.2314087
+  },
+  {
+   "symbol": "KRN",
+   "close": 1069.4000244140625,
+   "avg_turnover": 599634554.8033264
+  },
+  {
+   "symbol": "GRANULES",
+   "close": 820.5499877929688,
+   "avg_turnover": 594875913.4290375
+  },
+  {
+   "symbol": "TIPSMUSIC",
+   "close": 716.9000244140625,
+   "avg_turnover": 593287704.8330078
+  },
+  {
+   "symbol": "EDELWEISS",
+   "close": 122.91000366210938,
+   "avg_turnover": 591334873.3792088
+  },
+  {
+   "symbol": "FEDDERSHOL",
+   "close": 53.97999954223633,
+   "avg_turnover": 586503697.9810365
+  },
+  {
+   "symbol": "ORIENTELEC",
+   "close": 184.97999572753906,
+   "avg_turnover": 584373318.7805115
+  },
+  {
+   "symbol": "KTKBANK",
+   "close": 299.8500061035156,
+   "avg_turnover": 583669517.9496353
+  },
+  {
+   "symbol": "TEJASNET",
+   "close": 404.1499938964844,
+   "avg_turnover": 578897345.1384369
+  },
+  {
+   "symbol": "DPABHUSHAN",
+   "close": 2119.10009765625,
+   "avg_turnover": 574678041.5904663
+  },
+  {
+   "symbol": "TECHNOCRAF",
+   "close": 486.0,
+   "avg_turnover": 570522419.0232636
+  },
+  {
+   "symbol": "EMUDHRA",
+   "close": 318.45001220703125,
+   "avg_turnover": 568725128.8684632
+  },
+  {
+   "symbol": "KPIGREEN",
+   "close": 284.45001220703125,
+   "avg_turnover": 565412193.5561554
+  },
+  {
+   "symbol": "ASTRAL",
+   "close": 1349.0,
+   "avg_turnover": 564822195.5096191
+  },
+  {
+   "symbol": "IOLCP",
+   "close": 167.97999572753906,
+   "avg_turnover": 560387960.6335503
+  },
+  {
+   "symbol": "LANDMARK",
+   "close": 425.1000061035156,
+   "avg_turnover": 559703313.4185073
+  },
+  {
+   "symbol": "PARAGMILK",
+   "close": 244.5,
+   "avg_turnover": 556635505.406765
+  },
+  {
+   "symbol": "LALPATHLAB",
+   "close": 1855.5999755859375,
+   "avg_turnover": 552706834.8567994
+  },
+  {
+   "symbol": "SHOPERSTOP",
+   "close": 333.79998779296875,
+   "avg_turnover": 552358487.5652221
+  },
+  {
+   "symbol": "EBGNG",
+   "close": 708.5999755859375,
+   "avg_turnover": 548922952.5116088
+  },
+  {
+   "symbol": "CEMPRO",
+   "close": 1131.800048828125,
+   "avg_turnover": 544786907.2772095
+  },
+  {
+   "symbol": "CUB",
+   "close": 207.97999572753906,
+   "avg_turnover": 542307627.3584335
+  },
+  {
+   "symbol": "UNOMINDA",
+   "close": 1069.300048828125,
+   "avg_turnover": 539502334.2700256
+  },
+  {
+   "symbol": "MANIPALHOS",
+   "close": 623.7000122070312,
+   "avg_turnover": 536071437.0241211
+  },
+  {
+   "symbol": "MARKSANS",
+   "close": 296.6499938964844,
+   "avg_turnover": 535394898.3593582
+  },
+  {
+   "symbol": "SAMBHV",
+   "close": 157.8000030517578,
+   "avg_turnover": 535184961.2358719
+  },
+  {
+   "symbol": "NCC",
+   "close": 115.62000274658203,
+   "avg_turnover": 532610124.93529284
+  },
+  {
+   "symbol": "JINDALSAW",
+   "close": 231.8000030517578,
+   "avg_turnover": 525991061.08648604
+  },
+  {
+   "symbol": "VIYASH",
+   "close": 207.8699951171875,
+   "avg_turnover": 524203538.3662491
+  },
+  {
+   "symbol": "TATACAP",
+   "close": 299.54998779296875,
+   "avg_turnover": 523351508.80130005
+  },
+  {
+   "symbol": "NEWGEN",
+   "close": 475.8999938964844,
+   "avg_turnover": 520677675.6687485
+  },
+  {
+   "symbol": "AARTIPHARM",
+   "close": 823.0999755859375,
+   "avg_turnover": 518052369.6308533
+  },
+  {
+   "symbol": "GKSL",
+   "close": 177.57000732421875,
+   "avg_turnover": 518022147.8729027
+  },
+  {
+   "symbol": "MARSONS",
+   "close": 117.4000015258789,
+   "avg_turnover": 516152291.9622154
+  },
+  {
+   "symbol": "SHYAMMETL",
+   "close": 1126.199951171875,
+   "avg_turnover": 512419233.4541931
+  },
+  {
+   "symbol": "KSCL",
+   "close": 695.5499877929688,
+   "avg_turnover": 510034155.2558991
+  },
+  {
+   "symbol": "MBEL",
+   "close": 254.0500030517578,
+   "avg_turnover": 507318131.1687477
+  },
+  {
+   "symbol": "JWL",
+   "close": 174.61000061035156,
+   "avg_turnover": 506590963.21395797
+  },
+  {
+   "symbol": "HTEL",
+   "close": 77.16000366210938,
+   "avg_turnover": 500518170.4993908
+  },
+  {
+   "symbol": "QPOWER",
+   "close": 1357.0,
+   "avg_turnover": 495396928.2755493
+  },
+  {
+   "symbol": "KMEW",
+   "close": 3282.5,
+   "avg_turnover": 493914717.8587036
+  },
+  {
+   "symbol": "IPCALAB",
+   "close": 1938.5999755859375,
+   "avg_turnover": 491507358.3692139
+  },
+  {
+   "symbol": "LUMINO",
+   "close": 89.87000274658203,
+   "avg_turnover": 489969660.3770145
+  },
+  {
+   "symbol": "STYLEBAAZA",
+   "close": 363.79998779296875,
+   "avg_turnover": 487732564.9867157
+  },
+  {
+   "symbol": "NEOGEN",
+   "close": 2174.89990234375,
+   "avg_turnover": 486537888.1652466
+  },
+  {
+   "symbol": "JSL",
+   "close": 688.8499755859375,
+   "avg_turnover": 482314098.8468903
+  },
+  {
+   "symbol": "J&KBANK",
+   "close": 117.0199966430664,
+   "avg_turnover": 481220036.51474607
+  },
+  {
+   "symbol": "LEMONTREE",
+   "close": 110.13999938964844,
+   "avg_turnover": 480703587.86334574
+  },
+  {
+   "symbol": "PROTEAN",
+   "close": 610.0499877929688,
+   "avg_turnover": 478506612.4206421
+  },
+  {
+   "symbol": "CREDITACC",
+   "close": 997.5,
+   "avg_turnover": 477076143.26347655
+  },
+  {
+   "symbol": "ASTRAMICRO",
+   "close": 1498.300048828125,
+   "avg_turnover": 475371073.93201905
+  },
+  {
+   "symbol": "PRASOLCHEM",
+   "close": 739.25,
+   "avg_turnover": 475218118.47105104
+  },
+  {
+   "symbol": "BALKRISIND",
+   "close": 2109.39990234375,
+   "avg_turnover": 474206362.53622437
+  },
+  {
+   "symbol": "ARTEMISMED",
+   "close": 287.20001220703125,
+   "avg_turnover": 474015543.9005798
+  },
+  {
+   "symbol": "SGFIN",
+   "close": 631.2000122070312,
+   "avg_turnover": 473745478.9481476
+  },
+  {
+   "symbol": "BAJAJHLDNG",
+   "close": 11050.0,
+   "avg_turnover": 470190950.75
+  },
+  {
+   "symbol": "CRAFTSMAN",
+   "close": 10726.0,
+   "avg_turnover": 469578312.95
+  },
+  {
+   "symbol": "PPLPHARMA",
+   "close": 195.1699981689453,
+   "avg_turnover": 468317789.1161537
+  },
+  {
+   "symbol": "GABRIEL",
+   "close": 1394.300048828125,
+   "avg_turnover": 464489760.9381897
+  },
+  {
+   "symbol": "ARFIN",
+   "close": 85.87000274658203,
+   "avg_turnover": 464003488.5657261
+  },
+  {
+   "symbol": "JSLL",
+   "close": 344.70001220703125,
+   "avg_turnover": 461110651.16530913
+  },
+  {
+   "symbol": "BAJAJCON",
+   "close": 387.3500061035156,
+   "avg_turnover": 451002965.3367813
+  },
+  {
+   "symbol": "JSFB",
+   "close": 378.70001220703125,
+   "avg_turnover": 449544553.93677217
+  },
+  {
+   "symbol": "63MOONS",
+   "close": 906.5,
+   "avg_turnover": 446165073.09628296
+  },
+  {
+   "symbol": "JAYNECOIND",
+   "close": 88.63999938964844,
+   "avg_turnover": 440676208.2535866
+  },
+  {
+   "symbol": "ACMESOLAR",
+   "close": 382.1499938964844,
+   "avg_turnover": 438445135.64743197
+  },
+  {
+   "symbol": "EMAMILTD",
+   "close": 366.29998779296875,
+   "avg_turnover": 438037534.93583834
+  },
+  {
+   "symbol": "SMLMAH",
+   "close": 4616.0,
+   "avg_turnover": 436274773.325
+  },
+  {
+   "symbol": "INOXINDIA",
+   "close": 1900.699951171875,
+   "avg_turnover": 434218412.7306824
+  },
+  {
+   "symbol": "DEEPAKFERT",
+   "close": 1142.4000244140625,
+   "avg_turnover": 434089528.2183838
+  },
+  {
+   "symbol": "THELEELA",
+   "close": 582.9500122070312,
+   "avg_turnover": 432064483.4893219
+  },
+  {
+   "symbol": "AWL",
+   "close": 172.77000427246094,
+   "avg_turnover": 431464710.2556915
+  },
+  {
+   "symbol": "TANLA",
+   "close": 567.7999877929688,
+   "avg_turnover": 428728176.6041626
+  },
+  {
+   "symbol": "ITCHOTELS",
+   "close": 164.30999755859375,
+   "avg_turnover": 423322249.9450035
+  },
+  {
+   "symbol": "FLUOROCHEM",
+   "close": 4197.10009765625,
+   "avg_turnover": 423026589.57868654
+  },
+  {
+   "symbol": "ZENTEC",
+   "close": 1544.699951171875,
+   "avg_turnover": 416676067.10874635
+  },
+  {
+   "symbol": "ANURAS",
+   "close": 1124.5,
+   "avg_turnover": 416079767.4035095
+  },
+  {
+   "symbol": "KISSHT",
+   "close": 305.1000061035156,
+   "avg_turnover": 414054961.6626312
+  },
+  {
+   "symbol": "SHANKESH",
+   "close": 90.61000061035156,
+   "avg_turnover": 410039796.5047577
+  },
+  {
+   "symbol": "SHIPROCKET",
+   "close": 120.05999755859375,
+   "avg_turnover": 408015726.1252567
+  },
+  {
+   "symbol": "TI",
+   "close": 486.20001220703125,
+   "avg_turnover": 405779504.01712036
+  },
+  {
+   "symbol": "SOLARA",
+   "close": 634.5499877929688,
+   "avg_turnover": 405690137.3210327
+  },
+  {
+   "symbol": "ROLEXRINGS",
+   "close": 161.44000244140625,
+   "avg_turnover": 405659522.2131996
+  },
+  {
+   "symbol": "CENTUM",
+   "close": 3943.5,
+   "avg_turnover": 397429800.9451782
+  },
+  {
+   "symbol": "GREAVESCOT",
+   "close": 182.32000732421875,
+   "avg_turnover": 396611200.4934143
+  },
+  {
+   "symbol": "VENUSPIPES",
+   "close": 1709.0,
+   "avg_turnover": 396097853.55788577
+  },
+  {
+   "symbol": "JAMNAAUTO",
+   "close": 124.69000244140625,
+   "avg_turnover": 396049257.63463366
+  },
+  {
+   "symbol": "HUDCO",
+   "close": 145.25,
+   "avg_turnover": 395936396.2873894
+  },
+  {
+   "symbol": "SHRIPISTON",
+   "close": 4298.7998046875,
+   "avg_turnover": 393698020.5124512
+  },
+  {
+   "symbol": "IEX",
+   "close": 103.5,
+   "avg_turnover": 393163889.93030393
+  },
+  {
+   "symbol": "KIMS",
+   "close": 669.5999755859375,
+   "avg_turnover": 392935933.22742003
+  },
+  {
+   "symbol": "CONCOR",
+   "close": 411.6000061035156,
+   "avg_turnover": 391750678.8009933
+  },
+  {
+   "symbol": "RKFORGE",
+   "close": 604.8499755859375,
+   "avg_turnover": 389739779.0142273
+  },
+  {
+   "symbol": "NATCOPHARM",
+   "close": 790.2000122070312,
+   "avg_turnover": 388746576.891391
+  },
+  {
+   "symbol": "ALKYLAMINE",
+   "close": 1637.0,
+   "avg_turnover": 387264407.37145996
+  },
+  {
+   "symbol": "YATHARTH",
+   "close": 926.2000122070312,
+   "avg_turnover": 386251003.66905516
+  },
+  {
+   "symbol": "DYNAMATECH",
+   "close": 12229.0,
+   "avg_turnover": 386155276.05
+  },
+  {
+   "symbol": "BHARTIHEXA",
+   "close": 1629.5,
+   "avg_turnover": 386061546.4505005
+  },
+  {
+   "symbol": "TEXRAIL",
+   "close": 98.8499984741211,
+   "avg_turnover": 384984694.61110723
+  },
+  {
+   "symbol": "IRCTC",
+   "close": 438.6499938964844,
+   "avg_turnover": 384944767.2253906
+  },
+  {
+   "symbol": "EUROPRATIK",
+   "close": 176.0500030517578,
+   "avg_turnover": 383874081.81215364
+  },
+  {
+   "symbol": "PRIVISCL",
+   "close": 3356.0,
+   "avg_turnover": 383448050.0306152
+  },
+  {
+   "symbol": "SONATSOFTW",
+   "close": 235.89999389648438,
+   "avg_turnover": 380002272.3996231
+  },
+  {
+   "symbol": "WHEELS",
+   "close": 2205.699951171875,
+   "avg_turnover": 379351370.361145
+  },
+  {
+   "symbol": "GENUSPOWER",
+   "close": 260.79998779296875,
+   "avg_turnover": 379308723.95009613
+  },
+  {
+   "symbol": "NBCC",
+   "close": 68.6500015258789,
+   "avg_turnover": 377600176.51745987
+  },
+  {
+   "symbol": "TIMETECHNO",
+   "close": 158.82000732421875,
+   "avg_turnover": 374382283.13261795
+  },
+  {
+   "symbol": "GMDCLTD",
+   "close": 428.95001220703125,
+   "avg_turnover": 372117497.0885483
+  },
+  {
+   "symbol": "UNIMECH",
+   "close": 1615.9000244140625,
+   "avg_turnover": 371329499.5070984
+  },
+  {
+   "symbol": "UTTAMSUGAR",
+   "close": 309.20001220703125,
+   "avg_turnover": 371143978.6259552
+  },
+  {
+   "symbol": "DCMSRIND",
+   "close": 51.5,
+   "avg_turnover": 371035070.3314266
+  },
+  {
+   "symbol": "APTUS",
+   "close": 197.92999267578125,
+   "avg_turnover": 370841062.9722946
+  },
+  {
+   "symbol": "BEML",
+   "close": 1844.5999755859375,
+   "avg_turnover": 366034400.0333313
+  },
+  {
+   "symbol": "ORIENTTECH",
+   "close": 187.44000244140625,
+   "avg_turnover": 365845286.0194588
+  },
+  {
+   "symbol": "ANTHEM",
+   "close": 822.25,
+   "avg_turnover": 365103914.7713318
+  },
+  {
+   "symbol": "GNFC",
+   "close": 519.3499755859375,
+   "avg_turnover": 364883157.82459104
+  },
+  {
+   "symbol": "ELLEN",
+   "close": 301.1499938964844,
+   "avg_turnover": 362768027.7970108
+  },
+  {
+   "symbol": "TBOTEK",
+   "close": 1514.800048828125,
+   "avg_turnover": 361310797.1296631
+  },
+  {
+   "symbol": "JINDALPOLY",
+   "close": 679.7000122070312,
+   "avg_turnover": 360058249.8376587
+  },
+  {
+   "symbol": "MOMSBELIEF",
+   "close": 252.67999267578125,
+   "avg_turnover": 358784271.1186363
+  },
+  {
+   "symbol": "WESTLIFE",
+   "close": 587.5999755859375,
+   "avg_turnover": 356648146.0233704
+  },
+  {
+   "symbol": "VIKRAN",
+   "close": 52.27000045776367,
+   "avg_turnover": 355406643.6452816
+  },
+  {
+   "symbol": "ARCIL",
+   "close": 122.26000213623047,
+   "avg_turnover": 354754887.8451511
+  },
+  {
+   "symbol": "SWARAJENG",
+   "close": 3431.800048828125,
+   "avg_turnover": 352709035.86414796
+  },
+  {
+   "symbol": "PNGJL",
+   "close": 556.9500122070312,
+   "avg_turnover": 352661361.84281313
+  },
+  {
+   "symbol": "ATLANTAELE",
+   "close": 1624.0999755859375,
+   "avg_turnover": 349697507.01968384
+  },
+  {
+   "symbol": "ECLERX",
+   "close": 1876.5999755859375,
+   "avg_turnover": 349593063.148053
+  },
+  {
+   "symbol": "KSB",
+   "close": 662.9000244140625,
+   "avg_turnover": 349580816.7762207
+  },
+  {
+   "symbol": "MIDHANI",
+   "close": 362.0,
+   "avg_turnover": 349122022.6126968
+  },
+  {
+   "symbol": "COROMANDEL",
+   "close": 1730.5999755859375,
+   "avg_turnover": 348783188.7957703
+  },
+  {
+   "symbol": "GRAVITA",
+   "close": 1308.5999755859375,
+   "avg_turnover": 348410969.4185913
+  },
+  {
+   "symbol": "COHANCE",
+   "close": 463.54998779296875,
+   "avg_turnover": 347889476.7048019
+  },
+  {
+   "symbol": "ELECTCAST",
+   "close": 65.91999816894531,
+   "avg_turnover": 345762068.32641906
+  },
+  {
+   "symbol": "ONEPOINT",
+   "close": 69.52999877929688,
+   "avg_turnover": 341256500.2884048
+  },
+  {
+   "symbol": "JAYKAY",
+   "close": 197.72999572753906,
+   "avg_turnover": 341235147.5417984
+  },
+  {
+   "symbol": "GODFRYPHLP",
+   "close": 1664.0,
+   "avg_turnover": 338884612.54765624
+  },
+  {
+   "symbol": "NH",
+   "close": 1662.300048828125,
+   "avg_turnover": 336083735.9887207
+  },
+  {
+   "symbol": "INDOCO",
+   "close": 219.5,
+   "avg_turnover": 335974517.8115028
+  },
+  {
+   "symbol": "MANORAMA",
+   "close": 1776.0,
+   "avg_turnover": 335049100.89241946
+  },
+  {
+   "symbol": "AJANTPHARM",
+   "close": 3381.0,
+   "avg_turnover": 334597064.5712036
+  },
+  {
+   "symbol": "PIXTRANS",
+   "close": 1648.699951171875,
+   "avg_turnover": 334004038.66242677
+  },
+  {
+   "symbol": "SUNFLAG",
+   "close": 387.6499938964844,
+   "avg_turnover": 331327500.2031204
+  },
+  {
+   "symbol": "APOLLOTYRE",
+   "close": 386.8500061035156,
+   "avg_turnover": 331275411.29072875
+  },
+  {
+   "symbol": "ACE",
+   "close": 1011.2999877929688,
+   "avg_turnover": 329991528.4112457
+  },
+  {
+   "symbol": "SHAILY",
+   "close": 2985.10009765625,
+   "avg_turnover": 329273610.4253052
+  },
+  {
+   "symbol": "LLOYDSENT",
+   "close": 60.90999984741211,
+   "avg_turnover": 329111939.55985945
+  },
+  {
+   "symbol": "PRICOLLTD",
+   "close": 615.7000122070312,
+   "avg_turnover": 328643990.71384585
+  },
+  {
+   "symbol": "RUBICON",
+   "close": 1490.300048828125,
+   "avg_turnover": 326882126.6825989
+  },
+  {
+   "symbol": "AARTIIND",
+   "close": 428.3999938964844,
+   "avg_turnover": 326741471.583078
+  },
+  {
+   "symbol": "OLECTRA",
+   "close": 961.5,
+   "avg_turnover": 325221635.5998138
+  },
+  {
+   "symbol": "SJS",
+   "close": 1970.199951171875,
+   "avg_turnover": 323477509.9450073
+  },
+  {
+   "symbol": "ONESOURCE",
+   "close": 1397.300048828125,
+   "avg_turnover": 320493880.8446472
+  },
+  {
+   "symbol": "ATGL",
+   "close": 532.0,
+   "avg_turnover": 319036650.4598511
+  },
+  {
+   "symbol": "BAJAJHFL",
+   "close": 78.58000183105469,
+   "avg_turnover": 318740428.31729543
+  },
+  {
+   "symbol": "PRIORITY",
+   "close": 285.6499938964844,
+   "avg_turnover": 317715505.84449464
+  },
+  {
+   "symbol": "LCL",
+   "close": 546.6500244140625,
+   "avg_turnover": 316659300.425235
+  },
+  {
+   "symbol": "EPL",
+   "close": 221.5399932861328,
+   "avg_turnover": 316192434.0631607
+  },
+  {
+   "symbol": "MRF",
+   "close": 117380.0,
+   "avg_turnover": 315574737.25
+  },
+  {
+   "symbol": "NLCINDIA",
+   "close": 229.35000610351562,
+   "avg_turnover": 313324192.46054614
+  },
+  {
+   "symbol": "GUJENERGY",
+   "close": 215.3000030517578,
+   "avg_turnover": 313273509.9688156
+  },
+  {
+   "symbol": "TCI",
+   "close": 845.25,
+   "avg_turnover": 312193180.0810791
+  },
+  {
+   "symbol": "SENORES",
+   "close": 1245.5,
+   "avg_turnover": 311486012.54262084
+  },
+  {
+   "symbol": "ADVANCE",
+   "close": 131.50999450683594,
+   "avg_turnover": 311036934.4264862
+  },
+  {
+   "symbol": "TITAGARH",
+   "close": 649.5499877929688,
+   "avg_turnover": 310906060.3922119
+  },
+  {
+   "symbol": "DCBBANK",
+   "close": 192.41000366210938,
+   "avg_turnover": 310199429.43700254
+  },
+  {
+   "symbol": "JUBLPHARMA",
+   "close": 937.0,
+   "avg_turnover": 307716220.1446106
+  },
+  {
+   "symbol": "RPTECH",
+   "close": 817.2000122070312,
+   "avg_turnover": 306126995.7260254
+  },
+  {
+   "symbol": "JGCHEM",
+   "close": 558.7999877929688,
+   "avg_turnover": 303716568.85876465
+  },
+  {
+   "symbol": "JINDRILL",
+   "close": 506.75,
+   "avg_turnover": 303113091.7844757
+  },
+  {
+   "symbol": "TATVA",
+   "close": 1567.5,
+   "avg_turnover": 302667932.343219
+  },
+  {
+   "symbol": "INDGN",
+   "close": 601.75,
+   "avg_turnover": 302534545.2681885
+  },
+  {
+   "symbol": "JTLIND",
+   "close": 71.31999969482422,
+   "avg_turnover": 302282706.3545666
+  },
+  {
+   "symbol": "SUNTECK",
+   "close": 273.8500061035156,
+   "avg_turnover": 301123708.4155289
+  },
+  {
+   "symbol": "CAPLIPOINT",
+   "close": 2273.89990234375,
+   "avg_turnover": 300910503.46429443
+  },
+  {
+   "symbol": "CARBORUNIV",
+   "close": 1129.199951171875,
+   "avg_turnover": 300868571.8298584
+  },
+  {
+   "symbol": "MEDANTA",
+   "close": 1212.0,
+   "avg_turnover": 300031385.2240845
+  },
+  {
+   "symbol": "CHOICEIN",
+   "close": 698.0499877929688,
+   "avg_turnover": 299769413.69711
+  },
+  {
+   "symbol": "FIVESTAR",
+   "close": 414.8500061035156,
+   "avg_turnover": 298898540.91335297
+  },
+  {
+   "symbol": "LUMAXTECH",
+   "close": 1848.5999755859375,
+   "avg_turnover": 298832894.59595335
+  },
+  {
+   "symbol": "ROSSTECH",
+   "close": 1398.199951171875,
+   "avg_turnover": 298462271.8389465
+  },
+  {
+   "symbol": "TORNTPOWER",
+   "close": 1157.5999755859375,
+   "avg_turnover": 296900144.1111084
+  },
+  {
+   "symbol": "PACEDIGITK",
+   "close": 136.39999389648438,
+   "avg_turnover": 296467617.86842346
+  },
+  {
+   "symbol": "SCHNEIDER",
+   "close": 1137.199951171875,
+   "avg_turnover": 294935586.58347166
+  },
+  {
+   "symbol": "KRISHNADEF",
+   "close": 1115.0,
+   "avg_turnover": 294335873.99031067
+  },
+  {
+   "symbol": "SIGNATURE",
+   "close": 703.0499877929688,
+   "avg_turnover": 293637080.22187805
+  },
+  {
+   "symbol": "SGMART",
+   "close": 799.7000122070312,
+   "avg_turnover": 290977086.07976687
+  },
+  {
+   "symbol": "FILATEX",
+   "close": 94.62000274658203,
+   "avg_turnover": 290578375.36129534
+  },
+  {
+   "symbol": "MANALIPETC",
+   "close": 72.94999694824219,
+   "avg_turnover": 290165589.095116
+  },
+  {
+   "symbol": "THANGAMAYL",
+   "close": 4634.5,
+   "avg_turnover": 290162800.45
+  },
+  {
+   "symbol": "TIMEX",
+   "close": 630.0999755859375,
+   "avg_turnover": 290060774.4787903
+  },
+  {
+   "symbol": "GNA",
+   "close": 559.2999877929688,
+   "avg_turnover": 288323415.2499115
+  },
+  {
+   "symbol": "GMMPFAUDLR",
+   "close": 1209.4000244140625,
+   "avg_turnover": 285529914.79074705
+  },
+  {
+   "symbol": "PARADEEP",
+   "close": 137.88999938964844,
+   "avg_turnover": 285054049.72076416
+  },
+  {
+   "symbol": "USHAMART",
+   "close": 465.1499938964844,
+   "avg_turnover": 282506097.9157928
+  },
+  {
+   "symbol": "PRANAV",
+   "close": 85.19999694824219,
+   "avg_turnover": 281611118.7641903
+  },
+  {
+   "symbol": "QUADFUTURE",
+   "close": 394.5,
+   "avg_turnover": 279678099.972818
+  },
+  {
+   "symbol": "DEEPAKNTR",
+   "close": 1442.5,
+   "avg_turnover": 278449683.2204529
+  },
+  {
+   "symbol": "MAHLOG",
+   "close": 390.1499938964844,
+   "avg_turnover": 274071258.52453613
+  },
+  {
+   "symbol": "HEGAM",
+   "close": 205.0,
+   "avg_turnover": 273345157.0220879
+  },
+  {
+   "symbol": "BLS",
+   "close": 209.1300048828125,
+   "avg_turnover": 273309434.9179443
+  },
+  {
+   "symbol": "CEATLTD",
+   "close": 3119.800048828125,
+   "avg_turnover": 272086851.7491821
+  },
+  {
+   "symbol": "SOBHA",
+   "close": 1145.199951171875,
+   "avg_turnover": 272043568.1418274
+  },
+  {
+   "symbol": "SYNGENE",
+   "close": 359.8500061035156,
+   "avg_turnover": 270256638.1802643
+  },
+  {
+   "symbol": "ABREL",
+   "close": 1077.5,
+   "avg_turnover": 268709101.2083313
+  },
+  {
+   "symbol": "INDOBORAX",
+   "close": 404.3999938964844,
+   "avg_turnover": 268682547.0198349
+  },
+  {
+   "symbol": "ABLBL",
+   "close": 69.68000030517578,
+   "avg_turnover": 267537485.1436615
+  },
+  {
+   "symbol": "GCSL",
+   "close": 733.0,
+   "avg_turnover": 267069381.77467346
+  },
+  {
+   "symbol": "SUDARSCHEM",
+   "close": 1028.9000244140625,
+   "avg_turnover": 266734432.3179016
+  },
+  {
+   "symbol": "JKCEMENT",
+   "close": 4935.0,
+   "avg_turnover": 264601339.4
+  },
+  {
+   "symbol": "VESUVIUS",
+   "close": 385.3999938964844,
+   "avg_turnover": 264069680.37997133
+  },
+  {
+   "symbol": "TENNIND",
+   "close": 443.6000061035156,
+   "avg_turnover": 263148125.52520752
+  },
+  {
+   "symbol": "STARHEALTH",
+   "close": 538.25,
+   "avg_turnover": 263141338.9848358
+  },
+  {
+   "symbol": "VIKRAMSOLR",
+   "close": 128.3800048828125,
+   "avg_turnover": 262224465.86360055
+  },
+  {
+   "symbol": "SETL",
+   "close": 350.8999938964844,
+   "avg_turnover": 261694011.1285034
+  },
+  {
+   "symbol": "UBL",
+   "close": 1136.199951171875,
+   "avg_turnover": 261319911.5296875
+  },
+  {
+   "symbol": "ARE&M",
+   "close": 693.75,
+   "avg_turnover": 261084887.2930298
+  },
+  {
+   "symbol": "RELIGARE",
+   "close": 209.4600067138672,
+   "avg_turnover": 260020102.54735032
+  },
+  {
+   "symbol": "ARVIND",
+   "close": 482.3999938964844,
+   "avg_turnover": 259845854.67742157
+  },
+  {
+   "symbol": "DHAMPURSUG",
+   "close": 170.27000427246094,
+   "avg_turnover": 259416984.37249833
+  },
+  {
+   "symbol": "PRECWIRE",
+   "close": 396.29998779296875,
+   "avg_turnover": 258469816.08710784
+  },
+  {
+   "symbol": "PARKHOSPS",
+   "close": 219.64999389648438,
+   "avg_turnover": 258021801.22318038
+  },
+  {
+   "symbol": "NTPCGREEN",
+   "close": 81.73999786376953,
+   "avg_turnover": 257592048.80215493
+  },
+  {
+   "symbol": "IKS",
+   "close": 1659.9000244140625,
+   "avg_turnover": 257409081.3638977
+  },
+  {
+   "symbol": "AEGISVOPAK",
+   "close": 240.14999389648438,
+   "avg_turnover": 256932106.31032562
+  },
+  {
+   "symbol": "GODIGIT",
+   "close": 267.0,
+   "avg_turnover": 256847593.72937927
+  },
+  {
+   "symbol": "KERNEX",
+   "close": 1577.300048828125,
+   "avg_turnover": 255129086.81554565
+  },
+  {
+   "symbol": "GANDHAR",
+   "close": 300.25,
+   "avg_turnover": 254949945.27495116
+  },
+  {
+   "symbol": "KNACK",
+   "close": 203.77000427246094,
+   "avg_turnover": 254644475.3715767
+  },
+  {
+   "symbol": "SOTL",
+   "close": 688.9500122070312,
+   "avg_turnover": 253494626.66575623
+  },
+  {
+   "symbol": "KSHINTL",
+   "close": 910.9000244140625,
+   "avg_turnover": 253089542.23112792
+  },
+  {
+   "symbol": "INTELLECT",
+   "close": 603.7000122070312,
+   "avg_turnover": 251246526.98893127
+  },
+  {
+   "symbol": "IGL",
+   "close": 141.57000732421875,
+   "avg_turnover": 250238404.4932747
+  },
+  {
+   "symbol": "ATUL",
+   "close": 5354.0,
+   "avg_turnover": 249434103.525
+  },
+  {
+   "symbol": "LXCHEM",
+   "close": 153.5500030517578,
+   "avg_turnover": 248821351.8261299
+  },
+  {
+   "symbol": "TRITURBINE",
+   "close": 446.6000061035156,
+   "avg_turnover": 247184772.95708314
+  },
+  {
+   "symbol": "STAR",
+   "close": 1033.0999755859375,
+   "avg_turnover": 245913553.9533905
+  },
+  {
+   "symbol": "SUDEEPPHRM",
+   "close": 983.0,
+   "avg_turnover": 245553133.8167755
+  },
+  {
+   "symbol": "SKIPPER",
+   "close": 472.8999938964844,
+   "avg_turnover": 245067873.66011962
+  },
+  {
+   "symbol": "KIRIINDUS",
+   "close": 475.29998779296875,
+   "avg_turnover": 243127319.40456086
+  },
+  {
+   "symbol": "MAHSEAMLES",
+   "close": 533.4000244140625,
+   "avg_turnover": 239981084.4440857
+  },
+  {
+   "symbol": "RBA",
+   "close": 91.9000015258789,
+   "avg_turnover": 238870708.13306466
+  },
+  {
+   "symbol": "SBCL",
+   "close": 915.7000122070312,
+   "avg_turnover": 238666160.78279725
+  },
+  {
+   "symbol": "GPIL",
+   "close": 190.74000549316406,
+   "avg_turnover": 237617162.42933655
+  },
+  {
+   "symbol": "CHOLAHLDNG",
+   "close": 1254.0999755859375,
+   "avg_turnover": 237047281.02500612
+  },
+  {
+   "symbol": "FERMENTA",
+   "close": 447.04998779296875,
+   "avg_turnover": 236705467.71224517
+  },
+  {
+   "symbol": "AEROPLANE",
+   "close": 206.14999389648438,
+   "avg_turnover": 236420833.3707634
+  },
+  {
+   "symbol": "PAUSHAKLTD",
+   "close": 608.5499877929688,
+   "avg_turnover": 234957508.91139832
+  },
+  {
+   "symbol": "FINOPB",
+   "close": 119.56999969482422,
+   "avg_turnover": 234398168.88931847
+  },
+  {
+   "symbol": "FREDUN",
+   "close": 1365.5,
+   "avg_turnover": 232904369.168219
+  },
+  {
+   "symbol": "BLACKBUCK",
+   "close": 545.0999755859375,
+   "avg_turnover": 232796883.75351563
+  },
+  {
+   "symbol": "RAINBOW",
+   "close": 1162.0,
+   "avg_turnover": 232572504.9343872
+  },
+  {
+   "symbol": "DALMIASUG",
+   "close": 414.6499938964844,
+   "avg_turnover": 230698010.6905365
+  },
+  {
+   "symbol": "BALUFORGE",
+   "close": 424.6000061035156,
+   "avg_turnover": 230594641.27889556
+  },
+  {
+   "symbol": "CESC",
+   "close": 124.75,
+   "avg_turnover": 230084726.77431718
+  },
+  {
+   "symbol": "RAILTEL",
+   "close": 223.9499969482422,
+   "avg_turnover": 228764235.0223816
+  },
+  {
+   "symbol": "PARACABLES",
+   "close": 59.63999938964844,
+   "avg_turnover": 228243928.69893113
+  },
+  {
+   "symbol": "CCL",
+   "close": 903.2000122070312,
+   "avg_turnover": 227105853.3872284
+  },
+  {
+   "symbol": "SDBL",
+   "close": 67.33000183105469,
+   "avg_turnover": 225503595.1014801
+  },
+  {
+   "symbol": "RAMBHAJO",
+   "close": 337.95001220703125,
+   "avg_turnover": 225013709.70969543
+  },
+  {
+   "symbol": "SCHAEFFLER",
+   "close": 3516.300048828125,
+   "avg_turnover": 224684585.37320557
+  },
+  {
+   "symbol": "NRBBEARING",
+   "close": 436.29998779296875,
+   "avg_turnover": 223312311.00707245
+  },
+  {
+   "symbol": "AURUM",
+   "close": 214.02999877929688,
+   "avg_turnover": 221397100.87494355
+  },
+  {
+   "symbol": "JMFINANCIL",
+   "close": 107.22000122070312,
+   "avg_turnover": 221136897.8292839
+  },
+  {
+   "symbol": "SHAREINDIA",
+   "close": 176.97000122070312,
+   "avg_turnover": 220057890.57138214
+  },
+  {
+   "symbol": "JSWCEMENT",
+   "close": 117.5999984741211,
+   "avg_turnover": 219016582.41778678
+  },
+  {
+   "symbol": "CRISIL",
+   "close": 4777.7998046875,
+   "avg_turnover": 217555905.57460937
+  },
+  {
+   "symbol": "ABSLAMC",
+   "close": 882.5,
+   "avg_turnover": 217474347.4465027
+  },
+  {
+   "symbol": "MMTC",
+   "close": 50.65999984741211,
+   "avg_turnover": 216382025.50174028
+  },
+  {
+   "symbol": "WALCHANNAG",
+   "close": 182.27999877929688,
+   "avg_turnover": 216268044.00422364
+  },
+  {
+   "symbol": "PTC",
+   "close": 134.69000244140625,
+   "avg_turnover": 215985744.30978012
+  },
+  {
+   "symbol": "VINDHYATEL",
+   "close": 2622.800048828125,
+   "avg_turnover": 215485291.92750245
+  },
+  {
+   "symbol": "DAMCAPITAL",
+   "close": 130.5,
+   "avg_turnover": 215421964.72905272
+  },
+  {
+   "symbol": "PGIL",
+   "close": 1212.800048828125,
+   "avg_turnover": 213595771.92545167
+  },
+  {
+   "symbol": "EIDPARRY",
+   "close": 621.9500122070312,
+   "avg_turnover": 212939936.2706543
+  },
+  {
+   "symbol": "GPPL",
+   "close": 158.1699981689453,
+   "avg_turnover": 212803589.1410698
+  },
+  {
+   "symbol": "PCBL",
+   "close": 275.45001220703125,
+   "avg_turnover": 212529532.6174652
+  },
+  {
+   "symbol": "SUVEN",
+   "close": 262.0,
+   "avg_turnover": 211697534.12221068
+  },
+  {
+   "symbol": "CMPDI",
+   "close": 183.66000366210938,
+   "avg_turnover": 211193462.0203766
+  },
+  {
+   "symbol": "NORTHARC",
+   "close": 244.35000610351562,
+   "avg_turnover": 211192076.41886443
+  },
+  {
+   "symbol": "BEPL",
+   "close": 106.9000015258789,
+   "avg_turnover": 210785457.86141357
+  },
+  {
+   "symbol": "ARIS",
+   "close": 134.80999755859375,
+   "avg_turnover": 210344078.7429451
+  },
+  {
+   "symbol": "ESCORTS",
+   "close": 2575.89990234375,
+   "avg_turnover": 209577253.86245117
+  },
+  {
+   "symbol": "ITDC",
+   "close": 603.2999877929688,
+   "avg_turnover": 209519661.4354004
+  },
+  {
+   "symbol": "KRISHANA",
+   "close": 205.0500030517578,
+   "avg_turnover": 208895331.73680496
+  },
+  {
+   "symbol": "SWANCORP",
+   "close": 235.6999969482422,
+   "avg_turnover": 208598745.70970458
+  },
+  {
+   "symbol": "KPIL",
+   "close": 1295.9000244140625,
+   "avg_turnover": 208559803.53796998
+  },
+  {
+   "symbol": "HAPPSTMNDS",
+   "close": 300.1499938964844,
+   "avg_turnover": 207543538.04949036
+  },
+  {
+   "symbol": "HOMEFIRST",
+   "close": 1012.0,
+   "avg_turnover": 206279509.6871338
+  },
+  {
+   "symbol": "DCMSHRIRAM",
+   "close": 968.3499755859375,
+   "avg_turnover": 206141817.19255677
+  },
+  {
+   "symbol": "PREMEXPLN",
+   "close": 632.4000244140625,
+   "avg_turnover": 206116945.80575866
+  },
+  {
+   "symbol": "PASHUPATI",
+   "close": 109.87000274658203,
+   "avg_turnover": 206084375.65859985
+  },
+  {
+   "symbol": "RATEGAIN",
+   "close": 782.3499755859375,
+   "avg_turnover": 203971129.4440735
+  },
+  {
+   "symbol": "SUPRIYA",
+   "close": 833.0499877929688,
+   "avg_turnover": 201825806.88564453
+  },
+  {
+   "symbol": "TATAINVEST",
+   "close": 553.3499755859375,
+   "avg_turnover": 201641436.14584962
+  },
+  {
+   "symbol": "AVADHSUGAR",
+   "close": 812.9000244140625,
+   "avg_turnover": 201262902.839801
+  },
+  {
+   "symbol": "CANFINHOME",
+   "close": 725.8499755859375,
+   "avg_turnover": 201171503.36247253
+  },
+  {
+   "symbol": "EMCURE",
+   "close": 1780.199951171875,
+   "avg_turnover": 200418592.3821594
+  },
+  {
+   "symbol": "AFFLE",
+   "close": 1316.9000244140625,
+   "avg_turnover": 200000147.90023804
+  },
+  {
+   "symbol": "SKYWAYS",
+   "close": 96.45999908447266,
+   "avg_turnover": 199258476.71055984
+  },
+  {
+   "symbol": "FEDFINA",
+   "close": 150.22999572753906,
+   "avg_turnover": 199199351.90789717
+  },
+  {
+   "symbol": "DEEPINDS",
+   "close": 669.25,
+   "avg_turnover": 199128129.4039917
+  },
+  {
+   "symbol": "MASTEK",
+   "close": 1634.199951171875,
+   "avg_turnover": 197998740.13085938
+  },
+  {
+   "symbol": "SUNSHINE",
+   "close": 392.8500061035156,
+   "avg_turnover": 197686919.81302184
+  },
+  {
+   "symbol": "RIIL",
+   "close": 659.7999877929688,
+   "avg_turnover": 197446518.42239684
+  },
+  {
+   "symbol": "JAINREC",
+   "close": 282.70001220703125,
+   "avg_turnover": 196300534.55404663
+  },
+  {
+   "symbol": "ZFCVINDIA",
+   "close": 2143.699951171875,
+   "avg_turnover": 196293957.7751831
+  },
+  {
+   "symbol": "GICRE",
+   "close": 323.79998779296875,
+   "avg_turnover": 196282244.64502868
+  },
+  {
+   "symbol": "ENDURANCE",
+   "close": 2233.39990234375,
+   "avg_turnover": 195731702.1699829
+  },
+  {
+   "symbol": "GOKEX",
+   "close": 647.2999877929688,
+   "avg_turnover": 194159345.15689698
+  },
+  {
+   "symbol": "HAPPYFORGE",
+   "close": 1758.4000244140625,
+   "avg_turnover": 193211543.7900757
+  },
+  {
+   "symbol": "CORDELIA",
+   "close": 89.33000183105469,
+   "avg_turnover": 192417653.29530677
+  },
+  {
+   "symbol": "SHAKTIPUMP",
+   "close": 367.0,
+   "avg_turnover": 192222012.03548735
+  },
+  {
+   "symbol": "WAAREERTL",
+   "close": 655.5,
+   "avg_turnover": 191904189.97711793
+  },
+  {
+   "symbol": "TURTLEMINT",
+   "close": 53.77000045776367,
+   "avg_turnover": 190151368.91846028
+  },
+  {
+   "symbol": "JNPR",
+   "close": 230.85000610351562,
+   "avg_turnover": 190010485.3706192
+  },
+  {
+   "symbol": "TCIEXP",
+   "close": 461.45001220703125,
+   "avg_turnover": 189818868.87409362
+  },
+  {
+   "symbol": "LASERPOWER",
+   "close": 205.6999969482422,
+   "avg_turnover": 188361843.69135132
+  },
+  {
+   "symbol": "BAJAJELEC",
+   "close": 275.6499938964844,
+   "avg_turnover": 187949405.7005295
+  },
+  {
+   "symbol": "SPARC",
+   "close": 178.39999389648438,
+   "avg_turnover": 187073024.77113646
+  },
+  {
+   "symbol": "ACC",
+   "close": 1166.699951171875,
+   "avg_turnover": 186699317.0274536
+  },
+  {
+   "symbol": "CAPILLARY",
+   "close": 557.7999877929688,
+   "avg_turnover": 186483503.73014528
+  },
+  {
+   "symbol": "SWSOLAR",
+   "close": 139.6199951171875,
+   "avg_turnover": 186414522.83596498
+  },
+  {
+   "symbol": "VOLTAMP",
+   "close": 9799.0,
+   "avg_turnover": 186012651.45
+  },
+  {
+   "symbol": "EPACKPEB",
+   "close": 220.5800018310547,
+   "avg_turnover": 184641210.78591615
+  },
+  {
+   "symbol": "ACI",
+   "close": 468.3500061035156,
+   "avg_turnover": 184565067.6995758
+  },
+  {
+   "symbol": "AVANTEL",
+   "close": 136.1699981689453,
+   "avg_turnover": 184068193.63219985
+  },
+  {
+   "symbol": "DECNGOLD",
+   "close": 164.6300048828125,
+   "avg_turnover": 183835696.8148834
+  },
+  {
+   "symbol": "UNIVCABLES",
+   "close": 1330.199951171875,
+   "avg_turnover": 182998199.01270753
+  },
+  {
+   "symbol": "IDEAFORGE",
+   "close": 651.0,
+   "avg_turnover": 180532961.5988373
+  },
+  {
+   "symbol": "IIFLCAPS",
+   "close": 340.75,
+   "avg_turnover": 179497977.2131378
+  },
+  {
+   "symbol": "RAMRAT",
+   "close": 537.7000122070312,
+   "avg_turnover": 179392652.8908844
+  },
+  {
+   "symbol": "AVANTIFEED",
+   "close": 668.9500122070312,
+   "avg_turnover": 179297655.83573303
+  },
+  {
+   "symbol": "LEAPIND",
+   "close": 126.36000061035156,
+   "avg_turnover": 178961588.7347374
+  },
+  {
+   "symbol": "RPEL",
+   "close": 1695.0999755859375,
+   "avg_turnover": 178501788.2451355
+  },
+  {
+   "symbol": "TRIVENI",
+   "close": 225.9199981689453,
+   "avg_turnover": 178192687.8732643
+  },
+  {
+   "symbol": "MOSCHIP",
+   "close": 165.8699951171875,
+   "avg_turnover": 178074265.51108855
+  },
+  {
+   "symbol": "XTRANET",
+   "close": 250.60000610351562,
+   "avg_turnover": 177396846.36914673
+  },
+  {
+   "symbol": "RISHABH",
+   "close": 643.25,
+   "avg_turnover": 177203689.42871094
+  },
+  {
+   "symbol": "AYE",
+   "close": 131.25999450683594,
+   "avg_turnover": 176973337.37903365
+  },
+  {
+   "symbol": "CHAMBLFERT",
+   "close": 360.6000061035156,
+   "avg_turnover": 176772616.54446107
+  },
+  {
+   "symbol": "COMSYN",
+   "close": 208.4499969482422,
+   "avg_turnover": 175993583.08457184
+  },
+  {
+   "symbol": "NIBE",
+   "close": 1126.0999755859375,
+   "avg_turnover": 175947468.2465271
+  },
+  {
+   "symbol": "GLAXO",
+   "close": 2445.89990234375,
+   "avg_turnover": 175213138.44475096
+  },
+  {
+   "symbol": "WELENT",
+   "close": 625.0499877929688,
+   "avg_turnover": 174463781.9613861
+  },
+  {
+   "symbol": "ARSSBL",
+   "close": 446.8999938964844,
+   "avg_turnover": 174266486.17697448
+  },
+  {
+   "symbol": "VIJAYA",
+   "close": 1395.800048828125,
+   "avg_turnover": 174011654.25324708
+  },
+  {
+   "symbol": "ENTERO",
+   "close": 1475.0999755859375,
+   "avg_turnover": 173337457.84196168
+  },
+  {
+   "symbol": "SMSPHARMA",
+   "close": 417.8500061035156,
+   "avg_turnover": 172352291.8934311
+  },
+  {
+   "symbol": "INDSWFTLAB",
+   "close": 337.04998779296875,
+   "avg_turnover": 172314321.41192168
+  },
+  {
+   "symbol": "SUNDARMFIN",
+   "close": 3902.10009765625,
+   "avg_turnover": 171758025.422937
+  },
+  {
+   "symbol": "NIVABUPA",
+   "close": 70.87999725341797,
+   "avg_turnover": 171706060.770768
+  },
+  {
+   "symbol": "VINCOFE",
+   "close": 147.41000366210938,
+   "avg_turnover": 171525268.8466385
+  },
+  {
+   "symbol": "ERIS",
+   "close": 1105.199951171875,
+   "avg_turnover": 171217172.19679564
+  },
+  {
+   "symbol": "ICIL",
+   "close": 399.20001220703125,
+   "avg_turnover": 170492417.23973235
+  },
+  {
+   "symbol": "GAEL",
+   "close": 141.07000732421875,
+   "avg_turnover": 168748486.82919616
+  },
+  {
+   "symbol": "GRMOVER",
+   "close": 89.80999755859375,
+   "avg_turnover": 168554611.39682427
+  },
+  {
+   "symbol": "CONFIPET",
+   "close": 69.83000183105469,
+   "avg_turnover": 168021717.6384743
+  },
+  {
+   "symbol": "LCCPROJECT",
+   "close": 118.16000366210938,
+   "avg_turnover": 167919518.78415528
+  },
+  {
+   "symbol": "TEAMLEASE",
+   "close": 1054.699951171875,
+   "avg_turnover": 167650866.44873658
+  },
+  {
+   "symbol": "MUFIN",
+   "close": 128.9499969482422,
+   "avg_turnover": 167401944.65902558
+  },
+  {
+   "symbol": "KUSUMGAR",
+   "close": 544.2000122070312,
+   "avg_turnover": 167208160.20349425
+  },
+  {
+   "symbol": "CLEAN",
+   "close": 737.25,
+   "avg_turnover": 166812519.37209472
+  },
+  {
+   "symbol": "GMRP&UI",
+   "close": 94.05999755859375,
+   "avg_turnover": 166191070.91001207
+  },
+  {
+   "symbol": "SANGHVIMOV",
+   "close": 332.79998779296875,
+   "avg_turnover": 164706653.23122865
+  },
+  {
+   "symbol": "PLATIND",
+   "close": 226.0500030517578,
+   "avg_turnover": 163522131.9609024
+  },
+  {
+   "symbol": "BLUEJET",
+   "close": 485.6000061035156,
+   "avg_turnover": 163445276.3273651
+  },
+  {
+   "symbol": "THYROCARE",
+   "close": 470.6499938964844,
+   "avg_turnover": 161652387.86421204
+  },
+  {
+   "symbol": "NAVA",
+   "close": 474.6000061035156,
+   "avg_turnover": 161291110.94223326
+  },
+  {
+   "symbol": "MANINFRA",
+   "close": 102.83000183105469,
+   "avg_turnover": 161209593.14221954
+  },
+  {
+   "symbol": "AKUMS",
+   "close": 686.5999755859375,
+   "avg_turnover": 161176612.154126
+  },
+  {
+   "symbol": "YASHO",
+   "close": 3767.39990234375,
+   "avg_turnover": 160976251.13851318
+  },
+  {
+   "symbol": "MGL",
+   "close": 1036.199951171875,
+   "avg_turnover": 160890126.23997802
+  },
+  {
+   "symbol": "SAREGAMA",
+   "close": 489.04998779296875,
+   "avg_turnover": 160806815.2347702
+  },
+  {
+   "symbol": "POLYMED",
+   "close": 1443.5,
+   "avg_turnover": 160431740.50477904
+  },
+  {
+   "symbol": "VIDYAWIRES",
+   "close": 84.88999938964844,
+   "avg_turnover": 159241379.62125474
+  },
+  {
+   "symbol": "RIR",
+   "close": 148.07000732421875,
+   "avg_turnover": 158693383.18875808
+  },
+  {
+   "symbol": "AGIIL",
+   "close": 200.5500030517578,
+   "avg_turnover": 158606685.76055986
+  },
+  {
+   "symbol": "MINDACORP",
+   "close": 594.3499755859375,
+   "avg_turnover": 157974477.75329894
+  },
+  {
+   "symbol": "BRIGADE",
+   "close": 545.1500244140625,
+   "avg_turnover": 157967727.95489502
+  },
+  {
+   "symbol": "CCAVENUE",
+   "close": 119.80999755859375,
+   "avg_turnover": 157954908.04639664
+  },
+  {
+   "symbol": "KOPRAN",
+   "close": 249.1999969482422,
+   "avg_turnover": 157701306.96609497
+  },
+  {
+   "symbol": "OAL",
+   "close": 628.0499877929688,
+   "avg_turnover": 157373938.49086913
+  },
+  {
+   "symbol": "JKPAPER",
+   "close": 368.8999938964844,
+   "avg_turnover": 157032765.11338347
+  },
+  {
+   "symbol": "JUBLINGREA",
+   "close": 606.0,
+   "avg_turnover": 156184344.62555236
+  },
+  {
+   "symbol": "JKTYRE",
+   "close": 300.3999938964844,
+   "avg_turnover": 155870421.57525787
+  },
+  {
+   "symbol": "JASH",
+   "close": 479.1000061035156,
+   "avg_turnover": 154461321.5160385
+  },
+  {
+   "symbol": "GALAXYSURF",
+   "close": 2174.89990234375,
+   "avg_turnover": 154011909.80029297
+  },
+  {
+   "symbol": "GENESYS",
+   "close": 194.0,
+   "avg_turnover": 153892233.71148604
+  },
+  {
+   "symbol": "LTFOODS",
+   "close": 382.20001220703125,
+   "avg_turnover": 153579407.95921022
+  },
+  {
+   "symbol": "SKFINDUS",
+   "close": 2394.60009765625,
+   "avg_turnover": 153338761.15249023
+  },
+  {
+   "symbol": "ORIENTHOT",
+   "close": 154.52000427246094,
+   "avg_turnover": 153121780.38288194
+  },
+  {
+   "symbol": "UNICHEMLAB",
+   "close": 474.6499938964844,
+   "avg_turnover": 153088438.2522644
+  },
+  {
+   "symbol": "NEPHROPLUS",
+   "close": 607.4000244140625,
+   "avg_turnover": 152475025.11245424
+  },
+  {
+   "symbol": "SAKAR",
+   "close": 970.7999877929688,
+   "avg_turnover": 151632917.15238953
+  },
+  {
+   "symbol": "ABBOTINDIA",
+   "close": 25225.0,
+   "avg_turnover": 151539165.5
+  },
+  {
+   "symbol": "TMB",
+   "close": 804.0499877929688,
+   "avg_turnover": 151151467.94450074
+  },
+  {
+   "symbol": "DEEDEV",
+   "close": 541.0,
+   "avg_turnover": 150822028.12233275
+  },
+  {
+   "symbol": "PANAMAPET",
+   "close": 465.6000061035156,
+   "avg_turnover": 150727802.43920898
+  },
+  {
+   "symbol": "DEVYANI",
+   "close": 120.12000274658203,
+   "avg_turnover": 150708549.2236496
+  },
+  {
+   "symbol": "VARROC",
+   "close": 778.5499877929688,
+   "avg_turnover": 150695759.23974913
+  },
+  {
+   "symbol": "SAPPHIRE",
+   "close": 195.5500030517578,
+   "avg_turnover": 149106493.4576126
+  },
+  {
+   "symbol": "BECTORFOOD",
+   "close": 185.44000244140625,
+   "avg_turnover": 148973339.91157302
+  },
+  {
+   "symbol": "KPRMILL",
+   "close": 1010.2999877929688,
+   "avg_turnover": 148170152.2594574
+  },
+  {
+   "symbol": "EIEL",
+   "close": 162.57000732421875,
+   "avg_turnover": 146313914.52257004
+  },
+  {
+   "symbol": "BETA",
+   "close": 1977.9000244140625,
+   "avg_turnover": 145593254.3808716
+  },
+  {
+   "symbol": "GODAVARIB",
+   "close": 197.02999877929688,
+   "avg_turnover": 145336744.94025192
+  },
+  {
+   "symbol": "ASKAUTOLTD",
+   "close": 561.8499755859375,
+   "avg_turnover": 144697331.58451232
+  },
+  {
+   "symbol": "KRBL",
+   "close": 352.75,
+   "avg_turnover": 144229940.9722336
+  },
+  {
+   "symbol": "PRAJIND",
+   "close": 249.25,
+   "avg_turnover": 144043511.75873336
+  },
+  {
+   "symbol": "BLUSPRING",
+   "close": 148.36000061035156,
+   "avg_turnover": 143151825.5471939
+  },
+  {
+   "symbol": "PFIZER",
+   "close": 3687.199951171875,
+   "avg_turnover": 142866882.04089355
+  },
+  {
+   "symbol": "CSBBANK",
+   "close": 307.6499938964844,
+   "avg_turnover": 141798806.67068022
+  },
+  {
+   "symbol": "CANHLIFE",
+   "close": 121.9000015258789,
+   "avg_turnover": 141670815.0514801
+  },
+  {
+   "symbol": "FINEORG",
+   "close": 4999.5,
+   "avg_turnover": 141358771.7
+  },
+  {
+   "symbol": "AIAENG",
+   "close": 3578.39990234375,
+   "avg_turnover": 140874222.22026366
+  },
+  {
+   "symbol": "EIHOTEL",
+   "close": 288.79998779296875,
+   "avg_turnover": 140853345.8110382
+  },
+  {
+   "symbol": "SBFC",
+   "close": 77.54000091552734,
+   "avg_turnover": 140513254.05013198
+  },
+  {
+   "symbol": "EIMCOELECO",
+   "close": 2086.199951171875,
+   "avg_turnover": 140336706.2727661
+  },
+  {
+   "symbol": "POWERMECH",
+   "close": 2118.300048828125,
+   "avg_turnover": 139966403.13393554
+  },
+  {
+   "symbol": "AMAGI",
+   "close": 523.8499755859375,
+   "avg_turnover": 139778559.91405028
+  },
+  {
+   "symbol": "APLLTD",
+   "close": 766.4000244140625,
+   "avg_turnover": 138986374.44835204
+  },
+  {
+   "symbol": "TIMKEN",
+   "close": 2759.5,
+   "avg_turnover": 138420003.73555908
+  },
+  {
+   "symbol": "ASHAPURMIN",
+   "close": 417.1000061035156,
+   "avg_turnover": 138315841.58061066
+  },
+  {
+   "symbol": "BIRLACABLE",
+   "close": 296.1499938964844,
+   "avg_turnover": 138058529.55545655
+  },
+  {
+   "symbol": "ELGIEQUIP",
+   "close": 520.2000122070312,
+   "avg_turnover": 137483196.92716676
+  },
+  {
+   "symbol": "NELCO",
+   "close": 700.6500244140625,
+   "avg_turnover": 137165091.94895935
+  },
+  {
+   "symbol": "GSPCROP",
+   "close": 432.1499938964844,
+   "avg_turnover": 136524670.48102874
+  },
+  {
+   "symbol": "FIEMIND",
+   "close": 1671.5,
+   "avg_turnover": 136483115.44662476
+  },
+  {
+   "symbol": "3MINDIA",
+   "close": 29225.0,
+   "avg_turnover": 136006731.75
+  },
+  {
+   "symbol": "HERITGFOOD",
+   "close": 344.1000061035156,
+   "avg_turnover": 135871749.03294525
+  },
+  {
+   "symbol": "TNPETRO",
+   "close": 112.5999984741211,
+   "avg_turnover": 135236336.93584365
+  },
+  {
+   "symbol": "SUNDRMFAST",
+   "close": 1048.800048828125,
+   "avg_turnover": 134985498.10715944
+  },
+  {
+   "symbol": "MBAPL",
+   "close": 160.05999755859375,
+   "avg_turnover": 134892351.41356736
+  },
+  {
+   "symbol": "TRUALT",
+   "close": 390.29998779296875,
+   "avg_turnover": 133707122.20997468
+  },
+  {
+   "symbol": "NOCIL",
+   "close": 144.8699951171875,
+   "avg_turnover": 133342539.31935196
+  },
+  {
+   "symbol": "SUMICHEM",
+   "close": 354.29998779296875,
+   "avg_turnover": 132846061.33742829
+  },
+  {
+   "symbol": "SARDAEN",
+   "close": 446.6000061035156,
+   "avg_turnover": 132177944.45447846
+  },
+  {
+   "symbol": "GVPIL",
+   "close": 575.7999877929688,
+   "avg_turnover": 131952300.52038574
+  },
+  {
+   "symbol": "BORORENEW",
+   "close": 383.6499938964844,
+   "avg_turnover": 131944239.17949371
+  },
+  {
+   "symbol": "GILLETTE",
+   "close": 7256.5,
+   "avg_turnover": 131220933.175
+  },
+  {
+   "symbol": "GODREJIND",
+   "close": 949.2999877929688,
+   "avg_turnover": 130997387.3284851
+  },
+  {
+   "symbol": "RAMCOCEM",
+   "close": 745.6500244140625,
+   "avg_turnover": 130694418.13602296
+  },
+  {
+   "symbol": "TECHNOE",
+   "close": 826.5,
+   "avg_turnover": 130463432.95769958
+  },
+  {
+   "symbol": "CHEMPLASTS",
+   "close": 190.27000427246094,
+   "avg_turnover": 130413949.4481018
+  },
+  {
+   "symbol": "MSTCLTD",
+   "close": 581.9000244140625,
+   "avg_turnover": 130104361.87859192
+  },
+  {
+   "symbol": "METROPOLIS",
+   "close": 530.0,
+   "avg_turnover": 130054754.11365052
+  },
+  {
+   "symbol": "BIKAJI",
+   "close": 464.45001220703125,
+   "avg_turnover": 129691450.0508255
+  },
+  {
+   "symbol": "KIRLOSBROS",
+   "close": 1562.4000244140625,
+   "avg_turnover": 129488331.6527954
+  },
+  {
+   "symbol": "AMAL",
+   "close": 568.25,
+   "avg_turnover": 129401233.87726136
+  },
+  {
+   "symbol": "SPLPETRO",
+   "close": 709.4000244140625,
+   "avg_turnover": 129301635.41167298
+  },
+  {
+   "symbol": "HONAUT",
+   "close": 31250.0,
+   "avg_turnover": 128873947.25
+  },
+  {
+   "symbol": "POCL",
+   "close": 399.79998779296875,
+   "avg_turnover": 128738082.97921447
+  },
+  {
+   "symbol": "JBMA",
+   "close": 485.1000061035156,
+   "avg_turnover": 128668606.93335113
+  },
+  {
+   "symbol": "ALIVUS",
+   "close": 1262.0,
+   "avg_turnover": 128634447.28554077
+  },
+  {
+   "symbol": "RAYMONDLSL",
+   "close": 493.8500061035156,
+   "avg_turnover": 127934764.22044525
+  },
+  {
+   "symbol": "CONCORDBIO",
+   "close": 1311.199951171875,
+   "avg_turnover": 127547886.22410889
+  },
+  {
+   "symbol": "SATIN",
+   "close": 219.63999938964844,
+   "avg_turnover": 126814630.58688888
+  },
+  {
+   "symbol": "CMSINFO",
+   "close": 203.94000244140625,
+   "avg_turnover": 126110071.51761627
+  },
+  {
+   "symbol": "PRUDENT",
+   "close": 2780.10009765625,
+   "avg_turnover": 126058742.36921386
+  },
+  {
+   "symbol": "PREMIERPOL",
+   "close": 93.48999786376953,
+   "avg_turnover": 125804328.4696743
+  },
+  {
+   "symbol": "BERGEPAINT",
+   "close": 465.79998779296875,
+   "avg_turnover": 125260238.74765167
+  },
+  {
+   "symbol": "POWERICA",
+   "close": 503.3999938964844,
+   "avg_turnover": 124973932.26905671
+  },
+  {
+   "symbol": "LATENTVIEW",
+   "close": 225.3000030517578,
+   "avg_turnover": 124875900.26064758
+  },
+  {
+   "symbol": "RESPONIND",
+   "close": 146.30999755859375,
+   "avg_turnover": 124763460.87752
+  },
+  {
+   "symbol": "ZAGGLE",
+   "close": 151.4600067138672,
+   "avg_turnover": 122759146.89002609
+  },
+  {
+   "symbol": "KENNAMET",
+   "close": 3646.10009765625,
+   "avg_turnover": 122517256.87286377
+  },
+  {
+   "symbol": "DIVGIITTS",
+   "close": 911.0,
+   "avg_turnover": 122447474.73435363
+  },
+  {
+   "symbol": "SAMHI",
+   "close": 153.91000366210938,
+   "avg_turnover": 122421672.75524369
+  },
+  {
+   "symbol": "AURIONPRO",
+   "close": 538.4000244140625,
+   "avg_turnover": 121400032.56539612
+  },
+  {
+   "symbol": "DALBHARAT",
+   "close": 1625.800048828125,
+   "avg_turnover": 121134235.29359742
+  },
+  {
+   "symbol": "AWFIS",
+   "close": 224.88999938964844,
+   "avg_turnover": 120421407.33178711
+  },
+  {
+   "symbol": "LINDEINDIA",
+   "close": 5632.5,
+   "avg_turnover": 119998111.05
+  },
+  {
+   "symbol": "GOLDIAM",
+   "close": 294.8500061035156,
+   "avg_turnover": 119888171.69213715
+  },
+  {
+   "symbol": "LOKESHMACH",
+   "close": 351.1499938964844,
+   "avg_turnover": 119791641.90516968
+  },
+  {
+   "symbol": "ASIANENE",
+   "close": 399.25,
+   "avg_turnover": 118896509.2094696
+  },
+  {
+   "symbol": "VTL",
+   "close": 495.45001220703125,
+   "avg_turnover": 118794887.52260742
+  },
+  {
+   "symbol": "INDOAMIN",
+   "close": 125.38999938964844,
+   "avg_turnover": 118672082.29993172
+  },
+  {
+   "symbol": "INNOVACAP",
+   "close": 998.2000122070312,
+   "avg_turnover": 118257437.7372345
+  },
+  {
+   "symbol": "QUESS",
+   "close": 323.20001220703125,
+   "avg_turnover": 118171826.82767792
+  },
+  {
+   "symbol": "CHALET",
+   "close": 798.4000244140625,
+   "avg_turnover": 118112955.0261261
+  },
+  {
+   "symbol": "NUVOCO",
+   "close": 340.45001220703125,
+   "avg_turnover": 116515580.11219788
+  },
+  {
+   "symbol": "BOSCH-HCIL",
+   "close": 1713.0999755859375,
+   "avg_turnover": 116264812.3862915
+  },
+  {
+   "symbol": "DMCC",
+   "close": 288.3500061035156,
+   "avg_turnover": 116044915.42975006
+  },
+  {
+   "symbol": "TGVSL",
+   "close": 113.70999908447266,
+   "avg_turnover": 115853205.79644775
+  },
+  {
+   "symbol": "ALICON",
+   "close": 854.2999877929688,
+   "avg_turnover": 115712224.53844604
+  },
+  {
+   "symbol": "MVGJL",
+   "close": 186.3000030517578,
+   "avg_turnover": 115231651.88533783
+  },
+  {
+   "symbol": "LMW",
+   "close": 16168.0,
+   "avg_turnover": 115038205.9
+  },
+  {
+   "symbol": "CEIGALL",
+   "close": 376.04998779296875,
+   "avg_turnover": 114720500.9475998
+  },
+  {
+   "symbol": "BAYERCROP",
+   "close": 3342.800048828125,
+   "avg_turnover": 113819156.40402833
+  },
+  {
+   "symbol": "ETHOSLTD",
+   "close": 2423.800048828125,
+   "avg_turnover": 113642608.09840088
+  },
+  {
+   "symbol": "BOROLTD",
+   "close": 237.35000610351562,
+   "avg_turnover": 113539175.5816124
+  },
+  {
+   "symbol": "DYCL",
+   "close": 355.3500061035156,
+   "avg_turnover": 113437766.42947693
+  },
+  {
+   "symbol": "WEBELSOLAR",
+   "close": 63.4900016784668,
+   "avg_turnover": 112463693.88067226
+  },
+  {
+   "symbol": "RHIM",
+   "close": 349.29998779296875,
+   "avg_turnover": 111483381.90924072
+  },
+  {
+   "symbol": "ONIXSOLAR",
+   "close": 298.3500061035156,
+   "avg_turnover": 111279356.17697144
+  },
+  {
+   "symbol": "AADHARHFC",
+   "close": 441.20001220703125,
+   "avg_turnover": 111223482.12389679
+  },
+  {
+   "symbol": "KAPSTON",
+   "close": 522.7999877929688,
+   "avg_turnover": 109139209.40526123
+  },
+  {
+   "symbol": "MUKANDLTD",
+   "close": 146.07000732421875,
+   "avg_turnover": 108962061.34994812
+  },
+  {
+   "symbol": "MACPOWER",
+   "close": 1904.0999755859375,
+   "avg_turnover": 108513923.98590088
+  },
+  {
+   "symbol": "GSFC",
+   "close": 135.35000610351562,
+   "avg_turnover": 108229160.50374527
+  },
+  {
+   "symbol": "UTLSOLAR",
+   "close": 363.8999938964844,
+   "avg_turnover": 108118699.2517151
+  },
+  {
+   "symbol": "KMCSHIL",
+   "close": 149.50999450683594,
+   "avg_turnover": 107704464.53799133
+  },
+  {
+   "symbol": "EQUITASBNK",
+   "close": 64.30000305175781,
+   "avg_turnover": 107527499.85587463
+  },
+  {
+   "symbol": "AGARWALEYE",
+   "close": 475.25,
+   "avg_turnover": 107478777.17765808
+  },
+  {
+   "symbol": "INTERARCH",
+   "close": 1475.699951171875,
+   "avg_turnover": 107313121.42972413
+  },
+  {
+   "symbol": "AVTNPL",
+   "close": 87.80000305175781,
+   "avg_turnover": 106717372.37398568
+  },
+  {
+   "symbol": "KOLTEPATIL",
+   "close": 450.6000061035156,
+   "avg_turnover": 106088055.1917282
+  },
+  {
+   "symbol": "GUJTHEM",
+   "close": 337.8999938964844,
+   "avg_turnover": 105475969.5089447
+  },
+  {
+   "symbol": "PNBGILTS",
+   "close": 71.52999877929688,
+   "avg_turnover": 105330579.31739655
+  },
+  {
+   "symbol": "STYLAMIND",
+   "close": 3129.10009765625,
+   "avg_turnover": 105084000.69449463
+  },
+  {
+   "symbol": "NPST",
+   "close": 1639.5,
+   "avg_turnover": 104358634.8668396
+  },
+  {
+   "symbol": "PANORAMA",
+   "close": 58.7599983215332,
+   "avg_turnover": 103697439.92296752
+  },
+  {
+   "symbol": "KPL",
+   "close": 3461.699951171875,
+   "avg_turnover": 103062619.29403076
+  },
+  {
+   "symbol": "GMBREW",
+   "close": 780.9000244140625,
+   "avg_turnover": 102861257.6992279
+  },
+  {
+   "symbol": "MAHLIFE",
+   "close": 325.95001220703125,
+   "avg_turnover": 102680122.72919312
+  },
+  {
+   "symbol": "AFCONS",
+   "close": 211.5500030517578,
+   "avg_turnover": 102603050.85130616
+  },
+  {
+   "symbol": "INDOTECH",
+   "close": 2573.300048828125,
+   "avg_turnover": 101581418.90097657
+  },
+  {
+   "symbol": "JSWDULUX",
+   "close": 278.8999938964844,
+   "avg_turnover": 100868777.77808228
+  },
+  {
+   "symbol": "KDDL",
+   "close": 3654.89990234375,
+   "avg_turnover": 100847903.91232911
+  }
+ ]
+}
