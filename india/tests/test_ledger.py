@@ -46,6 +46,26 @@ class Ledger(unittest.TestCase):
         self.assertEqual(ledger.open_trades(s), [])
         self.assertAlmostEqual(ledger.cash(s), 20000 + t["net"])
 
+    def test_short_trade(self):
+        s = ledger.load(self.path, 20000)
+        t = ledger.new_trade("2026-10-27", "AAA", "gap_fade", "2026-10-27T09:45:05+05:30", 100.0, 10,
+                             105.0, None, None, side=-1)
+        self.assertEqual((t["side"], t["risk"], t["value"]), (-1, 50.0, 1000.0))
+        s["trades"].append(t)
+        self.assertEqual(ledger.cash(s), 19000)
+        ledger.close(t, 96.0, "2026-10-27T15:15:00+05:30", "close-all", RATES)
+        self.assertEqual(t["gross"], 40.0)
+        # bought back at 96, sold first at 100: same charges as a long buying 960 and selling 1000
+        from india import money
+        self.assertEqual(t["charges"], money.charges(960.0, 1000.0, RATES))
+        self.assertAlmostEqual(t["net"], 40.0 - t["charges"])
+
+    def test_old_trades_without_side_are_long(self):
+        t = trade()
+        del t["side"]
+        ledger.close(t, 1020.0, "2026-10-27T11:00:00+05:30", "target", RATES)
+        self.assertEqual(t["gross"], 200.0)
+
     def test_gross_uses_the_recorded_exit(self):
         t = trade()
         ledger.close(t, 1020.004, "2026-10-27T11:00:00+05:30", "target", RATES)

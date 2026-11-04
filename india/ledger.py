@@ -36,12 +36,13 @@ def save(path, state):
         raise
 
 
-def new_trade(date, symbol, setup, entry_time, entry, shares, stop, target, odds):
+def new_trade(date, symbol, setup, entry_time, entry, shares, stop, target, odds, side=1):
+    """side=1 long (bought at entry), side=-1 short (sold at entry, bought back at the exit)."""
     odds = odds or {}
     return {
-        "id": "%s-%s" % (date, symbol), "date": date, "symbol": symbol, "setup": setup,
+        "id": "%s-%s" % (date, symbol), "date": date, "symbol": symbol, "setup": setup, "side": side,
         "entry_time": entry_time, "entry": entry, "shares": shares, "value": round(entry * shares, 2),
-        "stop": stop, "target": target, "risk": round((entry - stop) * shares, 2),
+        "stop": stop, "target": target, "risk": round((entry - stop) * side * shares, 2),
         "tm_target": odds.get("target"), "tm_stop": odds.get("stop"),
         "checked_through": None, "exit_time": None, "exit": None, "reason": None,
         "gross": None, "charges": None, "net": None,
@@ -51,8 +52,10 @@ def new_trade(date, symbol, setup, entry_time, entry, shares, stop, target, odds
 def close(t, price, when, reason, rates):
     price = round(price, 2)
     t["exit"], t["exit_time"], t["reason"] = price, when, reason
-    t["gross"] = round((price - t["entry"]) * t["shares"], 2)
-    t["charges"] = money.charges(t["entry"] * t["shares"], price * t["shares"], rates)
+    side = t.get("side", 1)   # trades recorded before shorts existed are longs
+    t["gross"] = round((price - t["entry"]) * side * t["shares"], 2)
+    buy, sell = (t["entry"], price) if side == 1 else (price, t["entry"])
+    t["charges"] = money.charges(buy * t["shares"], sell * t["shares"], rates)
     t["net"] = round(t["gross"] - t["charges"], 2)
 
 

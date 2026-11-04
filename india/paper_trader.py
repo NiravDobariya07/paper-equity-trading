@@ -1,4 +1,7 @@
-"""NSE opening-range-breakout paper trader. Paper only: nothing here can place an order.
+"""NSE paper trader. Paper only: nothing here can place an order.
+
+The setup comes from "strategy" in config.json: "orb" (long opening-range breakout) or
+"gap_fade" (short a 3-12% gap-up already trading below its open, 09:45-09:55, held to close-all).
 
   python3 india/paper_trader.py prepare   today's liquid stock list (or the next trading day's, after 15:30)
   python3 india/paper_trader.py run       start around 10:00 IST; enters, exits and records paper trades
@@ -76,14 +79,15 @@ def summary(state, day):
           % (st["realized_net"], ledger.capital(state), state["capital_start"]))
 
 
-def make_engine(cfg, state, symbols, clock):
+def make_engine(cfg, state, symbols, clock, info=None):
     state_path, book_path = paths()
     return engine.Engine(
         cfg, state, symbols,
         fetch_today=lambda s: yahoo.fetch_chart(s, "1d", "5m"),
         fetch_60d=lambda s: yahoo.fetch_chart(s, "60d", "5m").bars,
         fetch_spark=lambda syms: yahoo.fetch_spark(syms, "1d", "5m"),
-        state_path=state_path, book_path=book_path, clock=clock)
+        fetch_spark_meta=yahoo.fetch_spark_meta,
+        state_path=state_path, book_path=book_path, clock=clock, info=info)
 
 
 def settle_open(cfg, clock):
@@ -113,21 +117,30 @@ def run(cfg, clock, sleep, max_minutes=None):
         if code:
             return code
     with open(liquid, encoding="utf-8") as fh:
-        symbols = tradable(json.load(fh), cfg["capital"])
+        doc = json.load(fh)
+    symbols = tradable(doc, cfg["capital"])
+    info = {r["symbol"]: {"close": r["close"], "atr": r.get("atr")} for r in doc.get("rows") or ()}
     if not symbols:
         print("There are no liquid stocks in today's list (%s). Check EQUITY_L.csv and the floors in "
               "config.json, then run prepare again." % liquid)
         return 1
     state_path, book_path = paths()
     state = ledger.load(state_path, cfg["capital"])
-    eng = make_engine(cfg, state, symbols, clock)
+    eng = make_engine(cfg, state, symbols, clock, info)
+    if cfg.get("strategy", "orb") == "gap_fade" and not any(v["atr"] for v in info.values()):
+        print("Today's stock list has no ATRs (it was prepared before gap_fade existed): run prepare "
+              "again, or no gap-fade trades can be sized today.")
     first = ist.at(today, "09:15") + datetime.timedelta(minutes=cfg["or_minutes"]) + GRACE
     now = clock()
     if now < first:
         print("Waiting for the opening range (09:15 to %s)..." % (first - GRACE).strftime("%H:%M"))
         sleep((first - now).total_seconds())
-    print("Paper trading %d NSE stocks. Entries until %s, everything closed at %s. Ctrl+C stops it safely.\n"
-          "Workbook: %s" % (len(symbols), cfg["no_entries_after"], cfg["close_all"], book_path))
+    if cfg.get("strategy", "orb") == "gap_fade":
+        window = "gap-fade shorts %s-%s" % (cfg["fade_entry_from"], cfg["fade_entry_until"])
+    else:
+        window = "breakout entries until %s" % cfg["no_entries_after"]
+    print("Paper trading %d NSE stocks: %s, everything closed at %s. Ctrl+C stops it safely.\n"
+          "Workbook: %s" % (len(symbols), window, cfg["close_all"], book_path))
     close_all = ist.at(today, cfg["close_all"])
     try:
         while True:
@@ -164,7 +177,7 @@ def run(cfg, clock, sleep, max_minutes=None):
 
 
 def main(argv=None, clock=ist.now, sleep=time.sleep):
-    ap = argparse.ArgumentParser(description="NSE opening-range-breakout paper trader (paper only)")
+    ap = argparse.ArgumentParser(description="NSE paper trader: ORB or gap fade (paper only)")
     ap.add_argument("command", choices=["prepare", "run", "report"])
     ap.add_argument("--max-minutes", type=float, help="run: stop after about this many minutes")
     a = ap.parse_args(argv)

@@ -90,3 +90,17 @@ class Yahoo(unittest.TestCase):
         self.assertTrue(out["RELIANCE"])
         t, c = out["TCS"][0]
         self.assertEqual((t.hour, t.minute), (9, 15))
+
+
+class SparkMeta(unittest.TestCase):
+    def setUp(self):
+        self._sleep, yahoo.SLEEP = yahoo.SLEEP, lambda s: None
+
+    def tearDown(self):
+        yahoo.SLEEP = self._sleep
+
+    def test_prev_close_and_day_high(self):
+        out = yahoo.fetch_spark_meta(["RELIANCE", "TCS", "GONE"], get=lambda u: fixture("spark-1d-5m.json"))
+        self.assertEqual(out["RELIANCE"], {"prev_close": 1190.0, "day_high": 1204.5})
+        self.assertEqual(out["TCS"], {"prev_close": 2530.0, "day_high": 2549.7})
+        self.assertNotIn("GONE", out)

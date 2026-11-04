@@ -306,3 +306,85 @@ class Engine(unittest.TestCase):
         self.run_engine({"AAA": breakout_at(9)}, [at("10:05")])
         wb = openpyxl.load_workbook(os.path.join(self.tmp, "paper_trades.xlsx"))
         self.assertEqual(wb["Trades"].max_row, 3)   # header, the trade, TOTAL
+
+
+def gapper(open_=105.0, at_945=104.0, rest=103.0, extra=()):
+    """Opens at open_ (prev close 100 in INFO), drifts to at_945 by the 09:45 bar, `rest` after."""
+    bars = [bar(i, open_ - 0.1 * i, o=open_ if i == 0 else None) for i in range(6)]
+    bars += [bar(i, at_945 if i < 8 else rest) for i in range(6, 75)]
+    by = {ist.bar_index(b.t): b for b in bars}
+    for b in extra:
+        by[ist.bar_index(b.t)] = b
+    return [by[i] for i in sorted(by)]
+
+
+class GapFade(unittest.TestCase):
+    INFO = {s: {"close": 100.0, "atr": 2.0} for s in ("AAA", "BBB", "CCC", "DDD", "FLAT")}
+
+    def setUp(self):
+        self.cfg = config.defaults()
+        self.cfg["strategy"] = "gap_fade"
+        self.state = ledger.load(os.path.join(tempfile.mkdtemp(), "state.json"), 20000)
+
+    def run_fade(self, days, times, spark_meta=None):
+        feed = Feed(days)
+        eng = engine.Engine(self.cfg, self.state, sorted(days), feed.today, feed.sixty, log=lambda *a: None,
+                            info=self.INFO, fetch_spark_meta=spark_meta)
+        events = []
+        for t in times:
+            feed.now = t
+            events += eng.sweep(t)
+        return feed, events
+
+    def test_short_at_945_held_to_close_all(self):
+        self.run_fade({"AAA": gapper()}, [at("09:30"), at("09:40"), at("09:45"), at("15:16")])
+        (t,) = self.state["trades"]
+        self.assertEqual((t["setup"], t["side"], t["entry"], t["stop"], t["target"]),
+                         ("gap_fade", -1, 104.0, 106.0, None))
+        self.assertEqual(t["entry_time"][11:16], "09:45")
+        self.assertEqual(t["shares"], 63)        # 33% of 20000 = 6600 / 104; risk 2 x 63 = 126 <= 200
+        self.assertEqual((t["reason"], t["exit"]), ("close-all", 103.0))
+        self.assertEqual(t["gross"], 63.0)
+
+    def test_stop_above_for_a_short(self):
+        bars = gapper(extra=[bar(20, 105, h=106.5, l=104)])
+        self.run_fade({"AAA": bars}, [at("09:45"), at("11:00")])
+        t = self.state["trades"][0]
+        self.assertEqual((t["reason"], t["exit"]), ("stop", 106.0))
+        self.assertLess(t["net"], 0)
+
+    def test_only_in_the_entry_window(self):
+        self.run_fade({"AAA": gapper()}, [at("09:40"), at("09:55")])
+        self.assertEqual(self.state["trades"], [])
+
+    def test_not_below_the_open_yet_waits_for_the_next_sweep(self):
+        bars = gapper(at_945=104.9)                       # 09:45: only 0.1% below the 105 open
+        bars[7] = bar(7, 104.0)                            # 09:50 bar: now 1% below
+        self.run_fade({"AAA": bars}, [at("09:45"), at("09:50")])
+        (t,) = self.state["trades"]
+        self.assertEqual(t["entry_time"][11:16], "09:50")
+
+    def test_small_and_huge_gaps_are_left_alone(self):
+        self.run_fade({"AAA": gapper(open_=102.0, at_945=101.0), "BBB": gapper(open_=115.0, at_945=110.0)},
+                      [at("09:45")])
+        self.assertEqual(self.state["trades"], [])
+
+    def test_biggest_gap_first_then_trade_limit(self):
+        days = {"AAA": gapper(open_=104.0, at_945=103.0), "BBB": gapper(open_=108.0, at_945=106.0),
+                "CCC": gapper(open_=106.0, at_945=105.0), "DDD": gapper(open_=105.0, at_945=104.0)}
+        self.cfg["max_daily_loss"] = 10000
+        self.run_fade(days, [at("09:45")])
+        self.assertEqual([t["symbol"] for t in self.state["trades"]], ["BBB", "CCC", "DDD"])
+
+    def test_spark_meta_prefilter_fetches_only_gappers(self):
+        days = {"AAA": gapper(), "FLAT": gapper(open_=100.5, at_945=100.0)}
+
+        def meta(syms):
+            return {"AAA": {"prev_close": 100.0, "day_high": 105.2}, "FLAT": {"prev_close": 100.0, "day_high": 101.0}}
+        feed, _ = self.run_fade(days, [at("09:45")], spark_meta=meta)
+        self.assertEqual(feed.calls, ["AAA"])
+        self.assertEqual([t["symbol"] for t in self.state["trades"]], ["AAA"])
+
+    def test_no_orb_trades_when_fading(self):
+        self.run_fade({"AAA": breakout_at(9)}, [at("10:05")])
+        self.assertEqual(self.state["trades"], [])

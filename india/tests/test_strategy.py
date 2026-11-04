@@ -46,3 +46,35 @@ class Strategy(unittest.TestCase):
 
     def test_strength(self):
         self.assertAlmostEqual(strategy.strength(104, 100), 0.04)
+
+
+class ShortSide(unittest.TestCase):
+    def test_exit_on_bar_short(self):
+        stop = 105.0
+        self.assertEqual(strategy.exit_on_bar(bar(9, 101, 106, 99, 100), stop, None, side=-1), (105.0, "stop"))
+        self.assertEqual(strategy.exit_on_bar(bar(9, 106, 107, 104, 105), stop, None, side=-1), (106, "stop"))
+        self.assertIsNone(strategy.exit_on_bar(bar(9, 101, 104.9, 90, 95), stop, None, side=-1))
+        self.assertEqual(strategy.exit_on_bar(bar(9, 101, 102, 94, 95), stop, 95.5, side=-1), (95.5, "target"))
+        self.assertEqual(strategy.exit_on_bar(bar(9, 95, 96, 94, 95), stop, 95.5, side=-1), (95, "target"))
+
+    def test_long_without_target_only_stops(self):
+        self.assertIsNone(strategy.exit_on_bar(bar(9, 104, 200, 101, 105), 100.5, None))
+
+    def test_atr(self):
+        days = [bar(0, 100, 102, 98, 100)] * 15                      # true range 4 every day
+        self.assertAlmostEqual(strategy.atr(days), 4.0)
+        gap = days[:14] + [bar(0, 110, 111, 109, 110)]              # gap up: range from prev close 100 to 111
+        self.assertAlmostEqual(strategy.atr(gap), (4 * 13 + 11) / 14.0)
+        self.assertIsNone(strategy.atr(days[:14]))                  # 14 ranges need 15 days
+
+    def test_fade_plan(self):
+        cfg = {"fade_gap_min_pct": 3, "fade_gap_max_pct": 12, "fade_below_open_pct": 0.5,
+               "fade_stop_atr": 1.0, "tick": 0.05}
+        # gap 5%, now 1% below the open: short, stop 1 ATR above, rounded up to the tick
+        p = strategy.fade_plan(105.0, 100.0, 103.95, 2.02, cfg)
+        self.assertEqual((p["stop"], p["target"], p["risk"]), (106.0, None, 2.05))
+        self.assertAlmostEqual(p["gap"], 0.05)
+        self.assertEqual(strategy.fade_plan(102.0, 100.0, 101.0, 2, cfg), "gap below 3%")
+        self.assertEqual(strategy.fade_plan(113.0, 100.0, 110.0, 2, cfg), "gap above 12%")
+        self.assertEqual(strategy.fade_plan(105.0, 100.0, 104.8, 2, cfg), "not 0.5% below the open")
+        self.assertEqual(strategy.fade_plan(105.0, 100.0, 104.0, None, cfg), "no ATR")

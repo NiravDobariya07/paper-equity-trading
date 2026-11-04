@@ -1,4 +1,5 @@
 {
+  "strategy": "orb",
   "capital": 20000,
   "max_loss_per_trade": 200,
   "max_position_pct": 33,
@@ -14,6 +15,12 @@
   "target_r": 2,
   "max_chase_range": 0.5,
   "tick": 0.05,
+  "fade_gap_min_pct": 3,
+  "fade_gap_max_pct": 12,
+  "fade_below_open_pct": 0.5,
+  "fade_stop_atr": 1.0,
+  "fade_entry_from": "09:45",
+  "fade_entry_until": "09:55",
   "tm_replays": 10000,
   "tm_seed": 19,
   "equity_list": "EQUITY_L.csv",

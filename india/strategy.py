@@ -1,4 +1,10 @@
-"""Long opening-range breakout: range, trigger, stop/target plan, exit on a bar."""
+"""Setups and their rules.
+
+orb       long opening-range breakout: range, trigger, stop at the range midpoint, target at R.
+gap_fade  short a stock that gapped up and is already trading below its open; stop an ATR above,
+          no target (held to close-all). Backtest over 60 sessions of 5-minute bars: see
+          docs/superpowers/specs/2026-11-04-gap-fade-short.md.
+"""
 
 from decimal import Decimal, ROUND_CEILING, ROUND_FLOOR
 
@@ -41,17 +47,52 @@ def make_plan(entry, orh, orl, target_r, tick):
     return {"stop": stop, "target": target, "risk": risk}
 
 
-def exit_on_bar(bar, stop, target):
-    """(price, reason) if this bar ends the trade. A bar touching both counts as the stop."""
-    if bar.o <= stop:
+def exit_on_bar(bar, stop, target, side=1):
+    """(price, reason) if this bar ends the trade. A bar touching both counts as the stop.
+    side=1 long, side=-1 short; target None means only the stop (or close-all) ends it."""
+    if side == 1:
+        if bar.o <= stop:
+            return bar.o, "stop"
+        if target is not None and bar.o >= target:
+            return bar.o, "target"
+        if bar.l <= stop:
+            return stop, "stop"
+        if target is not None and bar.h >= target:
+            return target, "target"
+        return None
+    if bar.o >= stop:
         return bar.o, "stop"
-    if bar.o >= target:
+    if target is not None and bar.o <= target:
         return bar.o, "target"
-    if bar.l <= stop:
+    if bar.h >= stop:
         return stop, "stop"
-    if bar.h >= target:
+    if target is not None and bar.l <= target:
         return target, "target"
     return None
+
+
+def atr(daily, n=14):
+    """Mean true range of the last n daily bars (needs n+1 bars), or None."""
+    if len(daily) < n + 1:
+        return None
+    rows = daily[-(n + 1):]
+    trs = [max(b.h, p.c) - min(b.l, p.c) for p, b in zip(rows[:-1], rows[1:])]
+    return sum(trs) / float(n)
+
+
+def fade_plan(open_, prev_close, price, atr_, cfg):
+    """Short plan for a gap-up that is fading, or the reason it is not one (a string)."""
+    gap = open_ / prev_close - 1
+    if gap * 100 < cfg["fade_gap_min_pct"]:
+        return "gap below %g%%" % cfg["fade_gap_min_pct"]
+    if gap * 100 > cfg["fade_gap_max_pct"]:
+        return "gap above %g%%" % cfg["fade_gap_max_pct"]
+    if price > open_ * (1 - cfg["fade_below_open_pct"] / 100.0):
+        return "not %g%% below the open" % cfg["fade_below_open_pct"]
+    if not atr_:
+        return "no ATR"
+    stop = _tick(round(price + cfg["fade_stop_atr"] * atr_, 6), cfg["tick"], ROUND_CEILING)
+    return {"stop": stop, "target": None, "risk": round(stop - price, 2), "gap": gap}
 
 
 def strength(price, orh):

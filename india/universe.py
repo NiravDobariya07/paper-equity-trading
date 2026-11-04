@@ -5,7 +5,7 @@ import json
 import os
 import urllib.error
 
-from india import config, yahoo
+from india import config, strategy, yahoo
 
 NSE_URL = "https://nsearchives.nseindia.com/content/equities/EQUITY_L.csv"
 
@@ -24,7 +24,8 @@ def read_equity_list(path):
 
 def liquid(daily, before, min_price, min_turnover, days):
     """Symbols whose last close >= min_price and mean close*volume over the last `days`
-    sessions before `before` >= min_turnover, most traded first."""
+    sessions before `before` >= min_turnover, most traded first. Each row has the
+    14-day ATR (for the gap-fade stop)."""
     out = []
     for sym, bars in daily.items():
         past = [b for b in bars if b.t.date() < before][-days:]
@@ -32,7 +33,9 @@ def liquid(daily, before, min_price, min_turnover, days):
             continue
         avg = sum(b.c * b.v for b in past) / days
         if past[-1].c >= min_price and avg >= min_turnover:
-            out.append({"symbol": sym, "close": past[-1].c, "avg_turnover": avg})
+            atr = strategy.atr([b for b in bars if b.t.date() < before])
+            out.append({"symbol": sym, "close": past[-1].c, "avg_turnover": avg,
+                        "atr": round(atr, 4) if atr else None})
     out.sort(key=lambda r: -r["avg_turnover"])
     return out
 

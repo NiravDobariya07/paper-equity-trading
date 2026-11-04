@@ -46,6 +46,13 @@ class Universe(unittest.TestCase):
         self.assertEqual([r["symbol"] for r in got], ["BIG", "OK"])
         self.assertAlmostEqual(got[1]["avg_turnover"], 11 * crore)
 
+    def test_liquid_rows_carry_the_atr(self):
+        crore = 10000000
+        bars = daily(100, 11 * crore / 100)
+        bars = [b._replace(h=b.c + 1, l=b.c - 1) for b in bars]     # true range 2 every day
+        (row,) = universe.liquid({"OK": bars}, DAY, 50, 100000000, 20)
+        self.assertAlmostEqual(row["atr"], 2.0)
+
     def test_prepare_retries_failed_requests_once(self):
         import urllib.error
         tmp = tempfile.mkdtemp()

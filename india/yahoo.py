@@ -77,9 +77,8 @@ def fetch_chart(sym, rng, interval, get=None):
     return parse_chart(_call(path, get, sym))
 
 
-def fetch_spark(syms, rng, interval, get=None):
-    """{sym: [(bar start, close), ...]} for every symbol asked; [] when Yahoo has none."""
-    out = {s: [] for s in syms}
+def _spark(syms, rng, interval, get):
+    """Yield (sym, first response) for every symbol Yahoo answered, SPARK_MAX per request."""
     for k in range(0, len(syms), SPARK_MAX):
         batch = syms[k:k + SPARK_MAX]
         path = "/v7/finance/spark?symbols=%s&range=%s&interval=%s" % (
@@ -91,9 +90,28 @@ def fetch_spark(syms, rng, interval, get=None):
         for item in ((doc or {}).get("spark") or {}).get("result") or []:
             sym = (item.get("symbol") or "")[:-3]
             resp = item.get("response") or []
-            if sym not in out or not resp or not resp[0].get("timestamp"):
-                continue
-            closes = resp[0]["indicators"]["quote"][0]["close"]
-            out[sym] = [(ist.from_ts(t), float(c)) for t, c in zip(resp[0]["timestamp"], closes)
-                        if c is not None]
+            if sym in batch and resp:
+                yield sym, resp[0]
+
+
+def fetch_spark(syms, rng, interval, get=None):
+    """{sym: [(bar start, close), ...]} for every symbol asked; [] when Yahoo has none."""
+    out = {s: [] for s in syms}
+    for sym, r in _spark(syms, rng, interval, get):
+        if not r.get("timestamp"):
+            continue
+        closes = r["indicators"]["quote"][0]["close"]
+        out[sym] = [(ist.from_ts(t), float(c)) for t, c in zip(r["timestamp"], closes) if c is not None]
+    return out
+
+
+def fetch_spark_meta(syms, get=None):
+    """{sym: {"prev_close", "day_high"}} for today, only for symbols Yahoo answered with both."""
+    out = {}
+    for sym, r in _spark(syms, "1d", "5m", get):
+        meta = r.get("meta") or {}
+        pc = meta.get("previousClose") or meta.get("chartPreviousClose")
+        hi = meta.get("regularMarketDayHigh")
+        if pc and hi:
+            out[sym] = {"prev_close": float(pc), "day_high": float(hi)}
     return out
