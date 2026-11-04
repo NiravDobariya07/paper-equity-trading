@@ -97,6 +97,36 @@ class CLI(unittest.TestCase):
         self.assertLess(clock[0], ist.at(D, "15:21"))
         self.assertIn("1 paper trade(s)", out.getvalue())
 
+    def test_max_minutes_hands_off_and_a_second_run_carries_on(self):
+        from india.tests.test_engine import bar, breakout_at
+        from india.yahoo import Chart
+        self.write_liquid(["AAA"])
+        day = {"AAA": breakout_at(9, extra=[bar(30, 110, h=110.5, l=108)])}   # target at the 11:45 bar
+        clock = [ist.at(D, "10:00")]
+
+        def fetch_chart(sym, rng, interval):
+            if rng == "60d":
+                raise paper_trader.yahoo.NoData(sym)
+            bars = [b for b in day[sym] if b.t <= clock[0]]
+            return Chart(bars, bars[-1].c, clock[0])
+
+        def sleep(s):
+            clock[0] += datetime.timedelta(seconds=s)
+        out = io.StringIO()
+        with mock.patch.object(paper_trader.yahoo, "fetch_chart", fetch_chart), \
+                contextlib.redirect_stdout(out):
+            code = paper_trader.main(["run", "--max-minutes", "60"], clock=lambda: clock[0], sleep=sleep)
+            self.assertEqual(code, paper_trader.HANDOFF, out.getvalue())
+            self.assertLessEqual(clock[0], ist.at(D, "11:00"))
+            with open(os.path.join(self.tmp, "state.json")) as fh:
+                (t,) = json.load(fh)["trades"]
+            self.assertIsNone(t["exit"])                                        # open, and saved
+            code = paper_trader.main(["run"], clock=lambda: clock[0], sleep=sleep)
+        self.assertEqual(code, 0, out.getvalue())
+        with open(os.path.join(self.tmp, "state.json")) as fh:
+            (t,) = json.load(fh)["trades"]
+        self.assertEqual((t["reason"], t["exit_time"][11:16]), ("target", "11:45"))
+
     def write_liquid(self, symbols):
         with open(os.path.join(self.tmp, "liquid-%s.json" % D.isoformat()), "w") as fh:
             json.dump({"day": D.isoformat(), "symbols": symbols}, fh)

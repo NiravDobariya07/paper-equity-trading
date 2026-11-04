@@ -2,6 +2,7 @@
 
   python3 india/paper_trader.py prepare   today's liquid stock list (or the next trading day's, after 15:30)
   python3 india/paper_trader.py run       start around 10:00 IST; enters, exits and records paper trades
+      run --max-minutes N   stop after about N minutes (exit code 75) so a fresh job can carry on
   python3 india/paper_trader.py report    rebuild paper_trades.xlsx and print the summary
 
 Files live in trader/india/ next to this folder: config.json, EQUITY_L.csv (save it from
@@ -22,6 +23,7 @@ if __package__ in (None, ""):
 from india import config, engine, ist, ledger, universe, workbook, yahoo  # noqa: E402
 
 GRACE = datetime.timedelta(seconds=5)   # after a bar closes, before asking Yahoo for it
+HANDOFF = 75    # run stopped at --max-minutes with the day unfinished: start it again to carry on
 
 
 def paths():
@@ -92,8 +94,9 @@ def settle_open(cfg, clock):
         make_engine(cfg, state, [], clock).settle(clock())
 
 
-def run(cfg, clock, sleep):
+def run(cfg, clock, sleep, max_minutes=None):
     now = clock()
+    deadline = now + datetime.timedelta(minutes=max_minutes) if max_minutes else None
     today = now.date()
     if not ist.is_trading_day(today, cfg["holidays"]):
         settle_open(cfg, clock)
@@ -146,6 +149,11 @@ def run(cfg, clock, sleep):
             if (now >= close_all and not ledger.open_trades(state)) or now >= ist.at(today, "15:30"):
                 break
             nxt = ist.floor5(clock()) + ist.BAR + GRACE
+            if deadline and nxt > deadline:
+                eng.save(clock())
+                print("%s: --max-minutes reached; everything is saved. Run it again to carry on."
+                      % clock().strftime("%H:%M:%S"))
+                return HANDOFF
             sleep(max(1.0, (nxt - clock()).total_seconds()))
     except KeyboardInterrupt:
         eng.save(clock())
@@ -158,12 +166,13 @@ def run(cfg, clock, sleep):
 def main(argv=None, clock=ist.now, sleep=time.sleep):
     ap = argparse.ArgumentParser(description="NSE opening-range-breakout paper trader (paper only)")
     ap.add_argument("command", choices=["prepare", "run", "report"])
+    ap.add_argument("--max-minutes", type=float, help="run: stop after about this many minutes")
     a = ap.parse_args(argv)
     cfg = config.load(os.path.join(config.DATA, "config.json"))
     if a.command == "prepare":
         return prepare(cfg, session_day(clock(), cfg["holidays"]))
     if a.command == "run":
-        return run(cfg, clock, sleep)
+        return run(cfg, clock, sleep, a.max_minutes)
     state_path, book_path = paths()
     state = ledger.load(state_path, cfg["capital"])
     ok = workbook.write(state, book_path, today=clock().date().isoformat())
