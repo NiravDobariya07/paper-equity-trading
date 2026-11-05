@@ -1,10 +1,10 @@
-# NSE paper trader on a schedule. Code comes from main; config.json, EQUITY_L.csv,
-# state.json, liquid-*.json and paper_trades.xlsx live on the `data` branch, checked
-# out at trader/india and committed back every 15 minutes and after every job.
+# NSE paper trader. Strategy code stays on main; config.json, EQUITY_L.csv, state.json,
+# liquid-*.json and paper_trades.xlsx live on the data branch at trader/india.
 #
-# The primary morning trigger is 08:30 IST. 09:00 and 09:30 are fallback starts in
-# case GitHub delays or drops a scheduled event. The workflow concurrency group keeps
-# data-branch writes serialized. A run stops after 320 minutes and hands off if needed.
+# Scheduled runs prepare at 16:15 IST and trade at 08:30 IST (09:00/09:30 fallbacks).
+# For ChatGPT-assisted manual triggering, open an issue titled exactly
+# [paper-trader:prepare] or [paper-trader:run]. Only the repository owner can trigger.
+# The india-data concurrency group serializes every writer to the shared data branch.
 name: India paper trader
 
 on:
@@ -20,30 +20,52 @@ on:
         type: choice
         options: [run, prepare, report]
         default: report
+  issues:
+    types: [opened]
 
 permissions:
   contents: write
-  actions: write              # the hand-off starts the next run job
+  actions: write
+  issues: write              # acknowledge ChatGPT-issued trigger requests
 
 concurrency:
-  group: india-data           # one job at a time writes the data branch
+  group: india-data
   cancel-in-progress: false
 
 jobs:
   trade:
+    # Issue-based requests are accepted only from the repository owner and only
+    # for the two exact command titles. Scheduled/manual dispatch behaviour remains.
+    if: >-
+      github.event_name != 'issues' ||
+      (github.actor == github.repository_owner &&
+       (github.event.issue.title == '[paper-trader:prepare]' ||
+        github.event.issue.title == '[paper-trader:run]'))
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
       - name: Pick the command
         id: cmd
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          SCHEDULE: ${{ github.event.schedule }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          DISPATCH_COMMAND: ${{ inputs.command }}
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "name=${{ inputs.command }}" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "45 10 * * 1-5" ]; then
-            echo "name=prepare" >> "$GITHUB_OUTPUT"
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            command="$DISPATCH_COMMAND"
+          elif [ "$EVENT_NAME" = "issues" ]; then
+            case "$ISSUE_TITLE" in
+              "[paper-trader:prepare]") command="prepare" ;;
+              "[paper-trader:run]") command="run" ;;
+              *) echo "Unsupported issue trigger title" >&2; exit 1 ;;
+            esac
+          elif [ "$SCHEDULE" = "45 10 * * 1-5" ]; then
+            command="prepare"
           else
-            echo "name=run" >> "$GITHUB_OUTPUT"
+            command="run"
           fi
+          echo "name=$command" >> "$GITHUB_OUTPUT"
 
       - uses: actions/checkout@v4
 
@@ -101,7 +123,7 @@ jobs:
         if: always()
         run: |
           pkill -f sync-loop.sh || true
-          while pgrep -f save-data.sh > /dev/null; do sleep 2; done   # let a save in progress finish
+          while pgrep -f save-data.sh > /dev/null; do sleep 2; done
           .github/scripts/save-data.sh "${{ steps.cmd.outputs.name }} $(TZ=Asia/Kolkata date '+%Y-%m-%d %H:%M IST')"
 
       - name: Hand off to a fresh run job
@@ -109,6 +131,19 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run india-paper-trader.yml --repo "${{ github.repository }}" --ref main -f command=run
+
+      - name: Report ChatGPT trigger result on the issue
+        if: always() && github.event_name == 'issues'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          JOB_STATUS: ${{ job.status }}
+          COMMAND: ${{ steps.cmd.outputs.name }}
+        run: |
+          gh issue comment "$ISSUE_NUMBER" --repo "${{ github.repository }}" \
+            --body "Paper-trader command: `$COMMAND`\nWorkflow result: **$JOB_STATUS**\nRun: $RUN_URL"
+          gh issue close "$ISSUE_NUMBER" --repo "${{ github.repository }}"
 
       - uses: actions/upload-artifact@v4
         if: always()
