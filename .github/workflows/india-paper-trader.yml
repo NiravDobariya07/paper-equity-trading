@@ -1,7 +1,7 @@
 # NSE paper trader. Strategy code stays on main; config.json, EQUITY_L.csv, state.json,
 # liquid-*.json and paper_trades.xlsx live on the data branch at trader/india.
 #
-# Scheduled runs prepare at 16:15 IST and trade at 08:30 IST (09:00/09:30 fallbacks).
+# Scheduled runs prepare at 15:46 IST and trade at 08:30 IST (09:00/09:30 fallbacks).
 # For ChatGPT-assisted manual triggering, open an issue titled exactly
 # [paper-trader:prepare] or [paper-trader:run]. Only the repository owner can trigger.
 # The india-data concurrency group serializes every writer to the shared data branch.
@@ -12,7 +12,7 @@ on:
     - cron: "0 3 * * 1-5"     # 08:30 IST: primary run (waits for the 09:30 opening range)
     - cron: "30 3 * * 1-5"    # 09:00 IST: fallback run
     - cron: "0 4 * * 1-5"     # 09:30 IST: fallback run
-    - cron: "45 10 * * 1-5"   # 16:15 IST: prepare the next trading day's stock list
+    - cron: "16 10 * * 1-5"   # 15:46 IST: prepare the next trading day's stock list
   workflow_dispatch:
     inputs:
       command:
