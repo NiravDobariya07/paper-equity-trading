@@ -478,13 +478,13 @@
    "risk": 186.3,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-06T14:55:00+05:30",
-   "exit_time": null,
-   "exit": null,
-   "reason": null,
-   "gross": null,
-   "charges": null,
-   "net": null
+   "checked_through": "2026-11-06T15:10:00+05:30",
+   "exit_time": "2026-11-06T15:15:00+05:30",
+   "exit": 2525.3,
+   "reason": "close-all",
+   "gross": 158.6,
+   "charges": 5.46,
+   "net": 153.14
   },
   {
    "id": "2026-11-06-BIRLACABLE",
@@ -501,13 +501,13 @@
    "risk": 189.0,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-06T14:55:00+05:30",
-   "exit_time": null,
-   "exit": null,
-   "reason": null,
-   "gross": null,
-   "charges": null,
-   "net": null
+   "checked_through": "2026-11-06T15:10:00+05:30",
+   "exit_time": "2026-11-06T15:15:00+05:30",
+   "exit": 348.1,
+   "reason": "close-all",
+   "gross": 48.0,
+   "charges": 3.72,
+   "net": 44.28
   },
   {
    "id": "2026-11-06-CPPLUS",
@@ -524,13 +524,13 @@
    "risk": 179.2,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-06T14:55:00+05:30",
-   "exit_time": null,
-   "exit": null,
-   "reason": null,
-   "gross": null,
-   "charges": null,
-   "net": null
+   "checked_through": "2026-11-06T15:10:00+05:30",
+   "exit_time": "2026-11-06T15:15:00+05:30",
+   "exit": 4113.6,
+   "reason": "close-all",
+   "gross": 176.2,
+   "charges": 4.48,
+   "net": 171.72
   }
  ],
  "days": {
