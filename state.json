@@ -547,13 +547,13 @@
    "risk": 180.0,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-11T14:55:00+05:30",
-   "exit_time": null,
-   "exit": null,
-   "reason": null,
-   "gross": null,
-   "charges": null,
-   "net": null
+   "checked_through": "2026-11-11T15:10:00+05:30",
+   "exit_time": "2026-11-11T15:15:00+05:30",
+   "exit": 429.7,
+   "reason": "close-all",
+   "gross": 12.8,
+   "charges": 3.65,
+   "net": 9.15
   },
   {
    "id": "2026-11-11-KPEL",
@@ -570,13 +570,13 @@
    "risk": 190.56,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-11T14:55:00+05:30",
-   "exit_time": null,
-   "exit": null,
-   "reason": null,
-   "gross": null,
-   "charges": null,
-   "net": null
+   "checked_through": "2026-11-11T15:10:00+05:30",
+   "exit_time": "2026-11-11T15:15:00+05:30",
+   "exit": 211.16,
+   "reason": "close-all",
+   "gross": -67.52,
+   "charges": 3.54,
+   "net": -71.06
   }
  ],
  "days": {
