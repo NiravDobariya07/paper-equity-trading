@@ -593,13 +593,13 @@
    "risk": 188.4,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-12T15:00:00+05:30",
-   "exit_time": null,
-   "exit": null,
-   "reason": null,
-   "gross": null,
-   "charges": null,
-   "net": null
+   "checked_through": "2026-11-12T15:10:00+05:30",
+   "exit_time": "2026-11-12T15:15:00+05:30",
+   "exit": 405.05,
+   "reason": "close-all",
+   "gross": 1.8,
+   "charges": 5.16,
+   "net": -3.36
   },
   {
    "id": "2026-11-12-HINDCOPPER",
@@ -616,13 +616,13 @@
    "risk": 199.55,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-12T15:00:00+05:30",
-   "exit_time": null,
-   "exit": null,
-   "reason": null,
-   "gross": null,
-   "charges": null,
-   "net": null
+   "checked_through": "2026-11-12T15:10:00+05:30",
+   "exit_time": "2026-11-12T15:15:00+05:30",
+   "exit": 447.65,
+   "reason": "close-all",
+   "gross": 84.5,
+   "charges": 6.23,
+   "net": 78.27
   }
  ],
  "days": {
