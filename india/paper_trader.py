@@ -6,6 +6,7 @@ The setup comes from "strategy" in config.json: "orb" (long opening-range breako
   python3 india/paper_trader.py prepare   today's liquid stock list (or the next trading day's, after 15:30)
   python3 india/paper_trader.py run       start around 10:00 IST; enters, exits and records paper trades
       run --max-minutes N   stop after about N minutes (exit code 75) so a fresh job can carry on
+      run --follow          never stop: after the day prepare the next list and wait for it
   python3 india/paper_trader.py report    rebuild paper_trades.xlsx and print the summary
 
 Files live in trader/india/ next to this folder: config.json, EQUITY_L.csv (save it from
@@ -98,13 +99,67 @@ def settle_open(cfg, clock):
         make_engine(cfg, state, [], clock).settle(clock())
 
 
-def run(cfg, clock, sleep, max_minutes=None):
+PREPARE_AT = "15:50"   # --follow: build the next day's stock list once today's daily bar is in
+WAKE_AT = "08:45"      # --follow: start of the trading day's own job
+PREPARE_TIME = datetime.timedelta(minutes=25)   # room a prepare needs before the job hands off
+
+
+def run(cfg, clock, sleep, max_minutes=None, follow=False):
+    """Trade today. With follow, never stop: after the day, prepare the next session's list and
+    wait for it, handing off to a fresh job (exit code 75) whenever max_minutes runs out, so the
+    trader does not depend on GitHub's schedule firing on time."""
+    deadline = clock() + datetime.timedelta(minutes=max_minutes) if max_minutes else None
+    while True:
+        code = run_day(cfg, clock, sleep, deadline)
+        if not follow or code != 0:
+            return code
+        code = wait_next(cfg, clock, sleep, deadline)
+        if code is not None:
+            return code
+
+
+def _pause_until(when, clock, sleep, deadline, why):
+    """Sleep until `when`, or until the deadline and return HANDOFF if that comes first."""
     now = clock()
-    deadline = now + datetime.timedelta(minutes=max_minutes) if max_minutes else None
+    if deadline and when > deadline:
+        print("%s %s. Waiting until %s, then handing off to a fresh job."
+              % (now.strftime("%Y-%m-%d %H:%M"), why, deadline.strftime("%H:%M")))
+        sleep(max(0.0, (deadline - now).total_seconds()))
+        return HANDOFF
+    print("%s %s. Waiting until %s." % (now.strftime("%Y-%m-%d %H:%M"), why, when.strftime("%Y-%m-%d %H:%M")))
+    sleep(max(0.0, (when - now).total_seconds()))
+    return None
+
+
+def wait_next(cfg, clock, sleep, deadline):
+    """After today is done: prepare the next session's list at PREPARE_AT, then wait for WAKE_AT."""
+    today = clock().date()
+    nxt = next_trading_day(today, cfg["holidays"])
+    if not os.path.exists(universe.liquid_path(nxt, config.DATA)):
+        prep = ist.at(today, PREPARE_AT)
+        if clock() < prep:
+            code = _pause_until(prep, clock, sleep, deadline, "Day done; the stock list for %s comes next" % nxt)
+            if code is not None:
+                return code
+        if deadline and deadline - clock() < PREPARE_TIME:
+            print("Too close to the hand-off to prepare the list for %s: the next job will." % nxt)
+            sleep(max(0.0, (deadline - clock()).total_seconds()))
+            return HANDOFF
+        if clock().date() == today:
+            print("Preparing the stock list for %s..." % nxt)
+            prepare(cfg, nxt)     # if it fails, that morning's job prepares the list itself
+    return _pause_until(ist.at(nxt, WAKE_AT), clock, sleep, deadline, "Next session %s" % nxt)
+
+
+def run_day(cfg, clock, sleep, deadline=None):
+    now = clock()
     today = now.date()
     if not ist.is_trading_day(today, cfg["holidays"]):
         settle_open(cfg, clock)
         print("%s is not a trading day (weekend or a holiday in config.json). Nothing to do." % today)
+        return 0
+    if (ledger.load(paths()[0], cfg["capital"])["days"].get(today.isoformat()) or {}).get("market_closed"):
+        print("%s: the market was found closed earlier today (a holiday). Nothing to do." % today)
         return 0
     if now >= ist.at(today, "15:30"):
         settle_open(cfg, clock)
@@ -180,6 +235,8 @@ def run(cfg, clock, sleep, max_minutes=None):
             if now >= ist.at(today, "09:35") and ls["checked"] and not ls["with_bars_today"]:
                 print("Yahoo has no 09:15 bar for today in any stock: the market looks closed (a holiday "
                       "missing from config.json?). Exiting.")
+                ledger.day(state, today.isoformat())["market_closed"] = True   # later jobs skip today
+                eng.save(clock())
                 return 0
             if (now >= close_all and not ledger.open_trades(state)) or now >= ist.at(today, "15:30"):
                 break
@@ -202,12 +259,14 @@ def main(argv=None, clock=ist.now, sleep=time.sleep):
     ap = argparse.ArgumentParser(description="NSE paper trader: ORB or gap fade (paper only)")
     ap.add_argument("command", choices=["prepare", "run", "report"])
     ap.add_argument("--max-minutes", type=float, help="run: stop after about this many minutes")
+    ap.add_argument("--follow", action="store_true",
+                    help="run: after the day, prepare and wait for the next session instead of exiting")
     a = ap.parse_args(argv)
     cfg = config.load(os.path.join(config.DATA, "config.json"))
     if a.command == "prepare":
         return prepare(cfg, session_day(clock(), cfg["holidays"]))
     if a.command == "run":
-        return run(cfg, clock, sleep, a.max_minutes)
+        return run(cfg, clock, sleep, a.max_minutes, a.follow)
     state_path, book_path = paths()
     state = ledger.load(state_path, cfg["capital"])
     ok = workbook.write(state, book_path, today=clock().date().isoformat())

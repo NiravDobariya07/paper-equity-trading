@@ -165,6 +165,8 @@ class CLI(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertIn("no 09:15 bar", out.getvalue())
         self.assertLess(clock[0], ist.at(D, "10:06"))
+        with open(os.path.join(self.tmp, "state.json")) as fh:     # a later job will not retry today
+            self.assertTrue(json.load(fh)["days"][D.isoformat()]["market_closed"])
 
     def test_empty_list_exits_with_a_reason(self):
         self.write_liquid([])
@@ -205,3 +207,71 @@ class CLI(unittest.TestCase):
             code, _ = self.main(["prepare"], ist.at(datetime.date(2026, 10, 30), "18:00"))   # Friday evening
         self.assertEqual(code, 0)
         self.assertEqual(got, [datetime.date(2026, 11, 2)])                                # Monday
+
+
+class Follow(unittest.TestCase):
+    """run --follow: after the day (or on a day off) prepare the next list, wait, hand off."""
+
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp()
+        self.old, config.DATA = config.DATA, self.tmp
+        self.prepared, self.slept = [], []
+
+    def tearDown(self):
+        config.DATA = self.old
+
+    def go(self, start, argv):
+        clock = [start]
+
+        def sleep(s):
+            self.slept.append(s)
+            clock[0] += datetime.timedelta(seconds=max(0, s))
+
+        def prepare(cfg, day):
+            self.prepared.append((clock[0].strftime("%H:%M"), day))
+            return 0
+        out = io.StringIO()
+        with mock.patch.object(paper_trader, "prepare", prepare), contextlib.redirect_stdout(out):
+            code = paper_trader.main(argv, clock=lambda: clock[0], sleep=sleep)
+        return code, out.getvalue(), clock[0]
+
+    def test_after_the_close_prepares_tomorrow_then_hands_off(self):
+        code, out, end = self.go(ist.at(D, "15:40"), ["run", "--follow", "--max-minutes", "320"])
+        self.assertEqual(code, paper_trader.HANDOFF, out)
+        self.assertEqual(self.prepared, [("15:50", datetime.date(2026, 10, 28))])
+        self.assertEqual(end, ist.at(D, "15:40") + datetime.timedelta(minutes=320))
+
+    def test_the_chain_reaches_the_next_morning(self):
+        # Friday 23:00: Saturday and Sunday are skipped, Monday's list is prepared, wake at 08:45
+        fri = datetime.date(2026, 10, 30)
+        code, out, end = self.go(ist.at(fri, "23:00"), ["run", "--follow", "--max-minutes", "320"])
+        self.assertEqual(code, paper_trader.HANDOFF, out)
+        self.assertEqual(self.prepared, [("23:00", datetime.date(2026, 11, 2))])   # missing: made at once
+        self.assertIn("Next session 2026-11-02", out)
+        self.assertEqual(end, ist.at(fri, "23:00") + datetime.timedelta(minutes=320))
+        # Monday 08:00: within reach of the 08:45 wake-up, so it sleeps until then and trades the day
+
+
+    def test_no_prepare_right_before_the_hand_off(self):
+        # started 10:40: its 320 minutes end at 16:00, 10 minutes after 15:50
+        code, out, end = self.go(ist.at(datetime.date(2026, 10, 31), "10:40"),   # a Saturday
+                                 ["run", "--follow", "--max-minutes", "320"])
+        self.assertEqual((code, self.prepared), (paper_trader.HANDOFF, []))
+        self.assertIn("the next job will", out)
+        self.assertEqual(end, ist.at(datetime.date(2026, 10, 31), "16:00"))
+
+    def test_without_follow_nothing_changes(self):
+        code, out, _ = self.go(ist.at(D, "15:40"), ["run", "--max-minutes", "320"])
+        self.assertEqual((code, self.prepared), (0, []))
+
+    def test_market_found_closed_is_remembered(self):
+        state = {"capital_start": 20000.0, "trades": [], "days": {D.isoformat(): {
+            "done": [], "skipped": [], "market_closed": True}}}
+        with open(os.path.join(self.tmp, "state.json"), "w") as fh:
+            json.dump(state, fh)
+        code, out, _ = self.go(ist.at(D, "09:50"), ["run", "--follow", "--max-minutes", "320"])
+        self.assertIn("found closed earlier today", out)
+        self.assertEqual(code, paper_trader.HANDOFF)
+        # its 320 minutes end at 15:10, before 15:50: the next job in the chain prepares the list
+        self.assertEqual(self.prepared, [])
+        self.assertIn("stock list for 2026-10-28 comes next", out)

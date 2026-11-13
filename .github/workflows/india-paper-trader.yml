@@ -1,7 +1,14 @@
 # NSE paper trader. Strategy code stays on main; config.json, EQUITY_L.csv, state.json,
 # liquid-*.json and paper_trades.xlsx live on the data branch at trader/india.
 #
-# Scheduled runs prepare at 15:46 IST and trade at 08:30 IST (09:00/09:30 fallbacks).
+# GitHub's schedule fires hours late or not at all, so the trader does not rely on it:
+# every `run` job uses --follow. It trades the day, prepares the next day's stock list at
+# 15:50 IST, then waits; after 320 minutes it starts a fresh job (the hand-off step), so a
+# chain of jobs is always running and the morning one is awake at 08:45 IST. The schedules
+# below are only a backup that (re)starts the chain if it ever breaks; while it runs they
+# queue behind it, and GitHub cancels the extra queued ones (shown as "cancelled").
+# To stop the trader: Actions -> India paper trader -> ... -> Disable workflow.
+#
 # For ChatGPT-assisted manual triggering, open an issue titled exactly
 # [paper-trader:prepare] or [paper-trader:run]. Only the repository owner can trigger.
 # The india-data concurrency group serializes every writer to the shared data branch.
@@ -9,10 +16,10 @@ name: India paper trader
 
 on:
   schedule:
-    - cron: "0 3 * * 1-5"     # 08:30 IST: primary run (waits for the 09:30 opening range)
-    - cron: "30 3 * * 1-5"    # 09:00 IST: fallback run
-    - cron: "0 4 * * 1-5"     # 09:30 IST: fallback run
-    - cron: "16 10 * * 1-5"   # 15:46 IST: prepare the next trading day's stock list
+    - cron: "0 3 * * 1-5"     # 08:30 IST: backup start of the chain
+    - cron: "30 3 * * 1-5"    # 09:00 IST: backup
+    - cron: "0 4 * * 1-5"     # 09:30 IST: backup
+    - cron: "16 10 * * 1-5"   # 15:46 IST: backup (prepares the next list, then waits)
   workflow_dispatch:
     inputs:
       command:
@@ -48,7 +55,6 @@ jobs:
         id: cmd
         env:
           EVENT_NAME: ${{ github.event_name }}
-          SCHEDULE: ${{ github.event.schedule }}
           ISSUE_TITLE: ${{ github.event.issue.title }}
           DISPATCH_COMMAND: ${{ inputs.command }}
         run: |
@@ -60,10 +66,8 @@ jobs:
               "[paper-trader:run]") command="run" ;;
               *) echo "Unsupported issue trigger title" >&2; exit 1 ;;
             esac
-          elif [ "$SCHEDULE" = "16 10 * * 1-5" ]; then   # must match the prepare cron above
-            command="prepare"
           else
-            command="run"
+            command="run"     # every schedule: run --follow prepares the next list itself
           fi
           echo "name=$command" >> "$GITHUB_OUTPUT"
 
@@ -102,7 +106,7 @@ jobs:
           set +e
           args=""
           if [ "$CMD" = run ]; then
-            args="--max-minutes 320"
+            args="--max-minutes 320 --follow"
             .github/scripts/sync-loop.sh &
           fi
           python3 india/paper_trader.py $CMD $args 2>&1 | tee "$RUNNER_TEMP/out.txt"
