@@ -639,13 +639,13 @@
    "risk": 177.0,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-13T15:05:00+05:30",
-   "exit_time": null,
-   "exit": null,
-   "reason": null,
-   "gross": null,
-   "charges": null,
-   "net": null
+   "checked_through": "2026-11-13T15:10:00+05:30",
+   "exit_time": "2026-11-13T15:15:00+05:30",
+   "exit": 621.4,
+   "reason": "close-all",
+   "gross": 110.4,
+   "charges": 2.71,
+   "net": 107.69
   },
   {
    "id": "2026-11-13-HAPPYFORGE",
@@ -662,13 +662,13 @@
    "risk": 188.4,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-13T15:05:00+05:30",
-   "exit_time": null,
-   "exit": null,
-   "reason": null,
-   "gross": null,
-   "charges": null,
-   "net": null
+   "checked_through": "2026-11-13T15:10:00+05:30",
+   "exit_time": "2026-11-13T15:15:00+05:30",
+   "exit": 1957.4,
+   "reason": "close-all",
+   "gross": -65.6,
+   "charges": 4.11,
+   "net": -69.71
   },
   {
    "id": "2026-11-13-TDPOWERSYS",
@@ -685,13 +685,13 @@
    "risk": 187.4,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-13T15:05:00+05:30",
-   "exit_time": null,
-   "exit": null,
-   "reason": null,
-   "gross": null,
-   "charges": null,
-   "net": null
+   "checked_through": "2026-11-13T15:10:00+05:30",
+   "exit_time": "2026-11-13T15:15:00+05:30",
+   "exit": 637.15,
+   "reason": "close-all",
+   "gross": 28.8,
+   "charges": 2.72,
+   "net": 26.08
   }
  ],
  "days": {
