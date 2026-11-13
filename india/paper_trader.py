@@ -133,6 +133,13 @@ def run(cfg, clock, sleep, max_minutes=None):
     first = ist.at(today, "09:15") + datetime.timedelta(minutes=cfg["or_minutes"]) + GRACE
     now = clock()
     if now < first:
+        if deadline and first > deadline:
+            # started hours early (GitHub fires late schedules at odd times): wait as long as this
+            # job may, then let a fresh job carry on instead of being killed by the job time limit
+            print("Started at %s, too early to wait for the market in one job: waiting until %s, "
+                  "then handing off." % (now.strftime("%H:%M"), deadline.strftime("%H:%M")))
+            sleep((deadline - now).total_seconds())
+            return HANDOFF
         print("Waiting for the opening range (09:15 to %s)..." % (first - GRACE).strftime("%H:%M"))
         sleep((first - now).total_seconds())
     if cfg.get("strategy", "orb") == "gap_fade":

@@ -101,6 +101,20 @@ class CLI(unittest.TestCase):
         self.assertRegex(out.getvalue(), r"now 103\.10 .* P&L \+0\.00, net -[0-9.]+ after charges")
         self.assertIn("open net", out.getvalue())
 
+    def test_very_early_start_hands_off_instead_of_timing_out(self):
+        # GitHub fired a schedule at 02:18: waiting until 09:30 would outlive the job
+        with open(os.path.join(self.tmp, "liquid-%s.json" % D.isoformat()), "w") as fh:
+            json.dump({"day": D.isoformat(), "symbols": ["RELIANCE"]}, fh)
+        clock = [ist.at(D, "02:18")]
+
+        def sleep(s):
+            self.slept.append(s)
+            clock[0] += datetime.timedelta(seconds=s)
+        with contextlib.redirect_stdout(io.StringIO()):
+            code = paper_trader.main(["run", "--max-minutes", "320"], clock=lambda: clock[0], sleep=sleep)
+        self.assertEqual(code, paper_trader.HANDOFF)
+        self.assertEqual(self.slept, [320 * 60.0])     # waited only as long as it may, then hands off
+
     def test_max_minutes_hands_off_and_a_second_run_carries_on(self):
         from india.tests.test_engine import bar, breakout_at
         from india.yahoo import Chart

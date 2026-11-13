@@ -60,7 +60,7 @@ jobs:
               "[paper-trader:run]") command="run" ;;
               *) echo "Unsupported issue trigger title" >&2; exit 1 ;;
             esac
-          elif [ "$SCHEDULE" = "45 10 * * 1-5" ]; then
+          elif [ "$SCHEDULE" = "16 10 * * 1-5" ]; then   # must match the prepare cron above
             command="prepare"
           else
             command="run"
