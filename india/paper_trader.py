@@ -151,9 +151,24 @@ def run(cfg, clock, sleep, max_minutes=None):
                 traceback.print_exc()
                 print("%s sweep failed; trying again at the next bar." % now.strftime("%H:%M:%S"))
             st = ledger.day_stats(state, today.isoformat())
-            n_open = len([t for t in ledger.open_trades(state) if t["date"] == today.isoformat()])
-            print("%s checked. Trades today %d, open %d, net %.2f"
-                  % (clock().strftime("%H:%M:%S"), st["trades"], n_open, st["realized_net"]))
+            live = [t for t in ledger.open_trades(state) if t["date"] == today.isoformat()]
+            lines, open_net = [], 0.0
+            for t in live:
+                price = eng.prices.get(t["symbol"])
+                if price is None:
+                    lines.append("  %-5s %-12s %4d @ %.2f  no price yet" % (
+                        "BUY" if t.get("side", 1) == 1 else "SHORT", t["symbol"], t["shares"], t["entry"]))
+                    continue
+                u = ledger.unrealized(t, price, cfg["charges"])
+                open_net += u["net"]
+                lines.append("  %-5s %-12s %4d @ %.2f  now %.2f  stop %.2f  P&L %+.2f, net %+.2f after charges" % (
+                    "BUY" if t.get("side", 1) == 1 else "SHORT", t["symbol"], t["shares"], t["entry"],
+                    price, t["stop"], u["gross"], u["net"]))
+            print("%s checked. Trades today %d, open %d, closed net %.2f, open net %+.2f, day net %+.2f"
+                  % (clock().strftime("%H:%M:%S"), st["trades"], len(live), st["realized_net"], open_net,
+                     st["realized_net"] + open_net))
+            for line in lines:
+                print(line)
             ls = eng.last_sweep
             if now >= ist.at(today, "09:35") and ls["checked"] and not ls["with_bars_today"]:
                 print("Yahoo has no 09:15 bar for today in any stock: the market looks closed (a holiday "

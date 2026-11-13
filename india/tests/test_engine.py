@@ -330,6 +330,7 @@ class GapFade(unittest.TestCase):
         feed = Feed(days)
         eng = engine.Engine(self.cfg, self.state, sorted(days), feed.today, feed.sixty, log=lambda *a: None,
                             info=self.INFO, fetch_spark_meta=spark_meta)
+        self.eng = eng
         events = []
         for t in times:
             feed.now = t
@@ -345,6 +346,11 @@ class GapFade(unittest.TestCase):
         self.assertEqual(t["shares"], 63)        # 33% of 20000 = 6600 / 104; risk 2 x 63 = 126 <= 200
         self.assertEqual((t["reason"], t["exit"]), ("close-all", 103.0))
         self.assertEqual(t["gross"], 63.0)
+
+    def test_latest_price_of_open_trades_is_kept(self):
+        self.run_fade({"AAA": gapper()}, [at("09:45"), at("10:30")])
+        self.assertIsNone(self.state["trades"][0]["exit"])
+        self.assertEqual(self.eng.prices["AAA"], 103.0)      # the 10:30 sweep's price, not the entry
 
     def test_stop_above_for_a_short(self):
         bars = gapper(extra=[bar(20, 105, h=106.5, l=104)])

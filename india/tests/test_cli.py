@@ -96,6 +96,10 @@ class CLI(unittest.TestCase):
         self.assertGreaterEqual(clock[0], ist.at(D, "15:15"))   # stayed until the close-all
         self.assertLess(clock[0], ist.at(D, "15:21"))
         self.assertIn("1 paper trade(s)", out.getvalue())
+        # while it was open, every sweep showed its live price and P&L
+        self.assertRegex(out.getvalue(), r"\n  BUY +AAA +64 @ 103\.10")
+        self.assertRegex(out.getvalue(), r"now 103\.10 .* P&L \+0\.00, net -[0-9.]+ after charges")
+        self.assertIn("open net", out.getvalue())
 
     def test_max_minutes_hands_off_and_a_second_run_carries_on(self):
         from india.tests.test_engine import bar, breakout_at

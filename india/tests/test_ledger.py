@@ -60,6 +60,17 @@ class Ledger(unittest.TestCase):
         self.assertEqual(t["charges"], money.charges(960.0, 1000.0, RATES))
         self.assertAlmostEqual(t["net"], 40.0 - t["charges"])
 
+    def test_unrealized_long_and_short(self):
+        t = trade()                                   # long 10 @ 1000
+        u = ledger.unrealized(t, 1012.0, RATES)
+        self.assertEqual(u["gross"], 120.0)
+        self.assertAlmostEqual(u["net"], 120.0 - u["charges"])
+        s = ledger.new_trade("2026-10-27", "AAA", "gap_fade", "2026-10-27T09:45:05+05:30", 100.0, 10,
+                             105.0, None, None, side=-1)
+        u = ledger.unrealized(s, 97.5, RATES)
+        self.assertEqual(u["gross"], 25.0)
+        self.assertIsNone(s["exit"])                  # nothing is recorded on the trade
+
     def test_old_trades_without_side_are_long(self):
         t = trade()
         del t["side"]

@@ -49,14 +49,19 @@ def new_trade(date, symbol, setup, entry_time, entry, shares, stop, target, odds
     }
 
 
+def unrealized(t, price, rates):
+    """{"gross", "charges", "net"} if the trade were closed at `price` now. Changes nothing."""
+    side = t.get("side", 1)   # trades recorded before shorts existed are longs
+    gross = round((price - t["entry"]) * side * t["shares"], 2)
+    buy, sell = (t["entry"], price) if side == 1 else (price, t["entry"])
+    chg = money.charges(buy * t["shares"], sell * t["shares"], rates)
+    return {"gross": gross, "charges": chg, "net": round(gross - chg, 2)}
+
+
 def close(t, price, when, reason, rates):
     price = round(price, 2)
     t["exit"], t["exit_time"], t["reason"] = price, when, reason
-    side = t.get("side", 1)   # trades recorded before shorts existed are longs
-    t["gross"] = round((price - t["entry"]) * side * t["shares"], 2)
-    buy, sell = (t["entry"], price) if side == 1 else (price, t["entry"])
-    t["charges"] = money.charges(buy * t["shares"], sell * t["shares"], rates)
-    t["net"] = round(t["gross"] - t["charges"], 2)
+    t.update(unrealized(t, price, rates))
 
 
 def open_trades(state):

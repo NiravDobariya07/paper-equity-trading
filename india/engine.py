@@ -33,6 +33,7 @@ class Engine(object):
         self.fetch_spark_meta = fetch_spark_meta
         self.clock = clock
         self.fetched_at = {}  # symbol -> when this sweep's chart was fetched
+        self.prices = {}      # symbol -> latest price seen (for the live P&L of open trades)
         self.last_sweep = {"checked": 0, "with_bars_today": 0, "failed": 0}
         self.fetch_today, self.fetch_60d, self.log = fetch_today, fetch_60d, log
         self.fetch_spark, self.spark_over = fetch_spark, spark_over
@@ -88,6 +89,7 @@ class Engine(object):
         if sym not in charts:
             charts[sym] = self.fetch_today(sym)
             self.fetched_at[sym] = self.clock() if self.clock else now
+            self.prices[sym] = charts[sym].price
         return charts[sym]
 
     def _to_check(self, syms, now):
