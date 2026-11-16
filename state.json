@@ -731,13 +731,13 @@
    "risk": 168.25,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-16T15:05:00+05:30",
-   "exit_time": null,
-   "exit": null,
-   "reason": null,
-   "gross": null,
-   "charges": null,
-   "net": null
+   "checked_through": "2026-11-16T15:10:00+05:30",
+   "exit_time": "2026-11-16T15:15:00+05:30",
+   "exit": 539.0,
+   "reason": "close-all",
+   "gross": 38.0,
+   "charges": 2.88,
+   "net": 35.12
   },
   {
    "id": "2026-11-16-MARSONS",
