@@ -708,7 +708,7 @@
    "risk": 199.76,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-16T10:30:00+05:30",
+   "checked_through": "2026-11-16T10:45:00+05:30",
    "exit_time": null,
    "exit": null,
    "reason": null,
@@ -731,7 +731,7 @@
    "risk": 168.25,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-16T10:30:00+05:30",
+   "checked_through": "2026-11-16T10:45:00+05:30",
    "exit_time": null,
    "exit": null,
    "reason": null,
@@ -754,13 +754,13 @@
    "risk": 194.94,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-16T10:30:00+05:30",
-   "exit_time": null,
-   "exit": null,
-   "reason": null,
-   "gross": null,
-   "charges": null,
-   "net": null
+   "checked_through": "2026-11-16T10:40:00+05:30",
+   "exit_time": "2026-11-16T10:40:00+05:30",
+   "exit": 163.95,
+   "reason": "stop",
+   "gross": -194.94,
+   "charges": 3.18,
+   "net": -198.12
   }
  ],
  "days": {
