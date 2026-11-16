@@ -692,6 +692,75 @@
    "gross": 28.8,
    "charges": 2.72,
    "net": 26.08
+  },
+  {
+   "id": "2026-11-16-SKYWAYS",
+   "date": "2026-11-16",
+   "symbol": "SKYWAYS",
+   "setup": "gap_fade",
+   "side": -1,
+   "entry_time": "2026-11-16T09:45:37+05:30",
+   "entry": 121.11,
+   "shares": 44,
+   "value": 5328.84,
+   "stop": 125.65,
+   "target": null,
+   "risk": 199.76,
+   "tm_target": null,
+   "tm_stop": null,
+   "checked_through": null,
+   "exit_time": null,
+   "exit": null,
+   "reason": null,
+   "gross": null,
+   "charges": null,
+   "net": null
+  },
+  {
+   "id": "2026-11-16-DEEDEV",
+   "date": "2026-11-16",
+   "symbol": "DEEDEV",
+   "setup": "gap_fade",
+   "side": -1,
+   "entry_time": "2026-11-16T09:45:35+05:30",
+   "entry": 546.6,
+   "shares": 5,
+   "value": 2733.0,
+   "stop": 580.25,
+   "target": null,
+   "risk": 168.25,
+   "tm_target": null,
+   "tm_stop": null,
+   "checked_through": null,
+   "exit_time": null,
+   "exit": null,
+   "reason": null,
+   "gross": null,
+   "charges": null,
+   "net": null
+  },
+  {
+   "id": "2026-11-16-MARSONS",
+   "date": "2026-11-16",
+   "symbol": "MARSONS",
+   "setup": "gap_fade",
+   "side": -1,
+   "entry_time": "2026-11-16T09:45:27+05:30",
+   "entry": 153.69,
+   "shares": 19,
+   "value": 2920.11,
+   "stop": 163.95,
+   "target": null,
+   "risk": 194.94,
+   "tm_target": null,
+   "tm_stop": null,
+   "checked_through": "2026-11-16T09:45:00+05:30",
+   "exit_time": null,
+   "exit": null,
+   "reason": null,
+   "gross": null,
+   "charges": null,
+   "net": null
   }
  ],
  "days": {
@@ -19845,8 +19914,78 @@
    ]
   },
   "2026-11-16": {
-   "done": [],
-   "skipped": []
+   "done": [
+    "BHARTIARTL",
+    "KALYANKJIL",
+    "ATHERENERG",
+    "EICHERMOT",
+    "MAXHEALTH",
+    "PPLPHARMA",
+    "GALLANTT",
+    "HEROMOTORS",
+    "SYMBIOTEC",
+    "SAREGAMA",
+    "SAMMAANCAP",
+    "MARSONS",
+    "RAYMOND",
+    "SGMART",
+    "CYIENTDLM",
+    "AJANTPHARM",
+    "STYLEBAAZA",
+    "BELRISE",
+    "NATCOPHARM",
+    "TEGA",
+    "BOROLTD",
+    "DEEPAKFERT",
+    "GOKEX",
+    "SHARDAMOTR",
+    "KITEX",
+    "JAMNAAUTO",
+    "VIJAYA",
+    "MBAPL",
+    "MENONBE",
+    "KERNEX",
+    "CMLL",
+    "DEEDEV",
+    "FIRSTCRY",
+    "KPIL",
+    "MOLDTKPAC",
+    "SUNSHINE",
+    "SKYWAYS",
+    "APOLLOPIPE",
+    "SRIT",
+    "IVALUE",
+    "YATRA",
+    "SUNTV",
+    "KPL"
+   ],
+   "skipped": [
+    {
+     "symbol": "MBAPL",
+     "reason": "trade limit",
+     "time": "2026-11-16T09:45:33+05:30"
+    },
+    {
+     "symbol": "HEROMOTORS",
+     "reason": "trade limit",
+     "time": "2026-11-16T09:45:25+05:30"
+    },
+    {
+     "symbol": "FIRSTCRY",
+     "reason": "trade limit",
+     "time": "2026-11-16T09:45:35+05:30"
+    },
+    {
+     "symbol": "JAMNAAUTO",
+     "reason": "trade limit",
+     "time": "2026-11-16T09:45:32+05:30"
+    },
+    {
+     "symbol": "KERNEX",
+     "reason": "trade limit",
+     "time": "2026-11-16T09:45:34+05:30"
+    }
+   ]
   }
  }
 }
