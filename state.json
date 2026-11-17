@@ -777,13 +777,13 @@
    "risk": 157.0,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-17T14:55:00+05:30",
-   "exit_time": null,
-   "exit": null,
-   "reason": null,
-   "gross": null,
-   "charges": null,
-   "net": null
+   "checked_through": "2026-11-17T15:10:00+05:30",
+   "exit_time": "2026-11-17T15:15:00+05:30",
+   "exit": 646.8,
+   "reason": "close-all",
+   "gross": -31.5,
+   "charges": 6.84,
+   "net": -38.34
   },
   {
    "id": "2026-11-17-TATAINVEST",
@@ -823,13 +823,13 @@
    "risk": 194.92,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-17T14:55:00+05:30",
-   "exit_time": null,
-   "exit": null,
-   "reason": null,
-   "gross": null,
-   "charges": null,
-   "net": null
+   "checked_through": "2026-11-17T15:10:00+05:30",
+   "exit_time": "2026-11-17T15:15:00+05:30",
+   "exit": 221.41,
+   "reason": "close-all",
+   "gross": -13.64,
+   "charges": 5.16,
+   "net": -18.8
   }
  ],
  "days": {
