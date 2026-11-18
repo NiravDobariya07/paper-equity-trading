@@ -846,13 +846,13 @@
    "risk": 196.8,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-18T15:05:00+05:30",
-   "exit_time": null,
-   "exit": null,
-   "reason": null,
-   "gross": null,
-   "charges": null,
-   "net": null
+   "checked_through": "2026-11-18T15:10:00+05:30",
+   "exit_time": "2026-11-18T15:15:00+05:30",
+   "exit": 115.2,
+   "reason": "close-all",
+   "gross": -61.5,
+   "charges": 4.97,
+   "net": -66.47
   },
   {
    "id": "2026-11-18-SWANCORP",
@@ -869,13 +869,13 @@
    "risk": 198.03,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-18T15:05:00+05:30",
-   "exit_time": null,
-   "exit": null,
-   "reason": null,
-   "gross": null,
-   "charges": null,
-   "net": null
+   "checked_through": "2026-11-18T15:10:00+05:30",
+   "exit_time": "2026-11-18T15:15:00+05:30",
+   "exit": 230.56,
+   "reason": "close-all",
+   "gross": -70.14,
+   "charges": 5.09,
+   "net": -75.23
   }
  ],
  "days": {
