@@ -892,13 +892,13 @@
    "risk": 195.48,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-19T11:10:00+05:30",
-   "exit_time": null,
-   "exit": null,
-   "reason": null,
-   "gross": null,
-   "charges": null,
-   "net": null
+   "checked_through": "2026-11-19T11:20:00+05:30",
+   "exit_time": "2026-11-19T11:20:00+05:30",
+   "exit": 137.35,
+   "reason": "stop",
+   "gross": -195.48,
+   "charges": 5.12,
+   "net": -200.6
   }
  ],
  "days": {
