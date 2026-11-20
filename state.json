@@ -915,13 +915,13 @@
    "risk": 182.0,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-20T15:05:00+05:30",
-   "exit_time": null,
-   "exit": null,
-   "reason": null,
-   "gross": null,
-   "charges": null,
-   "net": null
+   "checked_through": "2026-11-20T15:10:00+05:30",
+   "exit_time": "2026-11-20T15:15:00+05:30",
+   "exit": 337.1,
+   "reason": "close-all",
+   "gross": 145.0,
+   "charges": 3.67,
+   "net": 141.33
   },
   {
    "id": "2026-11-20-NITINSPIN",
@@ -938,13 +938,13 @@
    "risk": 193.2,
    "tm_target": null,
    "tm_stop": null,
-   "checked_through": "2026-11-20T15:05:00+05:30",
-   "exit_time": null,
-   "exit": null,
-   "reason": null,
-   "gross": null,
-   "charges": null,
-   "net": null
+   "checked_through": "2026-11-20T15:10:00+05:30",
+   "exit_time": "2026-11-20T15:15:00+05:30",
+   "exit": 704.35,
+   "reason": "close-all",
+   "gross": -2.45,
+   "charges": 5.23,
+   "net": -7.68
   }
  ],
  "days": {
